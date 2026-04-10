@@ -1,0 +1,28 @@
+﻿======================================================================
+  NOISE POLLUTION ZONE CLASSIFICATION - DELHI
+======================================================================
+
+======================================================================
+  STEP 1: DATA PREPROCESSING
+======================================================================
+python : Traceback (most recent call last):
+At line:1 char:1
++ python noise_pollution_analysis.py 2>&1 | Out-File 
+-Encoding utf8 out ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (Traceback (m 
+   ost recent call last)::String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+  File "D:\Noise polllution 
+Zone\noise_pollution_analysis.py", line 95, in <module>
+    print(f"\n\u2713 Loaded {len(df)} location records")
+  File "C:\Users\hp\anaconda3\Lib\encodings\cp1252.py", 
+line 19, in encode
+    return 
+codecs.charmap_encode(input,self.errors,encoding_table)[0]
+           
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'charmap' codec can't encode 
+character '\u2713' in position 2: character maps to 
+<undefined>

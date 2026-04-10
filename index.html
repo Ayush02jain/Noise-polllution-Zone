@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Interactive Delhi Noise Pollution Zone Map Dashboard with ML-based classification (2020-2024)">
+    <title>Delhi Noise Pollution Zone Map | 2020-2024</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav id="navbar">
+        <div class="navbar-brand">
+            <span class="navbar-icon">&#127981;</span>
+            <h1>Delhi Noise Pollution Zone Map</h1>
+        </div>
+        <div class="navbar-meta">
+            <span class="badge">2020 — 2024</span>
+            <span class="badge badge-accent">41 Stations</span>
+        </div>
+    </nav>
+
+    <!-- Main Layout -->
+    <div id="app-container">
+
+        <!-- Sidebar -->
+        <aside id="sidebar">
+
+            <!-- Year Filter -->
+            <div class="filter-card">
+                <h3 class="filter-title">Year Filter</h3>
+                <select id="yearFilter">
+                    <option value="all">All Years</option>
+                    <option value="2020">2020</option>
+                    <option value="2021">2021</option>
+                    <option value="2022">2022</option>
+                    <option value="2023">2023</option>
+                    <option value="2024">2024</option>
+                </select>
+            </div>
+
+            <!-- Zone Category Filter -->
+            <div class="filter-card">
+                <h3 class="filter-title">Zone Category</h3>
+                <div class="checkbox-group">
+                    <label class="checkbox-label zone-low">
+                        <input type="checkbox" id="zoneLow" value="Low" checked>
+                        <span class="checkmark"></span>
+                        Low
+                    </label>
+                    <label class="checkbox-label zone-moderate">
+                        <input type="checkbox" id="zoneModerate" value="Moderate" checked>
+                        <span class="checkmark"></span>
+                        Moderate
+                    </label>
+                    <label class="checkbox-label zone-high">
+                        <input type="checkbox" id="zoneHigh" value="High" checked>
+                        <span class="checkmark"></span>
+                        High
+                    </label>
+                    <label class="checkbox-label zone-critical">
+                        <input type="checkbox" id="zoneCritical" value="Critical" checked>
+                        <span class="checkmark"></span>
+                        Critical
+                    </label>
+                </div>
+            </div>
+
+            <!-- Reset -->
+            <button id="resetFilters" class="btn-reset">Reset Filters</button>
+
+            <!-- Statistics Card -->
+            <div class="filter-card stats-card">
+                <h3 class="filter-title">Statistics</h3>
+                <div class="stat-row">
+                    <span class="stat-label">Total Locations</span>
+                    <span class="stat-value" id="statTotal">—</span>
+                </div>
+                <div class="stat-row">
+                    <span class="stat-label">Avg Day dB</span>
+                    <span class="stat-value" id="statDay">—</span>
+                </div>
+                <div class="stat-row">
+                    <span class="stat-label">Avg Night dB</span>
+                    <span class="stat-value" id="statNight">—</span>
+                </div>
+            </div>
+
+        </aside>
+
+        <!-- Main Content -->
+        <main id="main-content">
+            <!-- Map -->
+            <div id="map-wrapper">
+                <div id="map"></div>
+
+                <!-- Legend -->
+                <div id="legend">
+                    <h4>Noise Level</h4>
+                    <div class="legend-item">
+                        <span class="legend-hex" style="background: #00b300;"></span>
+                        <span>&lt; 50 dB (Low)</span>
+                    </div>
+                    <div class="legend-item">
+                        <span class="legend-hex" style="background: #ffff00;"></span>
+                        <span>50–58 dB (Moderate)</span>
+                    </div>
+                    <div class="legend-item">
+                        <span class="legend-hex" style="background: #ff8c00;"></span>
+                        <span>58–66 dB (High)</span>
+                    </div>
+                    <div class="legend-item">
+                        <span class="legend-hex" style="background: #b40000;"></span>
+                        <span>66–74 dB (Critical)</span>
+                    </div>
+                    <div class="legend-item">
+                        <span class="legend-hex" style="background: #640096;"></span>
+                        <span>&gt; 74 dB (Severe)</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Trend Chart -->
+            <div id="trend-panel">
+                <h3 class="panel-title">Year-wise Noise Trend (2020–2024)</h3>
+                <div id="chart-container">
+                    <canvas id="trendChart"></canvas>
+                </div>
+            </div>
+        </main>
+
+    </div>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+    <script src="script.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,491 @@
+/* ===========================================================
+   Delhi Noise Pollution Zone Map - Dashboard Stylesheet
+   Theme: Dark Smart-City
+   =========================================================== */
+
+/* ---- CSS Variables ---- */
+:root {
+    --bg-primary: #0d1117;
+    --bg-secondary: #161b22;
+    --bg-card: #1c2333;
+    --bg-card-hover: #222d3f;
+    --accent: #00d4ff;
+    --accent-glow: rgba(0, 212, 255, 0.15);
+    --text-primary: #e6edf3;
+    --text-secondary: #8b949e;
+    --text-muted: #484f58;
+    --border: #30363d;
+    --border-light: #3d444d;
+    --success: #00b300;
+    --warning: #ff8c00;
+    --danger: #b40000;
+    --purple: #640096;
+    --sidebar-width: 280px;
+    --navbar-height: 56px;
+    --trend-height: 220px;
+    --radius: 10px;
+    --transition: 0.25s ease;
+}
+
+/* ---- Reset & Base ---- */
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    overflow: hidden;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    background: var(--bg-primary);
+    color: var(--text-primary);
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+/* ---- Scrollbar ---- */
+::-webkit-scrollbar {
+    width: 6px;
+}
+::-webkit-scrollbar-track {
+    background: var(--bg-secondary);
+}
+::-webkit-scrollbar-thumb {
+    background: var(--border);
+    border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: var(--text-muted);
+}
+
+/* ============================================================
+   NAVBAR
+   ============================================================ */
+#navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: var(--navbar-height);
+    background: var(--bg-secondary);
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 24px;
+    z-index: 1000;
+    backdrop-filter: blur(12px);
+}
+
+.navbar-brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.navbar-icon {
+    font-size: 22px;
+    filter: drop-shadow(0 0 6px var(--accent));
+}
+
+#navbar h1 {
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--accent);
+    letter-spacing: 0.3px;
+    text-shadow: 0 0 20px rgba(0, 212, 255, 0.3);
+}
+
+.navbar-meta {
+    display: flex;
+    gap: 8px;
+}
+
+.badge {
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 500;
+    background: var(--bg-card);
+    color: var(--text-secondary);
+    border: 1px solid var(--border);
+}
+
+.badge-accent {
+    color: var(--accent);
+    border-color: rgba(0, 212, 255, 0.3);
+    background: rgba(0, 212, 255, 0.08);
+}
+
+/* ============================================================
+   APP LAYOUT
+   ============================================================ */
+#app-container {
+    display: flex;
+    margin-top: var(--navbar-height);
+    height: calc(100vh - var(--navbar-height));
+}
+
+/* ============================================================
+   SIDEBAR
+   ============================================================ */
+#sidebar {
+    width: var(--sidebar-width);
+    min-width: var(--sidebar-width);
+    background: var(--bg-secondary);
+    border-right: 1px solid var(--border);
+    padding: 16px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+/* ---- Filter Cards ---- */
+.filter-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 14px;
+    transition: border-color var(--transition);
+}
+
+.filter-card:hover {
+    border-color: var(--border-light);
+}
+
+.filter-title {
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    color: var(--text-secondary);
+    margin-bottom: 10px;
+}
+
+
+/* ---- Select Dropdown ---- */
+#yearFilter {
+    width: 100%;
+    padding: 9px 12px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    background: var(--bg-primary);
+    color: var(--text-primary);
+    font-size: 13px;
+    font-family: inherit;
+    outline: none;
+    cursor: pointer;
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='%238b949e' viewBox='0 0 16 16'%3E%3Cpath d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 12px center;
+    padding-right: 32px;
+    transition: border-color var(--transition), box-shadow var(--transition);
+}
+
+#yearFilter:focus {
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px var(--accent-glow);
+}
+
+#yearFilter option {
+    background: var(--bg-card);
+    color: var(--text-primary);
+}
+
+/* ---- Checkboxes ---- */
+.checkbox-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.checkbox-label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 6px 10px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: 500;
+    transition: background var(--transition);
+}
+
+.checkbox-label:hover {
+    background: var(--bg-card-hover);
+}
+
+.checkbox-label input[type="checkbox"] {
+    display: none;
+}
+
+.checkmark {
+    width: 16px;
+    height: 16px;
+    border-radius: 4px;
+    border: 2px solid var(--border-light);
+    position: relative;
+    transition: all var(--transition);
+    flex-shrink: 0;
+}
+
+.checkbox-label input:checked + .checkmark {
+    border-color: var(--accent);
+    background: var(--accent);
+}
+
+.checkbox-label input:checked + .checkmark::after {
+    content: '';
+    position: absolute;
+    left: 4px;
+    top: 1px;
+    width: 5px;
+    height: 8px;
+    border: solid var(--bg-primary);
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+}
+
+.zone-low .checkmark    { border-color: #00b300; }
+.zone-low input:checked + .checkmark { background: #00b300; border-color: #00b300; }
+.zone-moderate .checkmark { border-color: #ffff00; }
+.zone-moderate input:checked + .checkmark { background: #cccc00; border-color: #cccc00; }
+.zone-high .checkmark   { border-color: #ff8c00; }
+.zone-high input:checked + .checkmark { background: #ff8c00; border-color: #ff8c00; }
+.zone-critical .checkmark { border-color: #b40000; }
+.zone-critical input:checked + .checkmark { background: #b40000; border-color: #b40000; }
+
+/* ---- Reset Button ---- */
+.btn-reset {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    background: transparent;
+    color: var(--text-secondary);
+    font-size: 13px;
+    font-weight: 500;
+    font-family: inherit;
+    cursor: pointer;
+    transition: all var(--transition);
+}
+
+.btn-reset:hover {
+    background: rgba(0, 212, 255, 0.08);
+    border-color: var(--accent);
+    color: var(--accent);
+}
+
+/* ---- Stats Card ---- */
+.stats-card {
+    background: linear-gradient(135deg, var(--bg-card) 0%, rgba(0,212,255,0.04) 100%);
+    border-color: rgba(0, 212, 255, 0.15);
+}
+
+.stat-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 6px 0;
+    border-bottom: 1px solid var(--border);
+}
+
+.stat-row:last-child {
+    border-bottom: none;
+}
+
+.stat-label {
+    font-size: 12px;
+    color: var(--text-secondary);
+}
+
+.stat-value {
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--accent);
+    font-variant-numeric: tabular-nums;
+}
+
+/* ============================================================
+   MAIN CONTENT
+   ============================================================ */
+#main-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+/* ---- Map ---- */
+#map-wrapper {
+    flex: 1;
+    position: relative;
+    min-height: 0;
+}
+
+#map {
+    width: 100%;
+    height: 100%;
+    background: var(--bg-primary);
+}
+
+/* Leaflet style overrides for dark theme */
+.leaflet-popup-content-wrapper {
+    background: var(--bg-card) !important;
+    color: var(--text-primary) !important;
+    border-radius: var(--radius) !important;
+    border: 1px solid var(--border) !important;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5) !important;
+}
+
+.leaflet-popup-tip {
+    background: var(--bg-card) !important;
+    border: 1px solid var(--border) !important;
+}
+
+.leaflet-popup-close-button {
+    color: var(--text-secondary) !important;
+}
+
+/* ---- Map Legend ---- */
+#legend {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    background: rgba(22, 27, 34, 0.92);
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 14px 16px;
+    z-index: 800;
+    min-width: 160px;
+}
+
+#legend h4 {
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    color: var(--text-secondary);
+    margin-bottom: 10px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--border);
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 3px 0;
+    font-size: 12px;
+    color: var(--text-secondary);
+}
+
+.legend-hex {
+    width: 14px;
+    height: 14px;
+    border-radius: 3px;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    flex-shrink: 0;
+}
+
+/* ---- Trend Panel ---- */
+#trend-panel {
+    height: var(--trend-height);
+    min-height: var(--trend-height);
+    background: var(--bg-secondary);
+    border-top: 1px solid var(--border);
+    padding: 14px 24px;
+    display: flex;
+    flex-direction: column;
+}
+
+.panel-title {
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    color: var(--text-secondary);
+    margin-bottom: 8px;
+    flex-shrink: 0;
+}
+
+#chart-container {
+    flex: 1;
+    min-height: 0;
+    position: relative;
+}
+
+#trendChart {
+    width: 100% !important;
+    height: 100% !important;
+}
+
+/* ============================================================
+   ANIMATIONS
+   ============================================================ */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(8px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+.filter-card {
+    animation: fadeIn 0.4s ease both;
+}
+.filter-card:nth-child(1) { animation-delay: 0.05s; }
+.filter-card:nth-child(2) { animation-delay: 0.10s; }
+.filter-card:nth-child(3) { animation-delay: 0.15s; }
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+@media (max-width: 768px) {
+    #app-container {
+        flex-direction: column;
+    }
+
+    #sidebar {
+        width: 100%;
+        min-width: 100%;
+        max-height: 240px;
+        border-right: none;
+        border-bottom: 1px solid var(--border);
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 8px;
+        padding: 10px;
+    }
+
+    .filter-card {
+        flex: 1 1 140px;
+        min-width: 140px;
+    }
+
+    .btn-reset {
+        flex: 0 0 auto;
+    }
+
+    #map-wrapper {
+        min-height: 300px;
+    }
+
+    #legend {
+        bottom: 10px;
+        right: 10px;
+        font-size: 11px;
+        padding: 10px 12px;
+    }
+
+    #trend-panel {
+        height: 180px;
+        min-height: 180px;
+        padding: 10px 16px;
+    }
+
+    .navbar-meta {
+        display: none;
+    }
+}
