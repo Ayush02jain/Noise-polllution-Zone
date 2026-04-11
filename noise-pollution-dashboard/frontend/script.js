@@ -53,7 +53,7 @@
     }
 
     function loadData() {
-        fetch('all_cities_locations_geo.json')
+        fetch('../data/geo/all_cities_locations_geo.json')
             .then(function (r) { if (!r.ok) throw new Error(); return r.json(); })
             .then(function (data) {
                 allData = data;
