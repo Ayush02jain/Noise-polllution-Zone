@@ -10,6 +10,7 @@ from geopy.geocoders import Nominatim
 from geopy.extra.rate_limiter import RateLimiter
 import json
 import os
+import shutil
 
 BASE_DIR = r"d:\Noise polllution Zone"
 # # os.chdir(BASE_DIR)
@@ -186,7 +187,8 @@ with open('../../data/geo/all_cities_locations_geo.json', 'w') as f:
 fsize = os.path.getsize('../../data/geo/all_cities_locations_geo.json')
 print(f"  Saved: all_cities_locations_geo.json ({fsize:,} bytes, {len(geo_records)} locations)")
 
-print("\n" + "=" * 70)
-print("  DONE! Now serve frontend with: python -m http.server 8080")
-print("  Open: http://localhost:8080/index.html")
 print("=" * 70)
+
+# Fix 7 — Copy JSON to frontend for deployment
+shutil.copy('../../data/geo/all_cities_locations_geo.json', '../../frontend/all_cities_locations_geo.json')
+print("JSON copied to frontend/ for deployment.")
