@@ -9,15 +9,10 @@ import pandas as pd
 from geopy.geocoders import Nominatim
 from geopy.extra.rate_limiter import RateLimiter
 import json
-
 import os
 
-# Resolve paths relative to this script's location
-SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
-PROJECT_ROOT = os.path.abspath(os.path.join(SCRIPT_DIR, '..', '..'))
-DATA_DIR = os.path.join(PROJECT_ROOT, 'data', 'processed')
-GEO_DIR = os.path.join(PROJECT_ROOT, 'data', 'geo')
-os.makedirs(GEO_DIR, exist_ok=True)
+BASE_DIR = r"d:\Noise polllution Zone"
+# # os.chdir(BASE_DIR)
 
 print("=" * 70)
 print("  MULTI-CITY NOISE POLLUTION — MERGE & GEOCODE")
@@ -28,12 +23,12 @@ print("=" * 70)
 # ============================================================================
 print("\n  Loading datasets...")
 
-df_delhi = pd.read_csv(os.path.join(DATA_DIR, 'delhi_noise_2020_2024.csv'))
+df_delhi = pd.read_csv('../../data/processed/delhi_noise_2020_2024.csv')
 if 'City' not in df_delhi.columns:
     df_delhi['City'] = 'Delhi'
 print(f"    Delhi:   {df_delhi.shape[0]} rows, {df_delhi['Location'].nunique()} locations")
 
-df_chennai = pd.read_csv(os.path.join(DATA_DIR, 'chennai_noise_2020_2024.csv'))
+df_chennai = pd.read_csv('../../data/processed/chennai_noise_2020_2024.csv')
 print(f"    Chennai: {df_chennai.shape[0]} rows, {df_chennai['Location'].nunique()} locations")
 
 # Keep only common columns
@@ -188,11 +183,10 @@ output = {
     'trends': trends
 }
 
-geo_path = os.path.join(GEO_DIR, 'all_cities_locations_geo.json')
-with open(geo_path, 'w') as f:
+with open('../../data/geo/all_cities_locations_geo.json', 'w') as f:
     json.dump(output, f, indent=2)
 
-fsize = os.path.getsize(geo_path)
+fsize = os.path.getsize('../../data/geo/all_cities_locations_geo.json')
 print(f"  Saved: all_cities_locations_geo.json ({fsize:,} bytes, {len(geo_records)} locations)")
 
 print("\n" + "=" * 70)

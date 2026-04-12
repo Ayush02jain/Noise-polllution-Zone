@@ -26,16 +26,8 @@ import os
 
 warnings.filterwarnings('ignore')
 
-# Resolve paths relative to this script's location
-SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
-PROJECT_ROOT = os.path.abspath(os.path.join(SCRIPT_DIR, '..', '..'))
-DATA_DIR = os.path.join(PROJECT_ROOT, 'data', 'processed')
-GEO_DIR = os.path.join(PROJECT_ROOT, 'data', 'geo')
-MODEL_DIR = os.path.join(PROJECT_ROOT, 'models', 'delhi')
-PLOT_DIR = os.path.join(PROJECT_ROOT, 'outputs', 'plots', 'delhi')
-os.makedirs(PLOT_DIR, exist_ok=True)
-os.makedirs(MODEL_DIR, exist_ok=True)
-os.makedirs(GEO_DIR, exist_ok=True)
+BASE_DIR = r"d:\Noise polllution Zone"
+# # os.chdir(BASE_DIR)
 
 print("=" * 70)
 print("  NOISE POLLUTION ZONE CLASSIFICATION - DELHI (2020-2024)")
@@ -48,7 +40,7 @@ print("\n" + "=" * 70)
 print("  STEP 1: DATA PREPROCESSING")
 print("=" * 70)
 
-df = pd.read_csv(os.path.join(DATA_DIR, 'delhi_noise_2020_2024.csv'))
+df = pd.read_csv('../../data/processed/delhi_noise_2020_2024.csv')
 print(f"\n  Loaded: {df.shape[0]} rows x {df.shape[1]} columns")
 
 # Convert numeric columns to float
@@ -163,7 +155,7 @@ ax.spines['right'].set_visible(False)
 for bar, val in zip(bars, feat_imp['Importance']):
     ax.text(val + 0.003, bar.get_y() + bar.get_height()/2, f'{val:.4f}', va='center', fontsize=9)
 plt.tight_layout()
-plt.savefig(os.path.join(PLOT_DIR, 'feature_importance.png'), dpi=150, bbox_inches='tight')
+plt.savefig('../../outputs/plots/delhi/feature_importance.png', dpi=150, bbox_inches='tight')
 plt.close()
 print("  Saved: feature_importance.png")
 
@@ -177,7 +169,7 @@ ax.set_title('Random Forest - Confusion Matrix', fontsize=15, fontweight='bold')
 ax.set_xlabel('Predicted', fontsize=12)
 ax.set_ylabel('Actual', fontsize=12)
 plt.tight_layout()
-plt.savefig(os.path.join(PLOT_DIR, 'rf_confusion_matrix.png'), dpi=150, bbox_inches='tight')
+plt.savefig('../../outputs/plots/delhi/rf_confusion_matrix.png', dpi=150, bbox_inches='tight')
 plt.close()
 print("  Saved: rf_confusion_matrix.png")
 
@@ -191,7 +183,7 @@ ax.set_title('XGBoost - Confusion Matrix', fontsize=15, fontweight='bold')
 ax.set_xlabel('Predicted', fontsize=12)
 ax.set_ylabel('Actual', fontsize=12)
 plt.tight_layout()
-plt.savefig(os.path.join(PLOT_DIR, 'xgb_confusion_matrix.png'), dpi=150, bbox_inches='tight')
+plt.savefig('../../outputs/plots/delhi/xgb_confusion_matrix.png', dpi=150, bbox_inches='tight')
 plt.close()
 print("  Saved: xgb_confusion_matrix.png")
 
@@ -201,7 +193,7 @@ joblib.dump({
     'label_encoder_zone_type': le_zone_type, 'feature_names': feature_names,
     'model_name': best_name, 'accuracy': max(rf_accuracy, xgb_accuracy),
     'f1_score': max(rf_f1, xgb_f1)
-}, os.path.join(MODEL_DIR, 'delhi_noise_model.pkl'))
+}, '../../models/delhi/delhi_noise_model.pkl')
 print(f"  Saved: noise_zone_model.pkl ({best_name})")
 
 # ============================================================================
@@ -250,7 +242,7 @@ ax.grid(True, alpha=0.3, linestyle='--')
 ax.spines['top'].set_visible(False)
 ax.spines['right'].set_visible(False)
 plt.tight_layout()
-plt.savefig(os.path.join(PLOT_DIR, 'noise_trend_2020_2024.png'), dpi=150, bbox_inches='tight')
+plt.savefig('../../outputs/plots/delhi/noise_trend_2020_2024.png', dpi=150, bbox_inches='tight')
 plt.close()
 print("  Saved: noise_trend_2020_2024.png")
 
@@ -366,7 +358,7 @@ output_json = {
     'yearly_trend': yearly_trend_clean
 }
 
-with open(os.path.join(GEO_DIR, 'delhi_locations_geo.json'), 'w') as f:
+with open('../../data/geo/delhi_locations_geo.json', 'w') as f:
     json.dump(output_json, f, indent=2)
 
 print(f"\n  Saved: locations_geo.json ({len(geo_records)} locations)")

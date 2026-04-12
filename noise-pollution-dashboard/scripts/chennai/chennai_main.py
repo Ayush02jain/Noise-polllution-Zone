@@ -26,16 +26,8 @@ import os
 
 warnings.filterwarnings('ignore')
 
-# Resolve paths relative to this script's location
-SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
-PROJECT_ROOT = os.path.abspath(os.path.join(SCRIPT_DIR, '..', '..'))
-DATA_DIR = os.path.join(PROJECT_ROOT, 'data', 'processed')
-GEO_DIR = os.path.join(PROJECT_ROOT, 'data', 'geo')
-MODEL_DIR = os.path.join(PROJECT_ROOT, 'models', 'chennai')
-PLOT_DIR = os.path.join(PROJECT_ROOT, 'outputs', 'plots', 'chennai')
-os.makedirs(PLOT_DIR, exist_ok=True)
-os.makedirs(MODEL_DIR, exist_ok=True)
-os.makedirs(GEO_DIR, exist_ok=True)
+BASE_DIR = r"d:\Noise polllution Zone"
+# # os.chdir(BASE_DIR)
 
 print("=" * 70)
 print("  NOISE POLLUTION ZONE CLASSIFICATION - CHENNAI (2020-2024)")
@@ -48,7 +40,7 @@ print("\n" + "=" * 70)
 print("  STEP 1: DATA PREPROCESSING")
 print("=" * 70)
 
-df = pd.read_csv(os.path.join(DATA_DIR, 'chennai_noise_2020_2024.csv'))
+df = pd.read_csv('../../data/processed/chennai_noise_2020_2024.csv')
 print(f"\n  Loaded: {df.shape[0]} rows x {df.shape[1]} columns")
 
 # Convert numeric columns
@@ -162,7 +154,7 @@ ax.spines['right'].set_visible(False)
 for bar, val in zip(bars, feat_imp['Importance']):
     ax.text(val + 0.003, bar.get_y() + bar.get_height()/2, f'{val:.4f}', va='center', fontsize=9)
 plt.tight_layout()
-plt.savefig(os.path.join(PLOT_DIR, 'chennai_feature_importance.png'), dpi=150, bbox_inches='tight')
+plt.savefig('../../outputs/plots/chennai/chennai_feature_importance.png', dpi=150, bbox_inches='tight')
 plt.close()
 print("  Saved: chennai_feature_importance.png")
 
@@ -176,7 +168,7 @@ ax.set_title('Random Forest - Confusion Matrix (Chennai)', fontsize=15, fontweig
 ax.set_xlabel('Predicted', fontsize=12)
 ax.set_ylabel('Actual', fontsize=12)
 plt.tight_layout()
-plt.savefig(os.path.join(PLOT_DIR, 'chennai_rf_cm.png'), dpi=150, bbox_inches='tight')
+plt.savefig('../../outputs/plots/chennai/chennai_rf_cm.png', dpi=150, bbox_inches='tight')
 plt.close()
 print("  Saved: chennai_rf_cm.png")
 
@@ -190,7 +182,7 @@ ax.set_title('XGBoost - Confusion Matrix (Chennai)', fontsize=15, fontweight='bo
 ax.set_xlabel('Predicted', fontsize=12)
 ax.set_ylabel('Actual', fontsize=12)
 plt.tight_layout()
-plt.savefig(os.path.join(PLOT_DIR, 'chennai_xgb_cm.png'), dpi=150, bbox_inches='tight')
+plt.savefig('../../outputs/plots/chennai/chennai_xgb_cm.png', dpi=150, bbox_inches='tight')
 plt.close()
 print("  Saved: chennai_xgb_cm.png")
 
@@ -200,7 +192,7 @@ joblib.dump({
     'label_encoder_zone_type': le_zone_type, 'feature_names': feature_names,
     'model_name': best_name, 'accuracy': max(rf_acc, xgb_acc),
     'f1_score': max(rf_f1, xgb_f1)
-}, os.path.join(MODEL_DIR, 'chennai_noise_model.pkl'))
+}, '../../models/chennai/chennai_noise_model.pkl')
 print(f"  Saved: chennai_noise_model.pkl ({best_name})")
 
 # ============================================================================
@@ -250,7 +242,7 @@ ax.grid(True, alpha=0.3, linestyle='--')
 ax.spines['top'].set_visible(False)
 ax.spines['right'].set_visible(False)
 plt.tight_layout()
-plt.savefig(os.path.join(PLOT_DIR, 'chennai_noise_trend.png'), dpi=150, bbox_inches='tight')
+plt.savefig('../../outputs/plots/chennai/chennai_noise_trend.png', dpi=150, bbox_inches='tight')
 plt.close()
 print("  Saved: chennai_noise_trend.png")
 
@@ -268,7 +260,7 @@ ax.grid(True, alpha=0.2, axis='y', linestyle='--')
 ax.spines['top'].set_visible(False)
 ax.spines['right'].set_visible(False)
 plt.tight_layout()
-plt.savefig(os.path.join(PLOT_DIR, 'chennai_zonewise_trend.png'), dpi=150, bbox_inches='tight')
+plt.savefig('../../outputs/plots/chennai/chennai_zonewise_trend.png', dpi=150, bbox_inches='tight')
 plt.close()
 print("  Saved: chennai_zonewise_trend.png")
 
@@ -363,7 +355,7 @@ yearly_trend_clean = [{'Year': int(r['Year']),
                        'Avg_Night': round(r['Noise_Night_dB'], 2)} for r in yearly_trend]
 
 output_json = {'locations': geo_records, 'yearly_trend': yearly_trend_clean}
-with open(os.path.join(GEO_DIR, 'chennai_locations_geo.json'), 'w') as f:
+with open('../../data/geo/chennai_locations_geo.json', 'w') as f:
     json.dump(output_json, f, indent=2)
 print(f"\n  Saved: chennai_locations_geo.json ({len(geo_records)} locations)")
 
@@ -374,10 +366,10 @@ print("\n" + "=" * 70)
 print("  ALL OUTPUTS GENERATED:")
 print("=" * 70)
 outputs = [
-    'chennai_noise_model.pkl', 'chennai_feature_importance.png',
-    'chennai_rf_cm.png', 'chennai_xgb_cm.png',
-    'chennai_noise_trend.png', 'chennai_zonewise_trend.png',
-    'chennai_locations_geo.json'
+    '../../models/chennai/chennai_noise_model.pkl', '../../outputs/plots/chennai/chennai_feature_importance.png',
+    '../../outputs/plots/chennai/chennai_rf_cm.png', '../../outputs/plots/chennai/chennai_xgb_cm.png',
+    '../../outputs/plots/chennai/chennai_noise_trend.png', '../../outputs/plots/chennai/chennai_zonewise_trend.png',
+    '../../data/geo/chennai_locations_geo.json'
 ]
 for i, f in enumerate(outputs, 1):
     sz = os.path.getsize(f) if os.path.exists(f) else 0
