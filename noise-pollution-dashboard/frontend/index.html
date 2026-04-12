@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
     <meta name="description" content="Multi-City Noise Pollution Zone Map — Delhi &amp; Chennai (2020–2024) with ML-based classification and interactive filters.">
     <title>India Noise Pollution Zone Map | Delhi &amp; Chennai 2020-2024</title>
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
@@ -21,23 +21,24 @@
                 <p class="navbar-subtitle">Smart City Dashboard — Delhi &amp; Chennai</p>
             </div>
         </div>
-        <div class="navbar-meta">
+        <div class="navbar-meta badge-group">
             <span class="badge">2020 — 2024</span>
             <span class="badge badge-delhi">Delhi · 41</span>
             <span class="badge badge-chennai">Chennai · 10</span>
         </div>
+        <button id="sidebarToggle" class="hamburger">&#9776; Filters</button>
     </nav>
 
     <!-- Main Layout -->
-    <div id="app-container">
+    <div id="app-container" class="layout">
 
         <!-- Sidebar -->
-        <aside id="sidebar">
+        <aside id="sidebar" class="sidebar">
 
             <!-- City Toggle -->
             <div class="filter-card">
                 <h3 class="filter-title">City</h3>
-                <div class="city-toggles">
+                <div class="city-toggles city-toggle">
                     <button class="city-btn active" id="btnAllCities" data-city="all">All Cities</button>
                     <button class="city-btn city-delhi" id="btnDelhi" data-city="Delhi">Delhi</button>
                     <button class="city-btn city-chennai" id="btnChennai" data-city="Chennai">Chennai</button>
@@ -60,7 +61,7 @@
             <!-- Zone Type -->
             <div class="filter-card">
                 <h3 class="filter-title">Zone Type</h3>
-                <div class="checkbox-group">
+                <div class="checkbox-group zone-checkboxes">
                     <label class="checkbox-label zt-commercial">
                         <input type="checkbox" id="ztCommercial" value="Commercial" checked>
                         <span class="checkmark"></span>Commercial
@@ -104,7 +105,7 @@
             </div>
 
             <!-- Reset -->
-            <button id="resetFilters" class="btn-reset">Reset Filters</button>
+            <button id="resetFilters" class="btn-reset reset-btn">Reset Filters</button>
 
             <!-- Statistics -->
             <div class="filter-card stats-card">
@@ -139,7 +140,7 @@
             <!-- Map -->
             <div id="map-wrapper">
                 <div id="map"></div>
-                <div id="legend">
+                <div id="legend" class="legend-box">
                     <h4>Noise Level</h4>
                     <div class="legend-item"><span class="legend-swatch" id="sw-low"></span>&lt; 55 dB (Low)</div>
                     <div class="legend-item"><span class="legend-swatch" id="sw-mod"></span>55–65 dB (Moderate)</div>
@@ -154,14 +155,14 @@
             </div>
 
             <!-- Trend Charts -->
-            <div id="trend-panel">
-                <div class="trend-col">
+            <div id="trend-panel" class="charts-panel">
+                <div class="trend-col chart-box">
                     <h3 class="trend-title trend-delhi">Delhi Noise Trend (2020–2024)</h3>
-                    <div class="chart-box"><canvas id="delhiTrendChart"></canvas></div>
+                    <div class="chart-box-inner"><canvas id="delhiTrendChart"></canvas></div>
                 </div>
-                <div class="trend-col">
+                <div class="trend-col chart-box">
                     <h3 class="trend-title trend-chennai">Chennai Noise Trend (2020–2024)</h3>
-                    <div class="chart-box"><canvas id="chennaiTrendChart"></canvas></div>
+                    <div class="chart-box-inner"><canvas id="chennaiTrendChart"></canvas></div>
                 </div>
             </div>
 

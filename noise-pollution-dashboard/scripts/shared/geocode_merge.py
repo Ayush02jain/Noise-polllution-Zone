@@ -64,34 +64,23 @@ print(f"    Locations: {len(loc_overall)} ({(loc_overall['City']=='Delhi').sum()
 print("\n  Geocoding 51 locations...")
 
 MANUAL_COORDS = {
-    # Delhi
-    'Adarsh Nagar': (28.7165, 77.1709), 'Anand Vihar': (28.6469, 77.3156),
-    'Ashok Vihar': (28.6957, 77.1770), 'Badli': (28.7353, 77.1331),
-    'Braham Puri': (28.6750, 77.2700), 'Daryaganj': (28.6411, 77.2388),
-    'Defence Colony': (28.5744, 77.2337), 'Dwaraka': (28.5921, 77.0460),
-    'Greater Kailash': (28.5420, 77.2400), 'Inder Puri': (28.5960, 77.1770),
-    'Janak Puri': (28.6219, 77.0815), 'Karawal Nagar': (28.7230, 77.2590),
-    'Karol Bagh': (28.6514, 77.1907), 'Kondli': (28.6200, 77.3500),
-    'Lajpat Nagar': (28.5700, 77.2400), 'Lawrence Road': (28.6800, 77.1300),
-    'Mandavali': (28.6364, 77.2953), 'Mangol Puri': (28.7050, 77.1300),
-    'Meera Bagh': (28.6700, 77.1100), 'Mehrauli': (28.5150, 77.1800),
-    'Moti Bagh': (28.5800, 77.1700), 'Moti Nagar': (28.6531, 77.1453),
-    'Mukherji Nagar': (28.7073, 77.2100), 'Nand Nagri': (28.6944, 77.3112),
-    'Naraouji Nagar': (28.5900, 77.1800), 'New Friends Colony': (28.5636, 77.2634),
-    'Pahar Ganj': (28.6441, 77.2132), 'Paschim Vihar': (28.6700, 77.1000),
-    'Patel Nagar': (28.6508, 77.1657), 'Prehladpur': (28.5400, 77.3000),
-    'R.K. Puram': (28.5700, 77.1700), 'Rajpura Road': (28.7100, 77.2300),
-    'Rana Pratap Bagh': (28.6900, 77.2000), 'Rohini': (28.7320, 77.1100),
-    'Sarita Vihar': (28.5310, 77.2880), 'Shalimar Bagh': (28.7184, 77.1600),
-    'Shanti Vihar': (28.6100, 77.3100), 'Tilak Nagar': (28.6400, 77.0900),
-    'Tughlakabad': (28.5147, 77.2530), 'Vasant Kunj': (28.5210, 77.1570),
-    'Yamuna Vihar': (28.6970, 77.2720),
-    # Chennai
-    'Guindy': (13.0067, 80.2206), 'Perambur': (13.1143, 80.2379),
-    'T Nagar': (13.0418, 80.2341), 'Triplicane': (13.0576, 80.2750),
-    'Pallikaranai': (12.9370, 80.2030), 'Velachery': (12.9815, 80.2180),
-    'Washermanpet': (13.1280, 80.2850), 'Anna Nagar': (13.0850, 80.2101),
-    'Sowcarpet': (13.0952, 80.2850), 'Egmore Eye Hospital': (13.0732, 80.2609),
+    # Delhi Fallback
+    "Adarsh Nagar": (28.7041, 77.1756), "Anand Vihar": (28.6469, 77.3152),
+    "Ashok Vihar": (28.6921, 77.1840), "Karol Bagh": (28.6519, 77.1909),
+    "Rohini": (28.7495, 77.0672), "Pahar Ganj": (28.6448, 77.2167),
+    "Lajpat Nagar": (28.5700, 77.2435), "Dwaraka": (28.5921, 77.0460),
+    "Vasant Kunj": (28.5244, 77.1565), "Sarita Vihar": (28.5318, 77.2907),
+    "Mehrauli": (28.5245, 77.1855), "Tughlakabad": (28.4780, 77.2570),
+    "Janak Puri": (28.6280, 77.0840), "Tilak Nagar": (28.6405, 77.0940),
+    "Shalimar Bagh": (28.7166, 77.1613), "Pitampura": (28.7006, 77.1306),
+    "Badli": (28.7478, 77.1540), "Mangol Puri": (28.7001, 77.0869),
+    "Moti Nagar": (28.6567, 77.1380), "Patel Nagar": (28.6538, 77.1629),
+    # Chennai Fallback
+    "T Nagar": (13.0358, 80.2333), "Perambur": (13.1116, 80.2329),
+    "Guindy": (13.0067, 80.2206), "Triplicane": (13.0569, 80.2762),
+    "Velachery": (12.9815, 80.2180), "Washermanpet": (13.1155, 80.2874),
+    "Pallikaranai": (12.9370, 80.2131), "Anna Nagar": (13.0850, 80.2101),
+    "Sowcarpet": (13.0916, 80.2784), "Egmore Eye Hospital": (13.0732, 80.2609),
 }
 
 CITY_DEFAULTS = {'Delhi': (28.6139, 77.2090), 'Chennai': (13.0827, 80.2707)}
@@ -137,6 +126,14 @@ for _, row in loc_overall.iterrows():
 
 loc_overall['Latitude'] = latitudes
 loc_overall['Longitude'] = longitudes
+
+# Step 3: Check for null/zero coordinates
+failed_geocoding = loc_overall[(loc_overall['Latitude'].isnull()) | (loc_overall['Latitude'] == 0)]
+if not failed_geocoding.empty:
+    print("\n  WARNING: The following locations have NULL or 0 coordinates:")
+    print(failed_geocoding[['Location', 'City']])
+else:
+    print("\n  SUCCESS: All locations have valid coordinates.")
 
 print(f"\n  Geocoding: {stats['Geocoded']} geocoded, {stats['Manual']} manual, {stats['Default']} default")
 
