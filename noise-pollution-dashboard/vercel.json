@@ -1,6 +1,4 @@
 {
-  "outputDirectory": "frontend",
-  "buildCommand": "node copy-geo.js",
   "rewrites": [
     { "source": "/(.*)", "destination": "/index.html" }
   ]

@@ -50,7 +50,7 @@ noise-pollution-dashboard/
 │   └── shared/
 │       └── geocode_merge.py
 │
-├── frontend/
+├── public/
 │   ├── index.html
 │   ├── style.css
 │   ├── script.js
@@ -66,7 +66,7 @@ noise-pollution-dashboard/
 2. **Run Delhi Analysis**: Navigate to `scripts/delhi/` and run `python main.py`.
 3. **Run Chennai Analysis**: Navigate to `scripts/chennai/` and run `python chennai_main.py`.
 4. **Run Geocode Merge**: Navigate to `scripts/shared/` and run `python geocode_merge.py`.
-5. **Open Frontend**: Open `frontend/index.html` in a web browser (or serve with a local server).
+5. **Open Frontend**: Open `public/index.html` in a web browser (or serve with a local server).
 
 ## Cities Covered
 - **Delhi**: 41 locations monitored.

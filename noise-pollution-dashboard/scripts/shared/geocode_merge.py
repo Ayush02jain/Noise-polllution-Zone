@@ -189,6 +189,6 @@ print(f"  Saved: all_cities_locations_geo.json ({fsize:,} bytes, {len(geo_record
 
 print("=" * 70)
 
-# Fix 7 — Copy JSON to frontend for deployment
-shutil.copy('../../data/geo/all_cities_locations_geo.json', '../../frontend/all_cities_locations_geo.json')
-print("JSON copied to frontend/ for deployment.")
+# Fix 7 — Copy JSON to public/ for deployment
+shutil.copy('../../data/geo/all_cities_locations_geo.json', '../../public/all_cities_locations_geo.json')
+print("JSON copied to public/ for deployment.")
