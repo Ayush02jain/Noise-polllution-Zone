@@ -1,0 +1,8 @@
+{
+  "name": "sonicmap",
+  "version": "1.0.0",
+  "description": "India Noise Pollution Smart City Dashboard",
+  "scripts": {
+    "build": "node copy-geo.js"
+  }
+}

@@ -1,14 +1,7 @@
 {
   "outputDirectory": "frontend",
+  "buildCommand": "node copy-geo.js",
   "rewrites": [
     { "source": "/(.*)", "destination": "/index.html" }
-  ],
-  "headers": [
-    {
-      "source": "/(.*).json",
-      "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=3600" }
-      ]
-    }
   ]
 }
