@@ -315,6 +315,19 @@ html, body {
     -webkit-transform: translateZ(0);
     backface-visibility: hidden;
     -webkit-backface-visibility: hidden;
+    cursor: grab;
+}
+#map:active {
+    cursor: grabbing;
+}
+.leaflet-container {
+    background: #0d1117 !important;
+}
+.leaflet-grab {
+    cursor: grab;
+}
+.leaflet-dragging .leaflet-grab {
+    cursor: grabbing;
 }
 
 /* Leaflet overrides */

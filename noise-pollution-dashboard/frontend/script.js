@@ -32,19 +32,35 @@
         };
     }
 
-    /* ---- Color by Zone Category ---- */
+    /* ---- Color by Zone Category (with dB fallback) ---- */
     function getColor(zone) {
+        // Primary: match zone category string
         switch (zone) {
             case 'Low':      return '#00b300';
             case 'Moderate': return '#ffff00';
             case 'High':     return '#ff8c00';
             case 'Critical': return '#b40000';
-            default:         return '#640096';
         }
+        // Fallback: if a dB number was passed instead
+        var db = parseFloat(zone);
+        if (!isNaN(db)) {
+            if (db < 55)  return '#00b300';
+            if (db < 65)  return '#ffff00';
+            if (db < 72)  return '#ff8c00';
+            if (db < 78)  return '#b40000';
+            return '#640096';
+        }
+        return '#888888';
     }
 
     function getRadius(avgDay) {
-        return Math.max(6, Math.min(16, 4 + (avgDay - 45) * 0.35));
+        var db = parseFloat(avgDay);
+        if (isNaN(db)) return 8;
+        if (db < 55)  return 7;
+        if (db < 65)  return 9;
+        if (db < 72)  return 11;
+        if (db < 78)  return 13;
+        return 15;
     }
 
     /* ---- Init ---- */
@@ -55,20 +71,22 @@
     });
 
     function initMap() {
-        // Fix 2 & 3: Canvas renderer and optimized animations
+        // Canvas renderer + optimized animations
         map = L.map('map', { 
             center: INDIA_CENTER, 
             zoom: INDIA_ZOOM, 
             zoomControl: true,
-            renderer: L.canvas(), // Fix 2
-            preferCanvas: true,   // Fix 2
+            renderer: L.canvas(),
+            preferCanvas: true,
             zoomAnimation: true,
             fadeAnimation: true,
             markerZoomAnimation: true,
             inertia: true,
             inertiaDeceleration: 3000,
             inertiaMaxSpeed: 1500,
-            wheelPxPerZoomLevel: 80
+            wheelPxPerZoomLevel: 80,
+            zoomSnap: 0.5,
+            zoomDelta: 0.5
         });
 
         // Fix 4: Faster Tile Layer settings
@@ -113,18 +131,20 @@
         
         allMarkers = locs.map(function(loc) {
             var border = CITY_COLORS[loc.City] || '#ffffff';
+            var initialColor = getColor(loc.Zone_Category);
+            var initialRadius = getRadius(loc.Avg_Day);
             
             var mk = L.circleMarker([loc.Latitude, loc.Longitude], {
-                radius: 10,
-                fillColor: '#ccc',
+                radius: initialRadius,
+                fillColor: initialColor,
                 color: border,
-                weight: 2.5,
-                opacity: 0, // Initially hidden
-                fillOpacity: 0.7,
+                weight: 2,
+                opacity: 1,
+                fillOpacity: 0.85,
                 interactive: true
             });
 
-            // Fix 7: Lazy Load Popups
+            // Lazy Load Popups — built on click
             mk.on('click', function() {
                 var f = getFilters();
                 var d = getYearData(loc, f.year);
@@ -189,12 +209,9 @@
         return { avgDay: loc.Avg_Day, avgNight: loc.Avg_Night, zone: loc.Zone_Category };
     }
 
-    /* ---- Apply Filters (Fix 1, 8, 9) ---- */
+    /* ---- Apply Filters ---- */
     function applyFilters() {
         if (!allMarkers.length) return;
-        
-        // Fix 8: Disable map drag during logic
-        map.dragging.disable();
 
         var f = getFilters();
         var count = 0, tDay = 0, tNight = 0;
@@ -202,61 +219,63 @@
         var maxLoc = '', maxDay = 0;
         var visibleLatLngs = [];
 
-        // Fix 9: Wrap visibility updates in requestAnimationFrame
-        requestAnimationFrame(function() {
-            allMarkers.forEach(function(item) {
-                var loc = item.data;
-                var mk = item.marker;
+        allMarkers.forEach(function(item) {
+            var loc = item.data;
+            var mk = item.marker;
 
-                var isVisible = true;
-                if (f.city !== 'all' && loc.City !== f.city) isVisible = false;
-                if (isVisible && f.zoneTypes.indexOf(loc.Zone_Type) === -1) isVisible = false;
+            var isVisible = true;
+            if (f.city !== 'all' && loc.City !== f.city) isVisible = false;
+            if (isVisible && f.zoneTypes.indexOf(loc.Zone_Type) === -1) isVisible = false;
+            
+            var d = getYearData(loc, f.year);
+            if (isVisible && f.categories.indexOf(d.zone) === -1) isVisible = false;
+
+            if (isVisible) {
+                var fill = getColor(d.zone);
+                var r = getRadius(d.avgDay);
                 
-                var d = getYearData(loc, f.year);
-                if (isVisible && f.categories.indexOf(d.zone) === -1) isVisible = false;
+                mk.setStyle({
+                    fillColor: fill,
+                    radius: r,
+                    opacity: 1,
+                    fillOpacity: 0.85,
+                    interactive: true
+                });
+                if (mk.getTooltip()) mk.getTooltip().setOpacity(1);
 
-                if (isVisible) {
-                    var fill = getColor(d.zone);
-                    var r = getRadius(d.avgDay);
-                    
-                    mk.setStyle({ fillColor: fill, radius: r, interactive: true });
-                    mk.setOpacity(0.95);
-                    mk.getTooltip().setOpacity(1);
-
-                    count++;
-                    tDay += d.avgDay;
-                    tNight += d.avgNight;
-                    cities[loc.City] = true;
-                    visibleLatLngs.push([loc.Latitude, loc.Longitude]);
-                    if (d.avgDay > maxDay) { maxDay = d.avgDay; maxLoc = loc.Location; }
-                } else {
-                    mk.setOpacity(0);
-                    mk.setStyle({ interactive: false });
-                    mk.getTooltip().setOpacity(0);
-                }
-            });
-
-            // Update Stats
-            document.getElementById('statTotal').textContent = count;
-            document.getElementById('statCities').textContent = Object.keys(cities).join(', ') || '—';
-            document.getElementById('statDay').textContent = count ? (tDay / count).toFixed(1) + ' dB' : '—';
-            document.getElementById('statNight').textContent = count ? (tNight / count).toFixed(1) + ' dB' : '—';
-            document.getElementById('statPolluted').textContent = maxLoc || '—';
-
-            // Auto-zoom
-            if (f.city !== 'all' && CITY_VIEWS[f.city]) {
-                map.setView(CITY_VIEWS[f.city].center, CITY_VIEWS[f.city].zoom, { animate: true });
-            } else if (f.city === 'all' && visibleLatLngs.length > 1) {
-                try {
-                    map.fitBounds(L.latLngBounds(visibleLatLngs), { padding: [30, 30], animate: true });
-                } catch (e) {
-                    map.setView(INDIA_CENTER, INDIA_ZOOM, { animate: true });
-                }
+                count++;
+                tDay += d.avgDay;
+                tNight += d.avgNight;
+                cities[loc.City] = true;
+                visibleLatLngs.push([loc.Latitude, loc.Longitude]);
+                if (d.avgDay > maxDay) { maxDay = d.avgDay; maxLoc = loc.Location; }
+            } else {
+                mk.setStyle({
+                    opacity: 0,
+                    fillOpacity: 0,
+                    interactive: false
+                });
+                if (mk.getTooltip()) mk.getTooltip().setOpacity(0);
             }
-
-            // Fix 8: Re-enable dragging
-            requestAnimationFrame(() => map.dragging.enable());
         });
+
+        // Update Stats
+        document.getElementById('statTotal').textContent = count;
+        document.getElementById('statCities').textContent = Object.keys(cities).join(', ') || '—';
+        document.getElementById('statDay').textContent = count ? (tDay / count).toFixed(1) + ' dB' : '—';
+        document.getElementById('statNight').textContent = count ? (tNight / count).toFixed(1) + ' dB' : '—';
+        document.getElementById('statPolluted').textContent = maxLoc || '—';
+
+        // Auto-zoom
+        if (f.city !== 'all' && CITY_VIEWS[f.city]) {
+            map.setView(CITY_VIEWS[f.city].center, CITY_VIEWS[f.city].zoom, { animate: true });
+        } else if (f.city === 'all' && visibleLatLngs.length > 1) {
+            try {
+                map.fitBounds(L.latLngBounds(visibleLatLngs), { padding: [30, 30], animate: true });
+            } catch (e) {
+                map.setView(INDIA_CENTER, INDIA_ZOOM, { animate: true });
+            }
+        }
     }
 
     /* ---- Trend Charts ---- */
