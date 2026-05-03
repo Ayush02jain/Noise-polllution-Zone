@@ -413,11 +413,12 @@ html, body {
         padding: 12px;
         border-right: none;
         border-bottom: 1px solid var(--border);
+        overflow-x: auto;
     }
 
     .sidebar .filter-card {
-        flex: 1 1 180px;
-        min-width: 160px;
+        flex: 1 1 160px;
+        min-width: 140px;
     }
 
     .stats-card {
@@ -447,29 +448,37 @@ html, body {
         padding: 8px 10px;
     }
 
-    .navbar .badge-group {
+    .navbar-meta.badge-group {
         display: none;
     }
 }
 
 /* ── Mobile (below 600px) ────────────────────────────────────────── */
 @media (max-width: 600px) {
+    html, body {
+        overflow: auto;
+        height: auto;
+    }
+
     #navbar {
+        position: sticky;
+        top: 0;
         height: auto;
         padding: 10px 14px;
         flex-wrap: wrap;
-        gap: 6px;
+        gap: 4px;
     }
 
     #navbar h1 {
-        font-size: 14px;
+        font-size: 13px;
+        line-height: 1.2;
     }
 
     .navbar-subtitle {
         font-size: 10px;
     }
 
-    .navbar .badge-group {
+    .navbar-meta.badge-group {
         display: none;
     }
 
@@ -478,14 +487,21 @@ html, body {
         background: transparent;
         border: 1px solid var(--delhi);
         color: var(--delhi);
-        padding: 5px 12px;
+        padding: 6px 14px;
         border-radius: 6px;
         font-size: 13px;
         cursor: pointer;
         white-space: nowrap;
     }
 
-    .sidebar {
+    #app-container {
+        flex-direction: column;
+        margin-top: 0;
+        height: auto;
+        overflow: visible;
+    }
+
+    #sidebar {
         display: none;
         width: 100%;
         flex-direction: column;
@@ -493,9 +509,11 @@ html, body {
         gap: 10px;
         border-right: none;
         border-bottom: 1px solid var(--border);
+        max-height: 70vh;
+        overflow-y: auto;
     }
 
-    .sidebar.open {
+    #sidebar.open {
         display: flex;
     }
 
@@ -511,41 +529,56 @@ html, body {
 
     .city-toggle button {
         flex: 1;
-        padding: 7px 10px;
+        padding: 8px 10px;
         font-size: 12px;
     }
 
     .zone-checkboxes {
         display: grid;
         grid-template-columns: 1fr 1fr;
-        gap: 6px;
+        gap: 8px;
+    }
+
+    #map-wrapper {
+        flex: none;
+        height: 50vh;
+        min-height: 50vh;
     }
 
     #map {
         width: 100%;
-        height: 45vh;
+        height: 100%;
+        touch-action: pan-x pan-y;
     }
 
     .legend-box {
         display: none;
     }
 
-    .charts-panel {
+    #trend-panel {
         flex-direction: column;
         height: auto;
+        min-height: auto;
         padding: 10px;
-        gap: 16px;
+        gap: 12px;
+    }
+
+    .trend-col {
+        padding: 10px 12px;
     }
 
     .chart-box {
         width: 100%;
-        height: auto;
         min-height: 200px;
+    }
+
+    .chart-box-inner {
+        min-height: 160px;
     }
 
     .trend-title {
         font-size: 11px;
-        margin-bottom: 6px;
+        margin-bottom: 4px;
     }
 
     .stats-card {
@@ -563,15 +596,23 @@ html, body {
         width: 100%;
         padding: 10px;
         font-size: 13px;
+        margin-top: 4px;
+    }
+
+    #yearFilter {
+        width: 100%;
+        padding: 8px 12px;
+        font-size: 13px;
     }
 }
 
 /* ── Always hide hamburger on desktop/tablet ─────────────────────── */
 @media (min-width: 601px) {
     .hamburger {
-        display: none;
+        display: none !important;
     }
-    .sidebar {
+    #sidebar {
         display: flex !important;
     }
 }
+

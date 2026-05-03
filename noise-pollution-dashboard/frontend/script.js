@@ -87,7 +87,9 @@
             wheelPxPerZoomLevel: 40,
             zoomSnap: 0,
             zoomDelta: 1,
-            wheelDebounceTime: 40
+            wheelDebounceTime: 40,
+            tap: true,
+            touchZoom: true
         });
 
         // Fix 4: Faster Tile Layer settings
@@ -439,6 +441,7 @@
                     if (window.innerWidth <= 600) {
                         sidebar.classList.remove('open');
                         sidebarToggle.textContent = '☰ Filters';
+                        setTimeout(() => { if (map) map.invalidateSize(); }, 300);
                     }
                 });
                 // Also for buttons (resets)
@@ -447,10 +450,22 @@
                         if (window.innerWidth <= 600) {
                             sidebar.classList.remove('open');
                             sidebarToggle.textContent = '☰ Filters';
+                            setTimeout(() => { if (map) map.invalidateSize(); }, 300);
                         }
                     });
                 }
             });
+
+        // Auto-close sidebar after city toggle button click on mobile
+        document.querySelectorAll('.city-toggle button').forEach(btn => {
+            btn.addEventListener('click', () => {
+                if (window.innerWidth <= 600 && sidebar) {
+                    sidebar.classList.remove('open');
+                    if (sidebarToggle) sidebarToggle.textContent = '☰ Filters';
+                    setTimeout(() => { if (map) map.invalidateSize(); }, 300);
+                }
+            });
+        });
 
         // Resize map when sidebar opens/closes on mobile
         if (sidebarToggle) {
@@ -463,6 +478,9 @@
         window.addEventListener('resize', () => {
             if (map) map.invalidateSize();
         });
+
+        // Enable touch on Leaflet map for mobile
+        if (map.tap) map.tap.enable();
     }
 
 })();
