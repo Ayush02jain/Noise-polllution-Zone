@@ -84,9 +84,10 @@
             inertia: true,
             inertiaDeceleration: 3000,
             inertiaMaxSpeed: 1500,
-            wheelPxPerZoomLevel: 80,
-            zoomSnap: 0.5,
-            zoomDelta: 0.5
+            wheelPxPerZoomLevel: 40,
+            zoomSnap: 0,
+            zoomDelta: 1,
+            wheelDebounceTime: 40
         });
 
         // Fix 4: Faster Tile Layer settings
