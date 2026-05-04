@@ -1,176 +1,123 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <meta name="description" content="Multi-City Noise Pollution Zone Map — Delhi &amp; Chennai (2020–2024) with ML-based classification and interactive filters.">
-    <title>India Noise Pollution Zone Map | Delhi &amp; Chennai 2020-2024</title>
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SonicMap — India Noise Pollution Zone Map</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <!-- Navbar -->
-    <nav id="navbar">
-        <div class="navbar-brand">
-            <span class="navbar-icon">&#127758;</span>
-            <div class="navbar-titles">
-                <h1>India Noise Pollution Zone Map</h1>
-                <p class="navbar-subtitle">Smart City Dashboard — Delhi &amp; Chennai</p>
-            </div>
-        </div>
-        <div class="navbar-meta badge-group">
-            <span class="badge">2020 — 2024</span>
-            <span class="badge badge-delhi">Delhi · 41</span>
-            <span class="badge badge-chennai">Chennai · 10</span>
-        </div>
-        <button id="sidebarToggle" class="hamburger">&#9776; Filters</button>
-    </nav>
-
-    <!-- Main Layout -->
-    <div id="app-container" class="layout">
-
-        <!-- Sidebar -->
-        <aside id="sidebar" class="sidebar">
-
-            <!-- City Toggle -->
-            <div class="filter-card">
-                <h3 class="filter-title">City</h3>
-                <div class="city-toggles city-toggle">
-                    <button class="city-btn active" id="btnAllCities" data-city="all">All Cities</button>
-                    <button class="city-btn city-delhi" id="btnDelhi" data-city="Delhi">Delhi</button>
-                    <button class="city-btn city-chennai" id="btnChennai" data-city="Chennai">Chennai</button>
-                </div>
-            </div>
-
-            <!-- Year -->
-            <div class="filter-card">
-                <h3 class="filter-title">Year</h3>
-                <select id="yearFilter">
-                    <option value="all">All Years</option>
-                    <option value="2020">2020</option>
-                    <option value="2021">2021</option>
-                    <option value="2022">2022</option>
-                    <option value="2023">2023</option>
-                    <option value="2024">2024</option>
-                </select>
-            </div>
-
-            <!-- Zone Type -->
-            <div class="filter-card">
-                <h3 class="filter-title">Zone Type</h3>
-                <div class="checkbox-group zone-checkboxes">
-                    <label class="checkbox-label zt-commercial">
-                        <input type="checkbox" id="ztCommercial" value="Commercial" checked>
-                        <span class="checkmark"></span>Commercial
-                    </label>
-                    <label class="checkbox-label zt-industrial">
-                        <input type="checkbox" id="ztIndustrial" value="Industrial" checked>
-                        <span class="checkmark"></span>Industrial
-                    </label>
-                    <label class="checkbox-label zt-residential">
-                        <input type="checkbox" id="ztResidential" value="Residential" checked>
-                        <span class="checkmark"></span>Residential
-                    </label>
-                    <label class="checkbox-label zt-silence">
-                        <input type="checkbox" id="ztSilence" value="Silence" checked>
-                        <span class="checkmark"></span>Silence
-                    </label>
-                </div>
-            </div>
-
-            <!-- Zone Category -->
-            <div class="filter-card">
-                <h3 class="filter-title">Zone Category</h3>
-                <div class="checkbox-group">
-                    <label class="checkbox-label cat-low">
-                        <input type="checkbox" id="catLow" value="Low" checked>
-                        <span class="checkmark"></span>Low
-                    </label>
-                    <label class="checkbox-label cat-moderate">
-                        <input type="checkbox" id="catModerate" value="Moderate" checked>
-                        <span class="checkmark"></span>Moderate
-                    </label>
-                    <label class="checkbox-label cat-high">
-                        <input type="checkbox" id="catHigh" value="High" checked>
-                        <span class="checkmark"></span>High
-                    </label>
-                    <label class="checkbox-label cat-critical">
-                        <input type="checkbox" id="catCritical" value="Critical" checked>
-                        <span class="checkmark"></span>Critical
-                    </label>
-                </div>
-            </div>
-
-            <!-- Reset -->
-            <button id="resetFilters" class="btn-reset reset-btn">Reset Filters</button>
-
-            <!-- Statistics -->
-            <div class="filter-card stats-card">
-                <h3 class="filter-title">Live Statistics</h3>
-                <div class="stat-row">
-                    <span class="stat-label">Locations</span>
-                    <span class="stat-value" id="statTotal">—</span>
-                </div>
-                <div class="stat-row">
-                    <span class="stat-label">Cities</span>
-                    <span class="stat-value" id="statCities">—</span>
-                </div>
-                <div class="stat-row">
-                    <span class="stat-label">Avg Day dB</span>
-                    <span class="stat-value" id="statDay">—</span>
-                </div>
-                <div class="stat-row">
-                    <span class="stat-label">Avg Night dB</span>
-                    <span class="stat-value" id="statNight">—</span>
-                </div>
-                <div class="stat-row">
-                    <span class="stat-label">Most Polluted</span>
-                    <span class="stat-value stat-small" id="statPolluted">—</span>
-                </div>
-            </div>
-
-        </aside>
-
-        <!-- Main Content -->
-        <main id="main-content">
-
-            <!-- Map -->
-            <div id="map-wrapper">
-                <div id="map"></div>
-                <div id="legend" class="legend-box">
-                    <h4>Noise Level</h4>
-                    <div class="legend-item"><span class="legend-swatch" id="sw-low"></span>&lt; 55 dB (Low)</div>
-                    <div class="legend-item"><span class="legend-swatch" id="sw-mod"></span>55–65 dB (Moderate)</div>
-                    <div class="legend-item"><span class="legend-swatch" id="sw-high"></span>65–72 dB (High)</div>
-                    <div class="legend-item"><span class="legend-swatch" id="sw-crit"></span>72–78 dB (Critical)</div>
-                    <div class="legend-item"><span class="legend-swatch" id="sw-sev"></span>&gt; 78 dB (Severe)</div>
-                    <div class="legend-divider"></div>
-                    <h4>City Border</h4>
-                    <div class="legend-item"><span class="legend-swatch" id="sw-delhi"></span>Delhi</div>
-                    <div class="legend-item"><span class="legend-swatch" id="sw-chennai"></span>Chennai</div>
-                </div>
-            </div>
-
-            <!-- Trend Charts -->
-            <div id="trend-panel" class="charts-panel">
-                <div class="trend-col chart-box">
-                    <h3 class="trend-title trend-delhi">Delhi Noise Trend (2020–2024)</h3>
-                    <div class="chart-box-inner"><canvas id="delhiTrendChart"></canvas></div>
-                </div>
-                <div class="trend-col chart-box">
-                    <h3 class="trend-title trend-chennai">Chennai Noise Trend (2020–2024)</h3>
-                    <div class="chart-box-inner"><canvas id="chennaiTrendChart"></canvas></div>
-                </div>
-            </div>
-
-        </main>
+  <!-- Title Bar -->
+  <div class="titlebar">
+    <div class="titlebar-left">
+      <div class="win-icon"></div>
+      <div class="titlebar-text">
+        <span class="titlebar-title">India Noise Pollution Zone Map</span>
+        <span class="titlebar-subtitle">Smart City Dashboard — Delhi &amp; Chennai</span>
+      </div>
     </div>
+    <div class="titlebar-right">
+      <span class="tb-badge" id="badge-period">2020 — 2024</span>
+      <span class="tb-badge delhi" id="badge-delhi">Delhi · 41</span>
+      <span class="tb-badge chennai" id="badge-chennai">Chennai · 10</span>
+      <button class="hamburger" id="sidebarToggle">&#9776; Filters</button>
+    </div>
+  </div>
 
-    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
-    <script src="script.js" defer></script>
+  <!-- Menu Bar -->
+  <div class="menubar">
+    <span class="menu-item">File</span>
+    <span class="menu-item">View</span>
+    <span class="menu-item">Filters</span>
+    <span class="menu-item">Export</span>
+    <span class="menu-item">Help</span>
+  </div>
+
+  <!-- Main Layout -->
+  <div class="layout">
+
+    <!-- Sidebar -->
+    <aside class="sidebar" id="sidebar">
+
+      <div class="panel-header">Filters</div>
+
+      <div class="filter-section">
+        <div class="filter-label">City</div>
+        <div class="city-toggle">
+          <button class="city-btn active" data-city="all">All</button>
+          <button class="city-btn" data-city="Delhi">Delhi</button>
+          <button class="city-btn" data-city="Chennai">Chennai</button>
+        </div>
+      </div>
+
+      <div class="filter-section">
+        <div class="filter-label">Year</div>
+        <select class="year-select" id="yearFilter">
+          <option value="all">All Years</option>
+          <option value="2020">2020</option>
+          <option value="2021">2021</option>
+          <option value="2022">2022</option>
+          <option value="2023">2023</option>
+          <option value="2024">2024</option>
+        </select>
+      </div>
+
+      <div class="filter-section">
+        <div class="filter-label">Zone Type</div>
+        <label class="check-row"><input type="checkbox" class="zone-type-check" value="Commercial" checked><span class="check-dot" style="background:#e07020"></span><span>Commercial</span></label>
+        <label class="check-row"><input type="checkbox" class="zone-type-check" value="Industrial" checked><span class="check-dot" style="background:#6080c0"></span><span>Industrial</span></label>
+        <label class="check-row"><input type="checkbox" class="zone-type-check" value="Residential" checked><span class="check-dot" style="background:#40a060"></span><span>Residential</span></label>
+        <label class="check-row"><input type="checkbox" class="zone-type-check" value="Silence" checked><span class="check-dot" style="background:#a060c0"></span><span>Silence</span></label>
+      </div>
+
+      <div class="filter-section">
+        <div class="filter-label">Zone Category</div>
+        <label class="check-row"><input type="checkbox" class="zone-cat-check" value="Low" checked><span class="check-dot" style="background:#00b300"></span><span>Low</span></label>
+        <label class="check-row"><input type="checkbox" class="zone-cat-check" value="Moderate" checked><span class="check-dot" style="background:#c8c800"></span><span>Moderate</span></label>
+        <label class="check-row"><input type="checkbox" class="zone-cat-check" value="High" checked><span class="check-dot" style="background:#e08000"></span><span>High</span></label>
+        <label class="check-row"><input type="checkbox" class="zone-cat-check" value="Critical" checked><span class="check-dot" style="background:#c02020"></span><span>Critical</span></label>
+      </div>
+
+      <button class="reset-btn" id="resetBtn">Reset Filters</button>
+
+      <div class="panel-header">Live Statistics</div>
+      <div class="stats-card">
+        <div class="stat-row"><span class="stat-lbl">Locations</span><span class="stat-val" id="stat-locations">51</span></div>
+        <div class="stat-row"><span class="stat-lbl">Cities</span><span class="stat-val" id="stat-cities">2</span></div>
+        <div class="stat-row"><span class="stat-lbl">Avg Day dB</span><span class="stat-val" id="stat-day">—</span></div>
+        <div class="stat-row"><span class="stat-lbl">Avg Night dB</span><span class="stat-val" id="stat-night">—</span></div>
+        <div class="stat-row"><span class="stat-lbl">Most Polluted</span><span class="stat-val highlight" id="stat-top">—</span></div>
+      </div>
+
+    </aside>
+
+    <!-- Map -->
+    <div id="map"></div>
+
+  </div>
+
+  <!-- Bottom Charts Panel -->
+  <div class="bottom-panel">
+    <div class="chart-box">
+      <div class="chart-title delhi-title">Delhi Noise Trend (2020–2024)</div>
+      <canvas id="delhiTrendChart"></canvas>
+    </div>
+    <div class="chart-box">
+      <div class="chart-title chennai-title">Chennai Noise Trend (2020–2024)</div>
+      <canvas id="chennaiTrendChart"></canvas>
+    </div>
+  </div>
+
+  <!-- Status Bar -->
+  <div class="statusbar">
+    <span class="status-txt" id="statusLeft">51 locations loaded &nbsp;|&nbsp; All filters active</span>
+    <span class="status-info">SonicMap v1.0 &nbsp;|&nbsp; © OSM © CARTO</span>
+  </div>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+  <script src="script.js" defer></script>
 </body>
 </html>
