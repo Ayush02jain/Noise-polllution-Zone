@@ -22,14 +22,14 @@ L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
 map.setView([22.0, 80.5], 5);
 
 // Color functions
-function getColor(db) {
-  const v = parseFloat(db);
-  if (isNaN(v)) return '#888888';
-  if (v < 55)  return '#00b300';
-  if (v < 65)  return '#c8c800';
-  if (v < 72)  return '#e08000';
-  if (v < 78)  return '#c02020';
-  return '#640096';
+function getColor(category) {
+  switch (category) {
+    case 'Low':      return '#00b300';
+    case 'Moderate': return '#c8c800';
+    case 'High':     return '#e08000';
+    case 'Critical': return '#c02020';
+    default:         return '#640096';
+  }
 }
 function getRadius(db) {
   const v = parseFloat(db);
@@ -137,7 +137,7 @@ fetch('all_cities_locations_geo.json')
     filteredData.forEach(loc => {
       const marker = L.circleMarker([loc.Latitude, loc.Longitude], {
         radius: getRadius(loc.Avg_Day),
-        fillColor: getColor(loc.Avg_Day),
+        fillColor: getColor(loc.Zone_Category),
         color: loc.City === 'Delhi' ? '#4a7db5' : '#c06020',
         weight: 1.5,
         opacity: 1,
