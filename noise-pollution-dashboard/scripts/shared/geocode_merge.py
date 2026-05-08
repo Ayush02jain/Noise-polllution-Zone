@@ -32,19 +32,37 @@ print(f"    Delhi:   {df_delhi.shape[0]} rows, {df_delhi['Location'].nunique()} 
 df_chennai = pd.read_csv('../../data/processed/chennai_noise_2020_2024.csv')
 print(f"    Chennai: {df_chennai.shape[0]} rows, {df_chennai['Location'].nunique()} locations")
 
-# Keep only common columns
+# Keep only common columns + DPCC columns where available
 common_cols = ['S_No', 'Location', 'City', 'Zone_Type', 'Year', 'Month',
                'Month_Name', 'Noise_Day_dB', 'Noise_Night_dB', 'Zone_Category']
-df_all = pd.concat([df_delhi[common_cols], df_chennai[common_cols]], ignore_index=True)
+
+# Add DPCC columns for Delhi if present
+dpcc_cols = ['DPCC_Day_Std_dB', 'Excess_Day_dB']
+delhi_cols = common_cols + [c for c in dpcc_cols if c in df_delhi.columns]
+chennai_cols = common_cols  # Chennai may not have DPCC columns
+
+# Add missing DPCC columns to Chennai with NaN
+df_chennai_merge = df_chennai[chennai_cols].copy()
+for c in dpcc_cols:
+    if c not in df_chennai_merge.columns:
+        df_chennai_merge[c] = float('nan')
+
+df_all = pd.concat([df_delhi[delhi_cols], df_chennai_merge[delhi_cols]], ignore_index=True)
 print(f"    Merged:  {df_all.shape[0]} rows, {df_all['Location'].nunique()} locations")
 
 # Per-location overall aggregates
-loc_overall = df_all.groupby(['Location', 'City']).agg(
-    Avg_Day=('Noise_Day_dB', 'mean'),
-    Avg_Night=('Noise_Night_dB', 'mean'),
-    Zone_Category=('Zone_Category', lambda x: x.mode()[0]),
-    Zone_Type=('Zone_Type', 'first')
-).reset_index()
+agg_dict = {
+    'Avg_Day': ('Noise_Day_dB', 'mean'),
+    'Avg_Night': ('Noise_Night_dB', 'mean'),
+    'Zone_Category': ('Zone_Category', lambda x: x.mode()[0]),
+    'Zone_Type': ('Zone_Type', 'first'),
+}
+if 'Excess_Day_dB' in df_all.columns:
+    agg_dict['Avg_Excess_Day'] = ('Excess_Day_dB', 'mean')
+if 'DPCC_Day_Std_dB' in df_all.columns:
+    agg_dict['DPCC_Std_Day'] = ('DPCC_Day_Std_dB', 'first')
+
+loc_overall = df_all.groupby(['Location', 'City']).agg(**agg_dict).reset_index()
 
 # Per-location+year aggregates
 loc_yearly = df_all.groupby(['Location', 'City', 'Year']).agg(
@@ -152,7 +170,7 @@ for _, ov in loc_overall.iterrows():
                      'Avg_Night': round(yr['Avg_Night'], 2),
                      'Zone_Category': yr['Zone_Category']}
                     for _, yr in yearly_rows.iterrows()]
-    geo_records.append({
+    record = {
         'Location': loc,
         'City': city,
         'Latitude': ov['Latitude'],
@@ -162,7 +180,17 @@ for _, ov in loc_overall.iterrows():
         'Avg_Night': round(ov['Avg_Night'], 2),
         'Zone_Category': ov['Zone_Category'],
         'Yearly': yearly_clean
-    })
+    }
+    # Add DPCC fields if available (Delhi has them, Chennai may not)
+    if 'Avg_Excess_Day' in ov.index and pd.notna(ov.get('Avg_Excess_Day')):
+        record['Avg_Excess_Day'] = round(ov['Avg_Excess_Day'], 2)
+    else:
+        record['Avg_Excess_Day'] = 0.0
+    if 'DPCC_Std_Day' in ov.index and pd.notna(ov.get('DPCC_Std_Day')):
+        record['DPCC_Std_Day'] = int(ov['DPCC_Std_Day'])
+    else:
+        record['DPCC_Std_Day'] = 0
+    geo_records.append(record)
 
 # City-level yearly trends
 trends = {}

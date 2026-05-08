@@ -155,14 +155,18 @@ fetch(`${BASE}/all_cities_locations_geo.json`)
       marker.on('click', function (e) {
         L.DomEvent.stopPropagation(e);
         this.unbindPopup();
+        const excess = parseFloat(loc.Avg_Excess_Day).toFixed(1);
+        const excessColor = excess > 15 ? '#c02020' : excess > 5 ? '#e08000' : '#2a8a2a';
         this.bindPopup(
           `<div class="popup-title">${loc.Location}</div>
            <div class="popup-row"><span class="popup-lbl">City</span><span class="popup-val">${loc.City}</span></div>
            <div class="popup-row"><span class="popup-lbl">Zone Type</span><span class="popup-val">${loc.Zone_Type}</span></div>
            <div class="popup-row"><span class="popup-lbl">Avg Day</span><span class="popup-val">${parseFloat(loc.Avg_Day).toFixed(1)} dB</span></div>
            <div class="popup-row"><span class="popup-lbl">Avg Night</span><span class="popup-val">${parseFloat(loc.Avg_Night).toFixed(1)} dB</span></div>
+           <div class="popup-row"><span class="popup-lbl">DPCC Standard</span><span class="popup-val">${loc.DPCC_Std_Day} dB</span></div>
+           <div class="popup-row"><span class="popup-lbl">Exceeds By</span><span class="popup-val" style="color:${excessColor}">${excess > 0 ? '+' + excess : excess} dB</span></div>
            <div class="popup-row"><span class="popup-lbl">Category</span><span class="popup-val">${loc.Zone_Category}</span></div>`,
-          { maxWidth: 200, closeButton: true }
+          { maxWidth: 220, closeButton: true }
         ).openPopup();
       });
 

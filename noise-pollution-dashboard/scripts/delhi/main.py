@@ -1,8 +1,10 @@
 """
-Noise Pollution Zone Classification for Delhi (2020-2024)
-=========================================================
-Steps 1-4: Preprocessing, ML Classification, Trend Analysis, Geocoding
-Outputs: model, plots, locations_geo.json for frontend
+Noise Pollution Zone Classification for Delhi (2020-2024) — v2
+================================================================
+Steps 1-5: Preprocessing, ML Classification, Trend Analysis,
+            DPCC Compliance Report, Geocoding
+Uses: data/processed/delhi_noise_2020_2024.csv (14-column v2 with DPCC standards)
+Outputs: model, plots, dpcc_compliance_report.csv, locations_geo.json
 """
 
 import pandas as pd
@@ -30,7 +32,7 @@ BASE_DIR = r"d:\Noise polllution Zone"
 # # os.chdir(BASE_DIR)
 
 print("=" * 70)
-print("  NOISE POLLUTION ZONE CLASSIFICATION - DELHI (2020-2024)")
+print("  NOISE POLLUTION ZONE CLASSIFICATION - DELHI (2020-2024) v2")
 print("=" * 70)
 
 # ============================================================================
@@ -42,18 +44,28 @@ print("=" * 70)
 
 df = pd.read_csv('../../data/processed/delhi_noise_2020_2024.csv')
 print(f"\n  Loaded: {df.shape[0]} rows x {df.shape[1]} columns")
+print(f"  Columns: {list(df.columns)}")
+
+# Drop legacy columns if present (no longer in v2)
+legacy_cols = ['Base_2008_Day_dB', 'Base_2008_Night_dB']
+dropped = [c for c in legacy_cols if c in df.columns]
+if dropped:
+    df.drop(columns=dropped, inplace=True)
+    print(f"  Dropped legacy columns: {dropped}")
 
 # Convert numeric columns to float
-numeric_cols = ['Noise_Day_dB', 'Noise_Night_dB', 'Base_2008_Day_dB', 'Base_2008_Night_dB']
+numeric_cols = ['Noise_Day_dB', 'Noise_Night_dB', 'DPCC_Day_Std_dB',
+                'DPCC_Night_Std_dB', 'Excess_Day_dB', 'Excess_Night_dB']
 for col in numeric_cols:
-    df[col] = pd.to_numeric(df[col], errors='coerce')
+    if col in df.columns:
+        df[col] = pd.to_numeric(df[col], errors='coerce')
 
 # Handle nulls
 null_counts = df.isnull().sum()
 if null_counts.any():
     print("  Null values found - applying mean imputation")
     for col in numeric_cols:
-        if df[col].isnull().any():
+        if col in df.columns and df[col].isnull().any():
             df[col].fillna(df[col].mean(), inplace=True)
 else:
     print("  No null values found")
@@ -66,6 +78,7 @@ print(f"  Zone_Type encoding: {dict(zip(le_zone_type.classes_, le_zone_type.tran
 # Derived features
 df['Avg_Noise'] = (df['Noise_Day_dB'] + df['Noise_Night_dB']) / 2.0
 df['Noise_Diff'] = df['Noise_Day_dB'] - df['Noise_Night_dB']
+df['Violation_Ratio'] = df['Excess_Day_dB'] / df['DPCC_Day_Std_dB']
 
 # Season: Summer=1, Monsoon=2, Winter=3, Spring=4
 def map_season(month):
@@ -85,7 +98,7 @@ le_target = LabelEncoder()
 df['Zone_Category_Encoded'] = le_target.fit_transform(df['Zone_Category'])
 print(f"  Zone_Category encoding: {dict(zip(le_target.classes_, le_target.transform(le_target.classes_)))}")
 print(f"  Zone distribution:\n{df['Zone_Category'].value_counts().to_string()}")
-print(f"  Derived features added: Avg_Noise, Noise_Diff, Season")
+print(f"  Derived features added: Avg_Noise, Noise_Diff, Violation_Ratio, Season")
 print(f"  Final shape: {df.shape}")
 
 # ============================================================================
@@ -96,6 +109,7 @@ print("  STEP 2: SUPERVISED CLASSIFICATION MODELS")
 print("=" * 70)
 
 feature_names = ['Noise_Day_dB', 'Noise_Night_dB', 'Avg_Noise', 'Noise_Diff',
+                 'Excess_Day_dB', 'Excess_Night_dB', 'Violation_Ratio',
                  'Zone_Type_Encoded', 'Year', 'Month', 'Season']
 X = df[feature_names].values
 y = df['Zone_Category_Encoded'].values
@@ -104,9 +118,21 @@ class_names = le_target.classes_
 print(f"\n  Features ({len(feature_names)}): {feature_names}")
 print(f"  Target classes: {list(class_names)}")
 
-X_train, X_test, y_train, y_test = train_test_split(
-    X, y, test_size=0.2, random_state=42, stratify=y
-)
+# Check minimum class count for stratification
+from collections import Counter
+class_counts = Counter(y)
+min_class_count = min(class_counts.values())
+print(f"  Class distribution: {dict(class_counts)}")
+
+if min_class_count >= 2:
+    X_train, X_test, y_train, y_test = train_test_split(
+        X, y, test_size=0.2, random_state=42, stratify=y
+    )
+else:
+    print(f"  WARNING: Class with only {min_class_count} sample(s) detected — using non-stratified split")
+    X_train, X_test, y_train, y_test = train_test_split(
+        X, y, test_size=0.2, random_state=42
+    )
 print(f"  Train: {len(X_train)}, Test: {len(X_test)}")
 
 # Random Forest
@@ -120,7 +146,7 @@ rf_pred = rf_model.predict(X_test)
 rf_accuracy = accuracy_score(y_test, rf_pred)
 rf_f1 = f1_score(y_test, rf_pred, average='weighted')
 print(f"    Accuracy: {rf_accuracy:.4f}, F1: {rf_f1:.4f}")
-print(classification_report(y_test, rf_pred, target_names=class_names, zero_division=0))
+print(classification_report(y_test, rf_pred, labels=range(len(class_names)), target_names=class_names, zero_division=0))
 
 # XGBoost
 print("  --- XGBoost ---")
@@ -134,7 +160,7 @@ xgb_pred = xgb_model.predict(X_test)
 xgb_accuracy = accuracy_score(y_test, xgb_pred)
 xgb_f1 = f1_score(y_test, xgb_pred, average='weighted')
 print(f"    Accuracy: {xgb_accuracy:.4f}, F1: {xgb_f1:.4f}")
-print(classification_report(y_test, xgb_pred, target_names=class_names, zero_division=0))
+print(classification_report(y_test, xgb_pred, labels=range(len(class_names)), target_names=class_names, zero_division=0))
 
 # Comparison
 best_name = 'Random Forest' if rf_f1 >= xgb_f1 else 'XGBoost'
@@ -247,10 +273,45 @@ plt.close()
 print("  Saved: noise_trend_2020_2024.png")
 
 # ============================================================================
-# STEP 4: GEOCODING & JSON EXPORT
+# STEP 4: DPCC COMPLIANCE REPORT
 # ============================================================================
 print("\n" + "=" * 70)
-print("  STEP 4: GEOCODING & JSON EXPORT")
+print("  STEP 4: DPCC COMPLIANCE REPORT")
+print("=" * 70)
+
+compliance = df.groupby('Zone_Type').agg(
+    DPCC_Day_Standard=('DPCC_Day_Std_dB', 'first'),
+    Avg_Recorded_Day_dB=('Noise_Day_dB', 'mean'),
+    Avg_Excess_Day_dB=('Excess_Day_dB', 'mean'),
+).reset_index()
+
+# Calculate % of months in violation per Zone_Type
+violation_pct = df.groupby('Zone_Type').apply(
+    lambda g: round((g['Excess_Day_dB'] > 0).sum() / len(g) * 100, 1)
+).reset_index(name='Violation_Pct')
+
+compliance = compliance.merge(violation_pct, on='Zone_Type')
+compliance['Avg_Recorded_Day_dB'] = compliance['Avg_Recorded_Day_dB'].round(2)
+compliance['Avg_Excess_Day_dB'] = compliance['Avg_Excess_Day_dB'].round(2)
+
+print("\n  DPCC Compliance Summary by Zone Type:")
+print("  " + "-" * 68)
+print(f"  {'Zone Type':<15} {'DPCC Std':>10} {'Avg Day dB':>12} {'Avg Excess':>12} {'Violation %':>12}")
+print("  " + "-" * 68)
+for _, row in compliance.iterrows():
+    print(f"  {row['Zone_Type']:<15} {row['DPCC_Day_Standard']:>10.0f} "
+          f"{row['Avg_Recorded_Day_dB']:>12.2f} {row['Avg_Excess_Day_dB']:>12.2f} "
+          f"{row['Violation_Pct']:>11.1f}%")
+print("  " + "-" * 68)
+
+compliance.to_csv('../../outputs/plots/delhi/dpcc_compliance_report.csv', index=False)
+print("  Saved: dpcc_compliance_report.csv")
+
+# ============================================================================
+# STEP 5: GEOCODING & JSON EXPORT
+# ============================================================================
+print("\n" + "=" * 70)
+print("  STEP 5: GEOCODING & JSON EXPORT")
 print("=" * 70)
 
 DELHI_COORDS = {
@@ -280,16 +341,16 @@ DELHI_COORDS = {
 geolocator = Nominatim(user_agent="delhi_noise_map", timeout=10)
 geocode = RateLimiter(geolocator.geocode, min_delay_seconds=1.5)
 
-# Aggregate per location+year for richer JSON, and also overall per location
-# Overall aggregation
+# Aggregate per location — overall and yearly
 loc_overall = df.groupby('Location').agg(
     Avg_Day=('Noise_Day_dB', 'mean'),
     Avg_Night=('Noise_Night_dB', 'mean'),
+    Avg_Excess_Day=('Excess_Day_dB', 'mean'),
+    DPCC_Std_Day=('DPCC_Day_Std_dB', 'first'),
     Zone_Category=('Zone_Category', lambda x: x.mode()[0]),
     Zone_Type=('Zone_Type', 'first')
 ).reset_index()
 
-# Per location+year aggregation
 loc_yearly = df.groupby(['Location', 'Year']).agg(
     Avg_Day=('Noise_Day_dB', 'mean'),
     Avg_Night=('Noise_Night_dB', 'mean'),
@@ -297,33 +358,24 @@ loc_yearly = df.groupby(['Location', 'Year']).agg(
     Zone_Type=('Zone_Type', 'first')
 ).reset_index()
 
-# Geocode
+# Use hardcoded coordinates directly — no network geocoding
 latitudes, longitudes = [], []
 for _, row in loc_overall.iterrows():
     loc = row['Location'].strip()
-    try:
-        result = geocode(f"{loc}, Delhi, India")
-        if result and 28.4 < result.latitude < 28.9 and 76.8 < result.longitude < 77.5:
-            latitudes.append(round(result.latitude, 6))
-            longitudes.append(round(result.longitude, 6))
-            print(f"    {loc}: ({result.latitude:.4f}, {result.longitude:.4f}) [Geocoded]")
-            continue
-    except Exception:
-        pass
     if loc in DELHI_COORDS:
         lat, lon = DELHI_COORDS[loc]
         latitudes.append(lat)
         longitudes.append(lon)
-        print(f"    {loc}: ({lat:.4f}, {lon:.4f}) [Manual]")
+        print(f"    {loc}: ({lat:.4f}, {lon:.4f})")
     else:
         latitudes.append(28.6139)
         longitudes.append(77.2090)
-        print(f"    {loc}: (28.6139, 77.2090) [Default]")
+        print(f"    {loc}: (28.6139, 77.2090) [Default — missing from DELHI_COORDS]")
 
 loc_overall['Latitude'] = latitudes
 loc_overall['Longitude'] = longitudes
 
-# Build the JSON: each location has coords, overall stats, and yearly breakdown
+# Build the JSON
 geo_records = []
 for _, ov in loc_overall.iterrows():
     loc = ov['Location']
@@ -342,12 +394,14 @@ for _, ov in loc_overall.iterrows():
         'Longitude': ov['Longitude'],
         'Avg_Day': round(ov['Avg_Day'], 2),
         'Avg_Night': round(ov['Avg_Night'], 2),
+        'Avg_Excess_Day': round(ov['Avg_Excess_Day'], 2),
+        'DPCC_Std_Day': int(ov['DPCC_Std_Day']),
         'Zone_Category': ov['Zone_Category'],
         'Zone_Type': ov['Zone_Type'],
         'Yearly': yearly_clean
     })
 
-# Also add global yearly trend data
+# Global yearly trend
 yearly_trend = yearly.to_dict('records')
 yearly_trend_clean = [{'Year': int(r['Year']),
                        'Avg_Day': round(r['Noise_Day_dB'], 2),
@@ -374,7 +428,8 @@ print("  2. feature_importance.png")
 print("  3. rf_confusion_matrix.png")
 print("  4. xgb_confusion_matrix.png")
 print("  5. noise_trend_2020_2024.png")
-print("  6. locations_geo.json")
+print("  6. dpcc_compliance_report.csv")
+print("  7. locations_geo.json")
 print("  ---")
 print("  Frontend files: index.html, style.css, script.js")
 print("=" * 70)

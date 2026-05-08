@@ -1,0 +1,4 @@
+Zone_Type,DPCC_Day_Standard,Avg_Recorded_Day_dB,Avg_Excess_Day_dB,Violation_Pct
+Commercial,65,69.06,4.06,90.9
+Industrial,75,72.08,-2.92,1.2
+Residential,55,65.65,10.65,100.0
