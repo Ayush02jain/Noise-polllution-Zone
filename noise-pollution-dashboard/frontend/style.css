@@ -207,6 +207,11 @@ body {
 }
 .leaflet-control-zoom a:hover { background: #ddeaf8; }
 
+/* Leaflet interactive cursor */
+.leaflet-interactive {
+  cursor: pointer !important;
+}
+
 /* Legend */
 .map-legend {
   background: #e4eef8;
@@ -286,6 +291,12 @@ body {
   font-family: 'Segoe UI', Tahoma, Geneva, sans-serif;
 }
 
+/* Desktop */
+@media (min-width: 601px) {
+  .hamburger { display: none !important; }
+  .sidebar { display: flex !important; }
+}
+
 /* Tablet */
 @media (max-width: 1024px) and (min-width: 601px) {
   .layout { flex-direction: column; }
@@ -297,43 +308,65 @@ body {
     padding: 8px;
     border-right: none;
     border-bottom: 1px solid #b0c8e0;
-    overflow-y: visible;
     overflow-x: auto;
+    overflow-y: visible;
   }
   .panel-header { display: none; }
-  .filter-section { border: 1px solid #c0d4e8; border-radius: 2px; padding: 6px 8px; flex: 1 1 140px; }
+  .filter-section {
+    flex: 1 1 140px;
+    border: 1px solid #c0d4e8;
+    border-radius: 2px;
+  }
   .stats-card { flex: 1 1 100%; }
   .reset-btn { margin: 0; width: auto; flex: 0 0 auto; align-self: flex-end; }
-  #map { height: 50vh; }
-  .bottom-panel { height: auto; flex-direction: column; }
+  #map { height: 52vh; width: 100%; }
+  .bottom-panel { flex-direction: column; height: auto; }
   .chart-box { height: 160px; border-right: none; border-bottom: 1px solid #c0d4e8; }
+  .chart-box:last-child { border-bottom: none; }
 }
 
 /* Mobile */
 @media (max-width: 600px) {
+  body { overflow-y: auto; }
+  .titlebar { padding: 5px 8px; }
   .titlebar-subtitle { display: none; }
-  .tb-badge { display: none; }
-  .hamburger { display: inline-block; }
+  .titlebar-right .tb-badge { display: none; }
+  .hamburger {
+    display: inline-block !important;
+    background: transparent;
+    border: 1px solid #b8d8f0;
+    color: #fff;
+    padding: 3px 10px;
+    border-radius: 2px;
+    font-size: 11px;
+    cursor: pointer;
+  }
   .menubar { display: none; }
+  .layout { flex-direction: column; }
   .sidebar {
     display: none;
     width: 100%;
+    flex-direction: column;
     border-right: none;
     border-bottom: 1px solid #b0c8e0;
     max-height: 65vh;
     overflow-y: auto;
   }
-  .sidebar.open { display: flex; }
-  #map { height: 48vh; }
-  .bottom-panel { height: auto; flex-direction: column; }
-  .chart-box { height: 150px; border-right: none; border-bottom: 1px solid #c0d4e8; }
+  .sidebar.open { display: flex !important; }
+  #map { width: 100%; height: 50vh; }
+  .bottom-panel {
+    flex-direction: column;
+    height: auto;
+  }
+  .chart-box {
+    width: 100%;
+    height: 160px;
+    border-right: none;
+    border-bottom: 1px solid #c0d4e8;
+  }
   .chart-box:last-child { border-bottom: none; }
+  .legend-box { display: none; }
   .statusbar .status-info { display: none; }
+  .reset-btn { width: 100%; }
+  .year-select { width: 100%; }
 }
-
-@media (min-width: 601px) {
-  .hamburger { display: none !important; }
-  .sidebar { display: flex !important; }
-}
-. l e a f l e t - i n t e r a c t i v e   {   c u r s o r :   p o i n t e r   ! i m p o r t a n t ;   }  
- 

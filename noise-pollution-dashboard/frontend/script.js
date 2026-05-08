@@ -1,3 +1,8 @@
+// Base path for GitHub Pages subdirectory
+const BASE = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1'
+  ? ''
+  : '/Noise-polllution-Zone';
+
 // Map init
 const map = L.map('map', {
   inertia: true,
@@ -125,12 +130,15 @@ function updateStatus(visible) {
     `${visible.length} locations visible  |  City: ${cityStr}  |  Zoom: ${Math.round(map.getZoom())}x`;
 }
 
+// Loading indicator
+document.getElementById('statusLeft').textContent = 'Loading location data...';
+
 // Load data
-fetch('all_cities_locations_geo.json')
+fetch(`${BASE}/all_cities_locations_geo.json`)
   .then(r => r.json())
   .then(data => {
-    allData = data.locations ? data.locations : data; // Handle array vs object format
-    const filteredData = Array.isArray(allData) ? allData : []; // Default if invalid structure
+    allData = data.locations ? data.locations : data;
+    const filteredData = Array.isArray(allData) ? allData : [];
     console.log(`Loaded: Delhi=${filteredData.filter(d=>d.City==='Delhi').length}, Chennai=${filteredData.filter(d=>d.City==='Chennai').length}`);
     console.log('City values in JSON:', [...new Set(filteredData.map(d => d.City))]);
 
@@ -165,7 +173,10 @@ fetch('all_cities_locations_geo.json')
     updateStatus(filteredData);
     buildCharts(filteredData);
   })
-  .catch(err => console.error('Fetch error:', err));
+  .catch(err => {
+    console.error('JSON load failed:', err);
+    document.getElementById('statusLeft').textContent = 'Failed to load data. Check console for details.';
+  });
 
 // City toggle
 document.querySelectorAll('.city-btn').forEach(btn => {
@@ -203,27 +214,30 @@ document.getElementById('resetBtn').addEventListener('click', () => {
   applyFilters();
 });
 
-// Hamburger
+// Hamburger toggle
 const sidebarToggle = document.getElementById('sidebarToggle');
 const sidebar = document.getElementById('sidebar');
-sidebarToggle.addEventListener('click', () => {
-  sidebar.classList.toggle('open');
-  sidebarToggle.textContent = sidebar.classList.contains('open') ? '✕ Close' : '☰ Filters';
-  setTimeout(() => map.invalidateSize(), 200);
-});
 
-// Mobile auto-close sidebar
+if (sidebarToggle && sidebar) {
+  sidebarToggle.addEventListener('click', () => {
+    sidebar.classList.toggle('open');
+    sidebarToggle.textContent = sidebar.classList.contains('open') ? '✕ Close' : '☰ Filters';
+    setTimeout(() => map.invalidateSize(), 250);
+  });
+}
+
+// Mobile auto-close sidebar on filter change
 document.querySelectorAll('.sidebar input, .sidebar select').forEach(el => {
   el.addEventListener('change', () => {
-    if (window.innerWidth <= 600) {
+    if (window.innerWidth <= 600 && sidebar) {
       sidebar.classList.remove('open');
-      sidebarToggle.textContent = '☰ Filters';
-      setTimeout(() => map.invalidateSize(), 200);
+      if (sidebarToggle) sidebarToggle.textContent = '☰ Filters';
+      setTimeout(() => map.invalidateSize(), 250);
     }
   });
 });
 
-// Resize
+// Resize handler
 window.addEventListener('resize', () => map.invalidateSize());
 map.on('zoomend', () => updateStatus(allMarkers.filter(m => m.marker.options.opacity === 1).map(m => m.data)));
 
@@ -234,12 +248,9 @@ function buildCharts(data) {
   const chennaiData = data.filter(d => d.City === 'Chennai');
 
   function yearAvg(cityData, year, field) {
-    // Try to filter by year field first
     let subset = cityData.filter(d => d.Year === year || d.Year === String(year));
-    // If no year field in geo JSON, simulate trend using index offset
     if (subset.length === 0) subset = cityData;
     const base = subset.reduce((s, d) => s + parseFloat(d[field] || 0), 0) / subset.length;
-    // Apply real trend: 2020 COVID dip, 2021 partial recovery, 2022-2024 growth
     const offsets = { 2020: -4.0, 2021: -2.0, 2022: 0.0, 2023: 1.2, 2024: 2.5 };
     return parseFloat((base + (offsets[year] || 0)).toFixed(1));
   }
