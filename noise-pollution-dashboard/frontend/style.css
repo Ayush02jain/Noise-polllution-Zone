@@ -291,44 +291,25 @@ body {
   font-family: 'Segoe UI', Tahoma, Geneva, sans-serif;
 }
 
-/* Desktop */
-@media (min-width: 601px) {
-  .hamburger { display: none !important; }
-  .sidebar { display: flex !important; }
+/* ── Reset body for mobile scrolling ── */
+html, body {
+  height: 100%;
+  overflow: hidden;
 }
 
-/* Tablet */
-@media (max-width: 1024px) and (min-width: 601px) {
-  .layout { flex-direction: column; }
-  .sidebar {
-    width: 100%;
-    flex-direction: row;
-    flex-wrap: wrap;
-    gap: 8px;
-    padding: 8px;
-    border-right: none;
-    border-bottom: 1px solid #b0c8e0;
-    overflow-x: auto;
-    overflow-y: visible;
+@media (max-width: 768px) {
+  html, body {
+    height: auto;
+    overflow-y: auto;
+    overflow-x: hidden;
   }
-  .panel-header { display: none; }
-  .filter-section {
-    flex: 1 1 140px;
-    border: 1px solid #c0d4e8;
-    border-radius: 2px;
-  }
-  .stats-card { flex: 1 1 100%; }
-  .reset-btn { margin: 0; width: auto; flex: 0 0 auto; align-self: flex-end; }
-  #map { height: 52vh; width: 100%; }
-  .bottom-panel { flex-direction: column; height: auto; }
-  .chart-box { height: 160px; border-right: none; border-bottom: 1px solid #c0d4e8; }
-  .chart-box:last-child { border-bottom: none; }
-}
 
-/* Mobile */
-@media (max-width: 600px) {
-  body { overflow-y: auto; }
-  .titlebar { padding: 5px 8px; }
+  /* Navbar */
+  .titlebar {
+    padding: 6px 10px;
+    flex-wrap: nowrap;
+    min-height: 44px;
+  }
   .titlebar-subtitle { display: none; }
   .titlebar-right .tb-badge { display: none; }
   .hamburger {
@@ -336,37 +317,99 @@ body {
     background: transparent;
     border: 1px solid #b8d8f0;
     color: #fff;
-    padding: 3px 10px;
+    padding: 4px 10px;
     border-radius: 2px;
-    font-size: 11px;
+    font-size: 12px;
     cursor: pointer;
+    white-space: nowrap;
+    font-family: 'Segoe UI', Tahoma, Geneva, sans-serif;
   }
+
+  /* Menu bar — hide on mobile */
   .menubar { display: none; }
-  .layout { flex-direction: column; }
+
+  /* Layout — stack vertically */
+  .layout {
+    display: flex !important;
+    flex-direction: column !important;
+    height: auto !important;
+    overflow: visible !important;
+  }
+
+  /* Sidebar — hidden by default, slide in when open */
   .sidebar {
-    display: none;
-    width: 100%;
-    flex-direction: column;
-    border-right: none;
-    border-bottom: 1px solid #b0c8e0;
-    max-height: 65vh;
+    display: none !important;
+    width: 100% !important;
+    height: auto !important;
+    max-height: 60vh;
     overflow-y: auto;
+    flex-direction: column !important;
+    border-right: none !important;
+    border-bottom: 1px solid #b0c8e0;
+    flex-shrink: 0;
   }
-  .sidebar.open { display: flex !important; }
-  #map { width: 100%; height: 50vh; }
+  .sidebar.open {
+    display: flex !important;
+  }
+
+  /* Map — fixed height, full width, MUST be visible */
+  #map {
+    display: block !important;
+    width: 100% !important;
+    height: 55vw !important;
+    min-height: 260px !important;
+    max-height: 360px !important;
+    flex-shrink: 0;
+  }
+
+  /* Bottom panel — stack charts vertically */
   .bottom-panel {
-    flex-direction: column;
-    height: auto;
+    display: flex !important;
+    flex-direction: column !important;
+    height: auto !important;
+    width: 100% !important;
   }
+
+  /* Each chart — fixed small height */
   .chart-box {
-    width: 100%;
-    height: 160px;
-    border-right: none;
+    width: 100% !important;
+    height: 220px !important;
+    min-height: 220px !important;
+    max-height: 220px !important;
+    border-right: none !important;
     border-bottom: 1px solid #c0d4e8;
+    flex-shrink: 0;
   }
   .chart-box:last-child { border-bottom: none; }
-  .legend-box { display: none; }
+  .chart-box canvas {
+    height: 160px !important;
+    max-height: 160px !important;
+  }
+
+  /* Status bar */
   .statusbar .status-info { display: none; }
-  .reset-btn { width: 100%; }
+  .statusbar { padding: 3px 8px; }
+
+  /* Legend — hide on mobile to save space */
+  .leaflet-control-container .leaflet-bottom.leaflet-right { display: none; }
+
+  /* Sidebar inner elements — full width */
+  .filter-section { width: 100%; }
   .year-select { width: 100%; }
+  .reset-btn { width: calc(100% - 16px); }
+  .city-toggle { display: flex; gap: 4px; }
+  .city-btn { flex: 1; padding: 5px 4px; font-size: 11px; }
+  .zone-checkboxes {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4px;
+  }
+  .stats-card { padding: 8px; }
+  .stat-val { font-size: 12px; }
+}
+
+/* Desktop — always show sidebar, never show hamburger */
+@media (min-width: 769px) {
+  .hamburger { display: none !important; }
+  .sidebar { display: flex !important; }
 }

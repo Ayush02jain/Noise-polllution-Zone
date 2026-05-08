@@ -225,24 +225,44 @@ const sidebar = document.getElementById('sidebar');
 if (sidebarToggle && sidebar) {
   sidebarToggle.addEventListener('click', () => {
     sidebar.classList.toggle('open');
-    sidebarToggle.textContent = sidebar.classList.contains('open') ? '✕ Close' : '☰ Filters';
-    setTimeout(() => map.invalidateSize(), 250);
+    sidebarToggle.textContent = sidebar.classList.contains('open')
+      ? '✕ Close' : '☰ Filters';
+    setTimeout(() => map.invalidateSize(), 300);
   });
 }
 
-// Mobile auto-close sidebar on filter change
+// Auto close sidebar after filter selection on mobile
 document.querySelectorAll('.sidebar input, .sidebar select').forEach(el => {
   el.addEventListener('change', () => {
-    if (window.innerWidth <= 600 && sidebar) {
+    if (window.innerWidth <= 768 && sidebar) {
       sidebar.classList.remove('open');
       if (sidebarToggle) sidebarToggle.textContent = '☰ Filters';
-      setTimeout(() => map.invalidateSize(), 250);
+      setTimeout(() => map.invalidateSize(), 300);
     }
   });
 });
 
-// Resize handler
-window.addEventListener('resize', () => map.invalidateSize());
+document.querySelectorAll('.city-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    if (window.innerWidth <= 768 && sidebar) {
+      sidebar.classList.remove('open');
+      if (sidebarToggle) sidebarToggle.textContent = '☰ Filters';
+    }
+  });
+});
+
+// Fix map size on any resize or orientation change
+window.addEventListener('resize', () => {
+  setTimeout(() => map.invalidateSize(), 200);
+});
+window.addEventListener('orientationchange', () => {
+  setTimeout(() => map.invalidateSize(), 500);
+});
+
+// Fix Chart.js ignoring CSS height on mobile
+Chart.defaults.responsive = true;
+Chart.defaults.maintainAspectRatio = false;
+
 map.on('zoomend', () => updateStatus(allMarkers.filter(m => m.marker.options.opacity === 1).map(m => m.data)));
 
 // Charts
