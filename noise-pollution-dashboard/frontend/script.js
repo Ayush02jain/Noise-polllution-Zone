@@ -61,6 +61,7 @@ legend.onAdd = () => {
     <div class="legend-title">City Border</div>
     <div class="legend-row"><div class="legend-ring" style="border-color:#4a7db5"></div>Delhi</div>
     <div class="legend-row"><div class="legend-ring" style="border-color:#c06020"></div>Chennai</div>
+    <div class="legend-row"><div class="legend-ring" style="border-color:#1a7a4a"></div>Mumbai</div>
   `;
   return d;
 };
@@ -146,7 +147,9 @@ fetch(`${BASE}/all_cities_locations_geo.json`)
       const marker = L.circleMarker([loc.Latitude, loc.Longitude], {
         radius: getRadius(loc.Avg_Day),
         fillColor: getColor(loc.Zone_Category),
-        color: loc.City === 'Delhi' ? '#4a7db5' : '#c06020',
+        color: loc.City === 'Delhi'   ? '#4a7db5' :
+               loc.City === 'Chennai' ? '#c06020' :
+               loc.City === 'Mumbai'  ? '#1a7a4a' : '#888888',
         weight: 1.5,
         opacity: 1,
         fillOpacity: 0.85,
@@ -176,6 +179,9 @@ fetch(`${BASE}/all_cities_locations_geo.json`)
     updateStats(filteredData);
     updateStatus(filteredData);
     buildCharts(filteredData);
+    
+    document.getElementById('badge-mumbai').textContent =
+      `Mumbai · ${filteredData.filter(d => d.City === 'Mumbai').length}`;
   })
   .catch(err => {
     console.error('JSON load failed:', err);
@@ -185,18 +191,18 @@ fetch(`${BASE}/all_cities_locations_geo.json`)
 // City toggle
 document.querySelectorAll('.city-btn').forEach(btn => {
   btn.addEventListener('click', () => {
-    document.querySelectorAll('.city-btn').forEach(b => b.classList.remove('active', 'chennai-active'));
+    document.querySelectorAll('.city-btn').forEach(b => {
+      b.classList.remove('active', 'chennai-active', 'mumbai-active');
+    });
     btn.classList.add('active');
     if (btn.dataset.city === 'Chennai') btn.classList.add('chennai-active');
+    if (btn.dataset.city === 'Mumbai')  btn.classList.add('mumbai-active');
     activeCity = btn.dataset.city;
 
-    if (activeCity === 'Delhi') {
-      map.setView([28.6139, 77.2090], 11);
-    } else if (activeCity === 'Chennai') {
-      map.setView([13.0827, 80.2707], 12);
-    } else {
-      map.setView([22.0, 80.5], 5);
-    }
+    if (activeCity === 'Delhi')        map.setView([28.6139, 77.2090], 11);
+    else if (activeCity === 'Chennai') map.setView([13.0827, 80.2707], 12);
+    else if (activeCity === 'Mumbai')  map.setView([19.0760, 72.8777], 12);
+    else                               map.setView([20.5, 78.5], 5);
     applyFilters();
   });
 });
@@ -210,11 +216,11 @@ document.querySelectorAll('.zone-type-check, .zone-cat-check').forEach(el => {
 // Reset
 document.getElementById('resetBtn').addEventListener('click', () => {
   activeCity = 'all';
-  document.querySelectorAll('.city-btn').forEach(b => b.classList.remove('active', 'chennai-active'));
+  document.querySelectorAll('.city-btn').forEach(b => b.classList.remove('active', 'chennai-active', 'mumbai-active'));
   document.querySelector('.city-btn[data-city="all"]').classList.add('active');
   document.getElementById('yearFilter').value = 'all';
   document.querySelectorAll('.zone-type-check, .zone-cat-check').forEach(c => c.checked = true);
-  map.setView([22.0, 80.5], 5);
+  map.setView([20.5, 78.5], 5);
   applyFilters();
 });
 
@@ -357,6 +363,17 @@ function buildCharts(data) {
       years.map(y => yearAvg(chennaiData, y, 'Avg_Day')),
       years.map(y => yearAvg(chennaiData, y, 'Avg_Night')),
       '#c06020', '#d09060'
+    )
+  );
+
+  const mumbaiData = data.filter(d => d.City === 'Mumbai');
+  new Chart(
+    document.getElementById('mumbaiTrendChart'),
+    chartConfig(
+      years.map(String),
+      years.map(y => yearAvg(mumbaiData, y, 'Avg_Day')),
+      years.map(y => yearAvg(mumbaiData, y, 'Avg_Night')),
+      '#1a7a4a', '#5aaa7a'
     )
   );
 }

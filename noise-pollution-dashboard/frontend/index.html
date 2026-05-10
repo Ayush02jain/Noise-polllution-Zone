@@ -15,13 +15,14 @@
       <div class="win-icon"></div>
       <div class="titlebar-text">
         <span class="titlebar-title">India Noise Pollution Zone Map</span>
-        <span class="titlebar-subtitle">Smart City Dashboard — Delhi &amp; Chennai</span>
+        <span class="titlebar-subtitle">Smart City Dashboard — Delhi, Chennai &amp; Mumbai</span>
       </div>
     </div>
     <div class="titlebar-right">
       <span class="tb-badge" id="badge-period">2020 — 2024</span>
       <span class="tb-badge delhi" id="badge-delhi">Delhi · 41</span>
       <span class="tb-badge chennai" id="badge-chennai">Chennai · 10</span>
+      <span class="tb-badge mumbai" id="badge-mumbai">Mumbai · 18</span>
       <button class="hamburger" id="sidebarToggle">&#9776; Filters</button>
     </div>
   </div>
@@ -40,6 +41,7 @@
           <button class="city-btn active" data-city="all">All</button>
           <button class="city-btn" data-city="Delhi">Delhi</button>
           <button class="city-btn" data-city="Chennai">Chennai</button>
+          <button class="city-btn" data-city="Mumbai">Mumbai</button>
         </div>
       </div>
 
@@ -75,8 +77,8 @@
 
       <div class="panel-header">Live Statistics</div>
       <div class="stats-card">
-        <div class="stat-row"><span class="stat-lbl">Locations</span><span class="stat-val" id="stat-locations">51</span></div>
-        <div class="stat-row"><span class="stat-lbl">Cities</span><span class="stat-val" id="stat-cities">2</span></div>
+        <div class="stat-row"><span class="stat-lbl">Locations</span><span class="stat-val" id="stat-locations">69</span></div>
+        <div class="stat-row"><span class="stat-lbl">Cities</span><span class="stat-val" id="stat-cities">3</span></div>
         <div class="stat-row"><span class="stat-lbl">Avg Day dB</span><span class="stat-val" id="stat-day">—</span></div>
         <div class="stat-row"><span class="stat-lbl">Avg Night dB</span><span class="stat-val" id="stat-night">—</span></div>
         <div class="stat-row"><span class="stat-lbl">Most Polluted</span><span class="stat-val highlight" id="stat-top">—</span></div>
@@ -99,11 +101,15 @@
       <div class="chart-title chennai-title">Chennai Noise Trend (2020–2024)</div>
       <canvas id="chennaiTrendChart"></canvas>
     </div>
+    <div class="chart-box">
+      <div class="chart-title mumbai-title">Mumbai Noise Trend (2020–2024)</div>
+      <canvas id="mumbaiTrendChart"></canvas>
+    </div>
   </div>
 
   <!-- Status Bar -->
   <div class="statusbar">
-    <span class="status-txt" id="statusLeft">51 locations loaded &nbsp;|&nbsp; All filters active</span>
+    <span class="status-txt" id="statusLeft">Loading location data...</span>
     <span class="status-info">SonicMap v1.0 &nbsp;|&nbsp; © OSM © CARTO</span>
   </div>
 

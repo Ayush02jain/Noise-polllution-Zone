@@ -1,222 +1,214 @@
 """
-Multi-City Noise Pollution — Merge, Geocode & JSON Export
-==========================================================
-Merges Delhi (41 locations) + Chennai (10 locations) datasets.
-Geocodes all 51 locations and exports all_cities_locations_geo.json.
+Multi-City Noise Pollution — Merge & JSON Export
+==================================================
+Merges Delhi (41), Chennai (10), Mumbai (18) = 69 total locations.
+Uses hardcoded coordinates — no geocoding API calls.
 """
 
 import pandas as pd
-from geopy.geocoders import Nominatim
-from geopy.extra.rate_limiter import RateLimiter
 import json
-import os
 import shutil
-
-BASE_DIR = r"d:\Noise polllution Zone"
-# # os.chdir(BASE_DIR)
+import os
 
 print("=" * 70)
-print("  MULTI-CITY NOISE POLLUTION — MERGE & GEOCODE")
+print("  MULTI-CITY NOISE POLLUTION — MERGE & JSON EXPORT")
 print("=" * 70)
+
+# ============================================================================
+# HARDCODED COORDINATES
+# ============================================================================
+DELHI_COORDS = {
+    'Adarsh Nagar': (28.7165, 77.1709), 'Anand Vihar': (28.6469, 77.3156),
+    'Ashok Vihar': (28.6957, 77.1770), 'Badli': (28.7353, 77.1331),
+    'Braham Puri': (28.6750, 77.2700), 'Daryaganj': (28.6411, 77.2388),
+    'Defence Colony': (28.5744, 77.2337), 'Dwaraka': (28.5921, 77.0460),
+    'Greater Kailash': (28.5420, 77.2400), 'Inder Puri': (28.5960, 77.1770),
+    'Janak Puri': (28.6219, 77.0815), 'Karawal Nagar': (28.7230, 77.2590),
+    'Karol Bagh': (28.6514, 77.1907), 'Kondli': (28.6200, 77.3500),
+    'Lajpat Nagar': (28.5700, 77.2400), 'Lawrence Road': (28.6800, 77.1300),
+    'Mandavali': (28.6364, 77.2953), 'Mangol Puri': (28.7050, 77.1300),
+    'Meera Bagh': (28.6700, 77.1100), 'Mehrauli': (28.5150, 77.1800),
+    'Moti Bagh': (28.5800, 77.1700), 'Moti Nagar': (28.6531, 77.1453),
+    'Mukherji Nagar': (28.7073, 77.2100), 'Nand Nagri': (28.6944, 77.3112),
+    'Naraouji Nagar': (28.5900, 77.1800), 'New Friends Colony': (28.5636, 77.2634),
+    'Pahar Ganj': (28.6441, 77.2132), 'Paschim Vihar': (28.6700, 77.1000),
+    'Patel Nagar': (28.6508, 77.1657), 'Prehladpur': (28.5400, 77.3000),
+    'R.K. Puram': (28.5700, 77.1700), 'Rajpura Road': (28.7100, 77.2300),
+    'Rana Pratap Bagh': (28.6900, 77.2000), 'Rohini': (28.7320, 77.1100),
+    'Sarita Vihar': (28.5310, 77.2880), 'Shalimar Bagh': (28.7184, 77.1600),
+    'Shanti Vihar': (28.6100, 77.3100), 'Tilak Nagar': (28.6400, 77.0900),
+    'Tughlakabad': (28.5147, 77.2530), 'Vasant Kunj': (28.5210, 77.1570),
+    'Yamuna Vihar': (28.6970, 77.2720),
+}
+
+CHENNAI_COORDS = {
+    'Guindy':               (13.0067, 80.2206),
+    'Perambur':             (13.1116, 80.2329),
+    'T Nagar':              (13.0358, 80.2333),
+    'Triplicane':           (13.0569, 80.2762),
+    'Pallikaranai':         (12.9370, 80.2131),
+    'Velachery':            (12.9815, 80.2180),
+    'Washermanpet':         (13.1155, 80.2874),
+    'Anna Nagar':           (13.0850, 80.2101),
+    'Sowcarpet':            (13.0916, 80.2784),
+    'Egmore Eye Hospital':  (13.0732, 80.2609),
+}
+
+MUMBAI_COORDS = {
+    'Santacruz (W)':        (19.0822, 72.8397),
+    'Vile Parle (W)':       (19.1004, 72.8497),
+    'Andheri (W)':          (19.1197, 72.8464),
+    'Bandra (W)':           (19.0596, 72.8295),
+    'Lower Parel':          (18.9982, 72.8326),
+    'Khar (W)':             (19.0726, 72.8373),
+    'Dr. E. Moses Road':    (19.0048, 72.8178),
+    'Marine Lines':         (18.9432, 72.8236),
+    'Charni Road':          (18.9549, 72.8186),
+    'Turner Road (Bandra)': (19.0543, 72.8366),
+    'Mahalakshmi':          (18.9845, 72.8191),
+    'Matunga':              (19.0225, 72.8587),
+    'Haji Ali':             (18.9826, 72.8089),
+    'Mahim':                (19.0385, 72.8438),
+    'Churchgate':           (18.9322, 72.8264),
+    'Mumbai Central':       (18.9696, 72.8194),
+    'Grant Road':           (18.9642, 72.8183),
+    'Mulund (W)':           (19.1728, 72.9569),
+}
+
+ALL_COORDS = {**DELHI_COORDS, **CHENNAI_COORDS, **MUMBAI_COORDS}
+CITY_DEFAULTS = {
+    'Delhi':   (28.6139, 77.2090),
+    'Chennai': (13.0827, 80.2707),
+    'Mumbai':  (19.0760, 72.8777),
+}
 
 # ============================================================================
 # STEP 1: LOAD & MERGE
 # ============================================================================
 print("\n  Loading datasets...")
 
-df_delhi = pd.read_csv('../../data/processed/delhi_noise_2020_2024.csv')
-if 'City' not in df_delhi.columns:
-    df_delhi['City'] = 'Delhi'
+BASE = r"d:\Noise polllution Zone\noise-pollution-dashboard"
+
+df_delhi   = pd.read_csv(os.path.join(BASE, 'data', 'processed', 'delhi_noise_2020_2024.csv'))
+df_chennai = pd.read_csv(os.path.join(BASE, 'data', 'processed', 'chennai_noise_2020_2024.csv'))
+df_mumbai  = pd.read_csv(os.path.join(BASE, 'data', 'processed', 'mumbai_noise_2020_2024.csv'))
+
+if 'City' not in df_delhi.columns:   df_delhi['City']   = 'Delhi'
+if 'City' not in df_chennai.columns: df_chennai['City'] = 'Chennai'
+if 'City' not in df_mumbai.columns:  df_mumbai['City']  = 'Mumbai'
+
+# Normalise standard column names: DPCC (Delhi) / CPCB (Mumbai) → Std_Day / Std_Night
+def normalise(df):
+    if 'DPCC_Day_Std_dB' in df.columns:
+        df = df.rename(columns={'DPCC_Day_Std_dB': 'Std_Day_dB', 'DPCC_Night_Std_dB': 'Std_Night_dB'})
+    elif 'CPCB_Day_Std_dB' in df.columns:
+        df = df.rename(columns={'CPCB_Day_Std_dB': 'Std_Day_dB', 'CPCB_Night_Std_dB': 'Std_Night_dB'})
+    return df
+
+df_delhi   = normalise(df_delhi)
+df_chennai = normalise(df_chennai)
+df_mumbai  = normalise(df_mumbai)
+
+# Add missing Std columns to Chennai (no standard defined)
+for df in [df_chennai]:
+    if 'Std_Day_dB' not in df.columns:
+        df['Std_Day_dB'] = float('nan')
+    if 'Std_Night_dB' not in df.columns:
+        df['Std_Night_dB'] = float('nan')
+    if 'Excess_Day_dB' not in df.columns:
+        df['Excess_Day_dB'] = float('nan')
+    if 'Excess_Night_dB' not in df.columns:
+        df['Excess_Night_dB'] = float('nan')
+
+KEEP_COLS = ['Location', 'City', 'Zone_Type', 'Year', 'Month', 'Month_Name',
+             'Noise_Day_dB', 'Noise_Night_dB', 'Excess_Day_dB', 'Excess_Night_dB',
+             'Std_Day_dB', 'Zone_Category']
+
+df_all = pd.concat(
+    [df_delhi[KEEP_COLS], df_chennai[KEEP_COLS], df_mumbai[KEEP_COLS]],
+    ignore_index=True
+)
+
 print(f"    Delhi:   {df_delhi.shape[0]} rows, {df_delhi['Location'].nunique()} locations")
-
-df_chennai = pd.read_csv('../../data/processed/chennai_noise_2020_2024.csv')
 print(f"    Chennai: {df_chennai.shape[0]} rows, {df_chennai['Location'].nunique()} locations")
-
-# Keep only common columns + DPCC columns where available
-common_cols = ['S_No', 'Location', 'City', 'Zone_Type', 'Year', 'Month',
-               'Month_Name', 'Noise_Day_dB', 'Noise_Night_dB', 'Zone_Category']
-
-# Add DPCC columns for Delhi if present
-dpcc_cols = ['DPCC_Day_Std_dB', 'Excess_Day_dB']
-delhi_cols = common_cols + [c for c in dpcc_cols if c in df_delhi.columns]
-chennai_cols = common_cols  # Chennai may not have DPCC columns
-
-# Add missing DPCC columns to Chennai with NaN
-df_chennai_merge = df_chennai[chennai_cols].copy()
-for c in dpcc_cols:
-    if c not in df_chennai_merge.columns:
-        df_chennai_merge[c] = float('nan')
-
-df_all = pd.concat([df_delhi[delhi_cols], df_chennai_merge[delhi_cols]], ignore_index=True)
+print(f"    Mumbai:  {df_mumbai.shape[0]} rows, {df_mumbai['Location'].nunique()} locations")
 print(f"    Merged:  {df_all.shape[0]} rows, {df_all['Location'].nunique()} locations")
 
-# Per-location overall aggregates
-agg_dict = {
-    'Avg_Day': ('Noise_Day_dB', 'mean'),
-    'Avg_Night': ('Noise_Night_dB', 'mean'),
-    'Zone_Category': ('Zone_Category', lambda x: x.mode()[0]),
-    'Zone_Type': ('Zone_Type', 'first'),
-}
-if 'Excess_Day_dB' in df_all.columns:
-    agg_dict['Avg_Excess_Day'] = ('Excess_Day_dB', 'mean')
-if 'DPCC_Day_Std_dB' in df_all.columns:
-    agg_dict['DPCC_Std_Day'] = ('DPCC_Day_Std_dB', 'first')
-
-loc_overall = df_all.groupby(['Location', 'City']).agg(**agg_dict).reset_index()
-
-# Per-location+year aggregates
-loc_yearly = df_all.groupby(['Location', 'City', 'Year']).agg(
-    Avg_Day=('Noise_Day_dB', 'mean'),
-    Avg_Night=('Noise_Night_dB', 'mean'),
-    Zone_Category=('Zone_Category', lambda x: x.mode()[0])
-).reset_index()
-
-# Per-city yearly trend
-city_yearly = df_all.groupby(['City', 'Year'])[['Noise_Day_dB', 'Noise_Night_dB']].mean().reset_index()
-
-print(f"    Locations: {len(loc_overall)} ({(loc_overall['City']=='Delhi').sum()} Delhi, "
-      f"{(loc_overall['City']=='Chennai').sum()} Chennai)")
-
 # ============================================================================
-# STEP 2: GEOCODING
+# STEP 2: BUILD GEO RECORDS
 # ============================================================================
-print("\n  Geocoding 51 locations...")
-
-MANUAL_COORDS = {
-    # Delhi Fallback
-    "Adarsh Nagar": (28.7041, 77.1756), "Anand Vihar": (28.6469, 77.3152),
-    "Ashok Vihar": (28.6921, 77.1840), "Karol Bagh": (28.6519, 77.1909),
-    "Rohini": (28.7495, 77.0672), "Pahar Ganj": (28.6448, 77.2167),
-    "Lajpat Nagar": (28.5700, 77.2435), "Dwaraka": (28.5921, 77.0460),
-    "Vasant Kunj": (28.5244, 77.1565), "Sarita Vihar": (28.5318, 77.2907),
-    "Mehrauli": (28.5245, 77.1855), "Tughlakabad": (28.4780, 77.2570),
-    "Janak Puri": (28.6280, 77.0840), "Tilak Nagar": (28.6405, 77.0940),
-    "Shalimar Bagh": (28.7166, 77.1613), "Pitampura": (28.7006, 77.1306),
-    "Badli": (28.7478, 77.1540), "Mangol Puri": (28.7001, 77.0869),
-    "Moti Nagar": (28.6567, 77.1380), "Patel Nagar": (28.6538, 77.1629),
-    # Chennai Fallback
-    "T Nagar": (13.0358, 80.2333), "Perambur": (13.1116, 80.2329),
-    "Guindy": (13.0067, 80.2206), "Triplicane": (13.0569, 80.2762),
-    "Velachery": (12.9815, 80.2180), "Washermanpet": (13.1155, 80.2874),
-    "Pallikaranai": (12.9370, 80.2131), "Anna Nagar": (13.0850, 80.2101),
-    "Sowcarpet": (13.0916, 80.2784), "Egmore Eye Hospital": (13.0732, 80.2609),
-}
-
-CITY_DEFAULTS = {'Delhi': (28.6139, 77.2090), 'Chennai': (13.0827, 80.2707)}
-CITY_BOUNDS = {
-    'Delhi': (28.4, 28.9, 76.8, 77.5),
-    'Chennai': (12.8, 13.3, 80.0, 80.4)
-}
-
-geolocator = Nominatim(user_agent="multi_city_noise_map", timeout=10)
-geocode = RateLimiter(geolocator.geocode, min_delay_seconds=1.5)
-
-latitudes, longitudes = [], []
-stats = {'Geocoded': 0, 'Manual': 0, 'Default': 0}
-
-for _, row in loc_overall.iterrows():
-    loc = row['Location'].strip()
-    city = row['City']
-    bounds = CITY_BOUNDS.get(city, (0, 90, 0, 180))
-
-    try:
-        result = geocode(f"{loc}, {city}, India")
-        if result and bounds[0] < result.latitude < bounds[1] and bounds[2] < result.longitude < bounds[3]:
-            latitudes.append(round(result.latitude, 6))
-            longitudes.append(round(result.longitude, 6))
-            stats['Geocoded'] += 1
-            print(f"    [{city:7s}] {loc}: ({result.latitude:.4f}, {result.longitude:.4f}) [Geocoded]")
-            continue
-    except Exception:
-        pass
-
-    if loc in MANUAL_COORDS:
-        lat, lon = MANUAL_COORDS[loc]
-        latitudes.append(lat)
-        longitudes.append(lon)
-        stats['Manual'] += 1
-        print(f"    [{city:7s}] {loc}: ({lat:.4f}, {lon:.4f}) [Manual]")
-    else:
-        lat, lon = CITY_DEFAULTS.get(city, (20.5, 79.0))
-        latitudes.append(lat)
-        longitudes.append(lon)
-        stats['Default'] += 1
-        print(f"    [{city:7s}] {loc}: ({lat:.4f}, {lon:.4f}) [Default]")
-
-loc_overall['Latitude'] = latitudes
-loc_overall['Longitude'] = longitudes
-
-# Step 3: Check for null/zero coordinates
-failed_geocoding = loc_overall[(loc_overall['Latitude'].isnull()) | (loc_overall['Latitude'] == 0)]
-if not failed_geocoding.empty:
-    print("\n  WARNING: The following locations have NULL or 0 coordinates:")
-    print(failed_geocoding[['Location', 'City']])
-else:
-    print("\n  SUCCESS: All locations have valid coordinates.")
-
-print(f"\n  Geocoding: {stats['Geocoded']} geocoded, {stats['Manual']} manual, {stats['Default']} default")
-
-# ============================================================================
-# BUILD JSON
-# ============================================================================
-print("\n  Building JSON...")
+print("\n  Building geo records...")
 
 geo_records = []
-for _, ov in loc_overall.iterrows():
-    loc = ov['Location']
-    city = ov['City']
-    yearly_rows = loc_yearly[(loc_yearly['Location'] == loc) & (loc_yearly['City'] == city)]
-    yearly_clean = [{'Year': int(yr['Year']), 'Avg_Day': round(yr['Avg_Day'], 2),
-                     'Avg_Night': round(yr['Avg_Night'], 2),
-                     'Zone_Category': yr['Zone_Category']}
-                    for _, yr in yearly_rows.iterrows()]
-    record = {
-        'Location': loc,
-        'City': city,
-        'Latitude': ov['Latitude'],
-        'Longitude': ov['Longitude'],
-        'Zone_Type': ov['Zone_Type'],
-        'Avg_Day': round(ov['Avg_Day'], 2),
-        'Avg_Night': round(ov['Avg_Night'], 2),
-        'Zone_Category': ov['Zone_Category'],
-        'Yearly': yearly_clean
-    }
-    # Add DPCC fields if available (Delhi has them, Chennai may not)
-    if 'Avg_Excess_Day' in ov.index and pd.notna(ov.get('Avg_Excess_Day')):
-        record['Avg_Excess_Day'] = round(ov['Avg_Excess_Day'], 2)
-    else:
-        record['Avg_Excess_Day'] = 0.0
-    if 'DPCC_Std_Day' in ov.index and pd.notna(ov.get('DPCC_Std_Day')):
-        record['DPCC_Std_Day'] = int(ov['DPCC_Std_Day'])
-    else:
-        record['DPCC_Std_Day'] = 0
-    geo_records.append(record)
 
-# City-level yearly trends
-trends = {}
-for _, tr in city_yearly.iterrows():
-    city = tr['City']
-    if city not in trends:
-        trends[city] = []
-    trends[city].append({
-        'Year': int(tr['Year']),
-        'Avg_Day': round(tr['Noise_Day_dB'], 2),
-        'Avg_Night': round(tr['Noise_Night_dB'], 2)
+for loc in df_all['Location'].unique():
+    subset = df_all[df_all['Location'] == loc]
+    city   = subset['City'].iloc[0]
+
+    # Coordinates
+    lat, lon = ALL_COORDS.get(loc, CITY_DEFAULTS.get(city, (20.5, 79.0)))
+    if loc not in ALL_COORDS:
+        print(f"    WARNING: No coords for '{loc}' ({city}) — using city default")
+
+    # Standard day dB (may be NaN for Chennai)
+    std_raw = subset['Std_Day_dB'].iloc[0]
+    std_day = int(std_raw) if pd.notna(std_raw) else 0
+
+    # Excess (may be NaN for Chennai)
+    excess_mean = subset['Excess_Day_dB'].mean()
+    avg_excess  = round(float(excess_mean), 2) if pd.notna(excess_mean) else 0.0
+
+    # Per-year breakdown
+    yearly_clean = []
+    for yr, grp in subset.groupby('Year'):
+        yearly_clean.append({
+            'Year':          int(yr),
+            'Avg_Day':       round(grp['Noise_Day_dB'].mean(), 2),
+            'Avg_Night':     round(grp['Noise_Night_dB'].mean(), 2),
+            'Zone_Category': grp['Zone_Category'].mode()[0],
+        })
+
+    geo_records.append({
+        'Location':       loc,
+        'City':           city,
+        'Latitude':       lat,
+        'Longitude':      lon,
+        'Zone_Type':      subset['Zone_Type'].iloc[0],
+        'Avg_Day':        round(subset['Noise_Day_dB'].mean(), 2),
+        'Avg_Night':      round(subset['Noise_Night_dB'].mean(), 2),
+        'Avg_Excess_Day': avg_excess,
+        'DPCC_Std_Day':   std_day,   # unified key for frontend
+        'Zone_Category':  subset['Zone_Category'].mode()[0],
+        'Yearly':         yearly_clean,
     })
 
-output = {
-    'locations': geo_records,
-    'trends': trends
-}
+    print(f"    [{city:7s}] {loc}: ({lat:.4f}, {lon:.4f})")
 
-with open('../../data/geo/all_cities_locations_geo.json', 'w') as f:
+# ============================================================================
+# STEP 3: SAVE JSON
+# ============================================================================
+print("\n  Saving JSON...")
+
+geo_df  = pd.DataFrame(geo_records)
+delhi_n   = (geo_df['City'] == 'Delhi').sum()
+chennai_n = (geo_df['City'] == 'Chennai').sum()
+mumbai_n  = (geo_df['City'] == 'Mumbai').sum()
+
+output = {'locations': geo_records}
+
+geo_out = os.path.join(BASE, 'data', 'geo', 'all_cities_locations_geo.json')
+fe_out  = os.path.join(BASE, 'frontend', 'all_cities_locations_geo.json')
+pub_out = os.path.join(BASE, 'public', 'all_cities_locations_geo.json')
+
+with open(geo_out, 'w') as f:
     json.dump(output, f, indent=2)
 
-fsize = os.path.getsize('../../data/geo/all_cities_locations_geo.json')
-print(f"  Saved: all_cities_locations_geo.json ({fsize:,} bytes, {len(geo_records)} locations)")
+shutil.copy(geo_out, fe_out)
 
+if os.path.isdir(os.path.dirname(pub_out)):
+    shutil.copy(geo_out, pub_out)
+
+fsize = os.path.getsize(fe_out)
+print(f"  Saved: all_cities_locations_geo.json ({fsize:,} bytes)")
+print(f"  Total: {len(geo_records)} locations — Delhi: {delhi_n}, Chennai: {chennai_n}, Mumbai: {mumbai_n}")
 print("=" * 70)
-
-# Fix 7 — Copy JSON to public/ for deployment
-shutil.copy('../../data/geo/all_cities_locations_geo.json', '../../public/all_cities_locations_geo.json')
-print("JSON copied to public/ for deployment.")

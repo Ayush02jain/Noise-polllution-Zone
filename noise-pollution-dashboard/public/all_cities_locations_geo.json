@@ -1,673 +1,15 @@
 {
   "locations": [
     {
-      "Location": "Adarsh Nagar",
-      "City": "Delhi",
-      "Latitude": 28.71658,
-      "Longitude": 77.170422,
-      "Zone_Type": "Residential",
-      "Avg_Day": 67.93,
-      "Avg_Night": 56.62,
-      "Zone_Category": "High",
-      "Yearly": [
-        {
-          "Year": 2020,
-          "Avg_Day": 65.86,
-          "Avg_Night": 55.0,
-          "Zone_Category": "High"
-        },
-        {
-          "Year": 2021,
-          "Avg_Day": 67.28,
-          "Avg_Night": 56.22,
-          "Zone_Category": "High"
-        },
-        {
-          "Year": 2022,
-          "Avg_Day": 68.43,
-          "Avg_Night": 56.95,
-          "Zone_Category": "High"
-        },
-        {
-          "Year": 2023,
-          "Avg_Day": 68.78,
-          "Avg_Night": 57.31,
-          "Zone_Category": "High"
-        },
-        {
-          "Year": 2024,
-          "Avg_Day": 69.31,
-          "Avg_Night": 57.64,
-          "Zone_Category": "High"
-        }
-      ],
-      "Avg_Excess_Day": 12.93,
-      "DPCC_Std_Day": 55
-    },
-    {
-      "Location": "Anand Vihar",
-      "City": "Delhi",
-      "Latitude": 28.646841,
-      "Longitude": 77.316033,
-      "Zone_Type": "Commercial",
-      "Avg_Day": 71.69,
-      "Avg_Night": 62.27,
-      "Zone_Category": "High",
-      "Yearly": [
-        {
-          "Year": 2020,
-          "Avg_Day": 68.69,
-          "Avg_Night": 60.03,
-          "Zone_Category": "High"
-        },
-        {
-          "Year": 2021,
-          "Avg_Day": 70.8,
-          "Avg_Night": 61.47,
-          "Zone_Category": "High"
-        },
-        {
-          "Year": 2022,
-          "Avg_Day": 72.1,
-          "Avg_Night": 62.67,
-          "Zone_Category": "High"
-        },
-        {
-          "Year": 2023,
-          "Avg_Day": 73.0,
-          "Avg_Night": 63.31,
-          "Zone_Category": "High"
-        },
-        {
-          "Year": 2024,
-          "Avg_Day": 73.85,
-          "Avg_Night": 63.89,
-          "Zone_Category": "High"
-        }
-      ],
-      "Avg_Excess_Day": 6.69,
-      "DPCC_Std_Day": 65
-    },
-    {
-      "Location": "Anna Nagar",
-      "City": "Chennai",
-      "Latitude": 13.0872,
-      "Longitude": 80.216442,
-      "Zone_Type": "Silence",
-      "Avg_Day": 64.77,
-      "Avg_Night": 54.78,
-      "Zone_Category": "Moderate",
-      "Yearly": [
-        {
-          "Year": 2020,
-          "Avg_Day": 62.21,
-          "Avg_Night": 52.76,
-          "Zone_Category": "Moderate"
-        },
-        {
-          "Year": 2021,
-          "Avg_Day": 63.8,
-          "Avg_Night": 54.28,
-          "Zone_Category": "Moderate"
-        },
-        {
-          "Year": 2022,
-          "Avg_Day": 65.73,
-          "Avg_Night": 55.52,
-          "Zone_Category": "Moderate"
-        },
-        {
-          "Year": 2023,
-          "Avg_Day": 65.93,
-          "Avg_Night": 55.44,
-          "Zone_Category": "Moderate"
-        },
-        {
-          "Year": 2024,
-          "Avg_Day": 66.17,
-          "Avg_Night": 55.9,
-          "Zone_Category": "Moderate"
-        }
-      ],
-      "Avg_Excess_Day": 0.0,
-      "DPCC_Std_Day": 0
-    },
-    {
-      "Location": "Ashok Vihar",
-      "City": "Delhi",
-      "Latitude": 28.688517,
-      "Longitude": 77.173934,
-      "Zone_Type": "Residential",
-      "Avg_Day": 67.13,
-      "Avg_Night": 55.83,
-      "Zone_Category": "High",
-      "Yearly": [
-        {
-          "Year": 2020,
-          "Avg_Day": 65.16,
-          "Avg_Night": 54.26,
-          "Zone_Category": "High"
-        },
-        {
-          "Year": 2021,
-          "Avg_Day": 66.56,
-          "Avg_Night": 55.47,
-          "Zone_Category": "High"
-        },
-        {
-          "Year": 2022,
-          "Avg_Day": 67.52,
-          "Avg_Night": 56.18,
-          "Zone_Category": "High"
-        },
-        {
-          "Year": 2023,
-          "Avg_Day": 68.04,
-          "Avg_Night": 56.43,
-          "Zone_Category": "High"
-        },
-        {
-          "Year": 2024,
-          "Avg_Day": 68.36,
-          "Avg_Night": 56.79,
-          "Zone_Category": "High"
-        }
-      ],
-      "Avg_Excess_Day": 12.13,
-      "DPCC_Std_Day": 55
-    },
-    {
-      "Location": "Badli",
-      "City": "Delhi",
-      "Latitude": 28.74654,
-      "Longitude": 77.137462,
-      "Zone_Type": "Industrial",
-      "Avg_Day": 72.35,
-      "Avg_Night": 69.02,
-      "Zone_Category": "Low",
-      "Yearly": [
-        {
-          "Year": 2020,
-          "Avg_Day": 70.03,
-          "Avg_Night": 67.11,
-          "Zone_Category": "Low"
-        },
-        {
-          "Year": 2021,
-          "Avg_Day": 71.56,
-          "Avg_Night": 68.46,
-          "Zone_Category": "Low"
-        },
-        {
-          "Year": 2022,
-          "Avg_Day": 72.8,
-          "Avg_Night": 69.38,
-          "Zone_Category": "Low"
-        },
-        {
-          "Year": 2023,
-          "Avg_Day": 73.36,
-          "Avg_Night": 69.83,
-          "Zone_Category": "Low"
-        },
-        {
-          "Year": 2024,
-          "Avg_Day": 73.99,
-          "Avg_Night": 70.31,
-          "Zone_Category": "Moderate"
-        }
-      ],
-      "Avg_Excess_Day": -2.65,
-      "DPCC_Std_Day": 75
-    },
-    {
-      "Location": "Braham Puri",
-      "City": "Delhi",
-      "Latitude": 28.6139,
-      "Longitude": 77.209,
-      "Zone_Type": "Industrial",
-      "Avg_Day": 71.77,
-      "Avg_Night": 68.21,
-      "Zone_Category": "Low",
-      "Yearly": [
-        {
-          "Year": 2020,
-          "Avg_Day": 69.54,
-          "Avg_Night": 66.27,
-          "Zone_Category": "Low"
-        },
-        {
-          "Year": 2021,
-          "Avg_Day": 70.86,
-          "Avg_Night": 67.53,
-          "Zone_Category": "Low"
-        },
-        {
-          "Year": 2022,
-          "Avg_Day": 72.23,
-          "Avg_Night": 68.64,
-          "Zone_Category": "Low"
-        },
-        {
-          "Year": 2023,
-          "Avg_Day": 72.8,
-          "Avg_Night": 69.09,
-          "Zone_Category": "Low"
-        },
-        {
-          "Year": 2024,
-          "Avg_Day": 73.44,
-          "Avg_Night": 69.52,
-          "Zone_Category": "Low"
-        }
-      ],
-      "Avg_Excess_Day": -3.23,
-      "DPCC_Std_Day": 75
-    },
-    {
-      "Location": "Daryaganj",
-      "City": "Delhi",
-      "Latitude": 28.64609,
-      "Longitude": 77.243048,
-      "Zone_Type": "Commercial",
-      "Avg_Day": 68.67,
-      "Avg_Night": 59.2,
-      "Zone_Category": "Moderate",
-      "Yearly": [
-        {
-          "Year": 2020,
-          "Avg_Day": 65.71,
-          "Avg_Night": 57.01,
-          "Zone_Category": "Moderate"
-        },
-        {
-          "Year": 2021,
-          "Avg_Day": 67.64,
-          "Avg_Night": 58.36,
-          "Zone_Category": "Moderate"
-        },
-        {
-          "Year": 2022,
-          "Avg_Day": 69.16,
-          "Avg_Night": 59.51,
-          "Zone_Category": "Moderate"
-        },
-        {
-          "Year": 2023,
-          "Avg_Day": 69.98,
-          "Avg_Night": 60.19,
-          "Zone_Category": "High"
-        },
-        {
-          "Year": 2024,
-          "Avg_Day": 70.88,
-          "Avg_Night": 60.93,
-          "Zone_Category": "High"
-        }
-      ],
-      "Avg_Excess_Day": 3.67,
-      "DPCC_Std_Day": 65
-    },
-    {
-      "Location": "Defence Colony",
-      "City": "Delhi",
-      "Latitude": 28.571358,
-      "Longitude": 77.23304,
-      "Zone_Type": "Residential",
-      "Avg_Day": 64.52,
-      "Avg_Night": 53.4,
-      "Zone_Category": "High",
-      "Yearly": [
-        {
-          "Year": 2020,
-          "Avg_Day": 62.48,
-          "Avg_Night": 51.75,
-          "Zone_Category": "High"
-        },
-        {
-          "Year": 2021,
-          "Avg_Day": 63.95,
-          "Avg_Night": 53.0,
-          "Zone_Category": "High"
-        },
-        {
-          "Year": 2022,
-          "Avg_Day": 65.01,
-          "Avg_Night": 53.72,
-          "Zone_Category": "High"
-        },
-        {
-          "Year": 2023,
-          "Avg_Day": 65.3,
-          "Avg_Night": 54.06,
-          "Zone_Category": "High"
-        },
-        {
-          "Year": 2024,
-          "Avg_Day": 65.83,
-          "Avg_Night": 54.45,
-          "Zone_Category": "High"
-        }
-      ],
-      "Avg_Excess_Day": 9.52,
-      "DPCC_Std_Day": 55
-    },
-    {
-      "Location": "Dwaraka",
-      "City": "Delhi",
-      "Latitude": 28.5921,
-      "Longitude": 77.046,
-      "Zone_Type": "Residential",
-      "Avg_Day": 65.14,
-      "Avg_Night": 53.8,
-      "Zone_Category": "High",
-      "Yearly": [
-        {
-          "Year": 2020,
-          "Avg_Day": 63.17,
-          "Avg_Night": 52.22,
-          "Zone_Category": "High"
-        },
-        {
-          "Year": 2021,
-          "Avg_Day": 64.53,
-          "Avg_Night": 53.51,
-          "Zone_Category": "High"
-        },
-        {
-          "Year": 2022,
-          "Avg_Day": 65.59,
-          "Avg_Night": 54.13,
-          "Zone_Category": "High"
-        },
-        {
-          "Year": 2023,
-          "Avg_Day": 65.9,
-          "Avg_Night": 54.38,
-          "Zone_Category": "High"
-        },
-        {
-          "Year": 2024,
-          "Avg_Day": 66.53,
-          "Avg_Night": 54.76,
-          "Zone_Category": "High"
-        }
-      ],
-      "Avg_Excess_Day": 10.14,
-      "DPCC_Std_Day": 55
-    },
-    {
-      "Location": "Egmore Eye Hospital",
-      "City": "Chennai",
-      "Latitude": 13.070363,
-      "Longitude": 80.260095,
-      "Zone_Type": "Silence",
-      "Avg_Day": 72.52,
-      "Avg_Night": 61.67,
-      "Zone_Category": "High",
-      "Yearly": [
-        {
-          "Year": 2020,
-          "Avg_Day": 70.19,
-          "Avg_Night": 59.51,
-          "Zone_Category": "High"
-        },
-        {
-          "Year": 2021,
-          "Avg_Day": 71.78,
-          "Avg_Night": 61.09,
-          "Zone_Category": "High"
-        },
-        {
-          "Year": 2022,
-          "Avg_Day": 73.34,
-          "Avg_Night": 62.25,
-          "Zone_Category": "High"
-        },
-        {
-          "Year": 2023,
-          "Avg_Day": 73.56,
-          "Avg_Night": 62.69,
-          "Zone_Category": "High"
-        },
-        {
-          "Year": 2024,
-          "Avg_Day": 73.74,
-          "Avg_Night": 62.78,
-          "Zone_Category": "High"
-        }
-      ],
-      "Avg_Excess_Day": 0.0,
-      "DPCC_Std_Day": 0
-    },
-    {
-      "Location": "Greater Kailash",
-      "City": "Delhi",
-      "Latitude": 28.541908,
-      "Longitude": 77.238493,
-      "Zone_Type": "Residential",
-      "Avg_Day": 63.9,
-      "Avg_Night": 52.61,
-      "Zone_Category": "High",
-      "Yearly": [
-        {
-          "Year": 2020,
-          "Avg_Day": 61.91,
-          "Avg_Night": 51.01,
-          "Zone_Category": "High"
-        },
-        {
-          "Year": 2021,
-          "Avg_Day": 63.31,
-          "Avg_Night": 52.2,
-          "Zone_Category": "High"
-        },
-        {
-          "Year": 2022,
-          "Avg_Day": 64.3,
-          "Avg_Night": 52.97,
-          "Zone_Category": "High"
-        },
-        {
-          "Year": 2023,
-          "Avg_Day": 64.77,
-          "Avg_Night": 53.22,
-          "Zone_Category": "High"
-        },
-        {
-          "Year": 2024,
-          "Avg_Day": 65.19,
-          "Avg_Night": 53.63,
-          "Zone_Category": "High"
-        }
-      ],
-      "Avg_Excess_Day": 8.9,
-      "DPCC_Std_Day": 55
-    },
-    {
-      "Location": "Guindy",
-      "City": "Chennai",
-      "Latitude": 13.008669,
-      "Longitude": 80.212606,
-      "Zone_Type": "Industrial",
-      "Avg_Day": 71.44,
-      "Avg_Night": 64.98,
-      "Zone_Category": "High",
-      "Yearly": [
-        {
-          "Year": 2020,
-          "Avg_Day": 67.13,
-          "Avg_Night": 61.49,
-          "Zone_Category": "High"
-        },
-        {
-          "Year": 2021,
-          "Avg_Day": 69.45,
-          "Avg_Night": 63.53,
-          "Zone_Category": "High"
-        },
-        {
-          "Year": 2022,
-          "Avg_Day": 72.96,
-          "Avg_Night": 66.16,
-          "Zone_Category": "High"
-        },
-        {
-          "Year": 2023,
-          "Avg_Day": 73.53,
-          "Avg_Night": 66.57,
-          "Zone_Category": "High"
-        },
-        {
-          "Year": 2024,
-          "Avg_Day": 74.12,
-          "Avg_Night": 67.15,
-          "Zone_Category": "High"
-        }
-      ],
-      "Avg_Excess_Day": 0.0,
-      "DPCC_Std_Day": 0
-    },
-    {
-      "Location": "Inder Puri",
-      "City": "Delhi",
-      "Latitude": 28.729945,
-      "Longitude": 77.170721,
-      "Zone_Type": "Residential",
-      "Avg_Day": 66.51,
-      "Avg_Night": 55.41,
-      "Zone_Category": "High",
-      "Yearly": [
-        {
-          "Year": 2020,
-          "Avg_Day": 64.55,
-          "Avg_Night": 53.87,
-          "Zone_Category": "High"
-        },
-        {
-          "Year": 2021,
-          "Avg_Day": 65.95,
-          "Avg_Night": 55.02,
-          "Zone_Category": "High"
-        },
-        {
-          "Year": 2022,
-          "Avg_Day": 66.94,
-          "Avg_Night": 55.75,
-          "Zone_Category": "High"
-        },
-        {
-          "Year": 2023,
-          "Avg_Day": 67.28,
-          "Avg_Night": 56.05,
-          "Zone_Category": "High"
-        },
-        {
-          "Year": 2024,
-          "Avg_Day": 67.82,
-          "Avg_Night": 56.39,
-          "Zone_Category": "High"
-        }
-      ],
-      "Avg_Excess_Day": 11.51,
-      "DPCC_Std_Day": 55
-    },
-    {
-      "Location": "Janak Puri",
-      "City": "Delhi",
-      "Latitude": 28.628047,
-      "Longitude": 77.089447,
-      "Zone_Type": "Residential",
-      "Avg_Day": 66.13,
-      "Avg_Night": 54.81,
-      "Zone_Category": "High",
-      "Yearly": [
-        {
-          "Year": 2020,
-          "Avg_Day": 64.2,
-          "Avg_Night": 53.21,
-          "Zone_Category": "High"
-        },
-        {
-          "Year": 2021,
-          "Avg_Day": 65.64,
-          "Avg_Night": 54.54,
-          "Zone_Category": "High"
-        },
-        {
-          "Year": 2022,
-          "Avg_Day": 66.57,
-          "Avg_Night": 55.13,
-          "Zone_Category": "High"
-        },
-        {
-          "Year": 2023,
-          "Avg_Day": 66.88,
-          "Avg_Night": 55.45,
-          "Zone_Category": "High"
-        },
-        {
-          "Year": 2024,
-          "Avg_Day": 67.36,
-          "Avg_Night": 55.71,
-          "Zone_Category": "High"
-        }
-      ],
-      "Avg_Excess_Day": 11.13,
-      "DPCC_Std_Day": 55
-    },
-    {
-      "Location": "Karawal Nagar",
-      "City": "Delhi",
-      "Latitude": 28.731141,
-      "Longitude": 77.27479,
-      "Zone_Type": "Commercial",
-      "Avg_Day": 67.46,
-      "Avg_Night": 58.07,
-      "Zone_Category": "Moderate",
-      "Yearly": [
-        {
-          "Year": 2020,
-          "Avg_Day": 64.65,
-          "Avg_Night": 55.89,
-          "Zone_Category": "Moderate"
-        },
-        {
-          "Year": 2021,
-          "Avg_Day": 66.43,
-          "Avg_Night": 57.19,
-          "Zone_Category": "Moderate"
-        },
-        {
-          "Year": 2022,
-          "Avg_Day": 67.98,
-          "Avg_Night": 58.42,
-          "Zone_Category": "Moderate"
-        },
-        {
-          "Year": 2023,
-          "Avg_Day": 68.69,
-          "Avg_Night": 59.07,
-          "Zone_Category": "Moderate"
-        },
-        {
-          "Year": 2024,
-          "Avg_Day": 69.54,
-          "Avg_Night": 59.78,
-          "Zone_Category": "Moderate"
-        }
-      ],
-      "Avg_Excess_Day": 2.46,
-      "DPCC_Std_Day": 65
-    },
-    {
       "Location": "Karol Bagh",
       "City": "Delhi",
-      "Latitude": 28.652998,
-      "Longitude": 77.189023,
+      "Latitude": 28.6514,
+      "Longitude": 77.1907,
       "Zone_Type": "Commercial",
       "Avg_Day": 73.27,
       "Avg_Night": 63.73,
+      "Avg_Excess_Day": 8.27,
+      "DPCC_Std_Day": 65,
       "Zone_Category": "High",
       "Yearly": [
         {
@@ -700,590 +42,62 @@
           "Avg_Night": 65.44,
           "Zone_Category": "High"
         }
-      ],
-      "Avg_Excess_Day": 8.27,
-      "DPCC_Std_Day": 65
+      ]
     },
     {
-      "Location": "Kondli",
+      "Location": "Anand Vihar",
       "City": "Delhi",
-      "Latitude": 28.607082,
-      "Longitude": 77.324332,
-      "Zone_Type": "Residential",
-      "Avg_Day": 65.55,
-      "Avg_Night": 54.41,
-      "Zone_Category": "High",
-      "Yearly": [
-        {
-          "Year": 2020,
-          "Avg_Day": 63.61,
-          "Avg_Night": 52.85,
-          "Zone_Category": "High"
-        },
-        {
-          "Year": 2021,
-          "Avg_Day": 64.97,
-          "Avg_Night": 54.02,
-          "Zone_Category": "High"
-        },
-        {
-          "Year": 2022,
-          "Avg_Day": 65.98,
-          "Avg_Night": 54.76,
-          "Zone_Category": "High"
-        },
-        {
-          "Year": 2023,
-          "Avg_Day": 66.29,
-          "Avg_Night": 55.06,
-          "Zone_Category": "High"
-        },
-        {
-          "Year": 2024,
-          "Avg_Day": 66.9,
-          "Avg_Night": 55.37,
-          "Zone_Category": "High"
-        }
-      ],
-      "Avg_Excess_Day": 10.55,
-      "DPCC_Std_Day": 55
-    },
-    {
-      "Location": "Lajpat Nagar",
-      "City": "Delhi",
-      "Latitude": 28.566092,
-      "Longitude": 77.243285,
+      "Latitude": 28.6469,
+      "Longitude": 77.3156,
       "Zone_Type": "Commercial",
-      "Avg_Day": 69.31,
-      "Avg_Night": 60.45,
+      "Avg_Day": 71.69,
+      "Avg_Night": 62.27,
+      "Avg_Excess_Day": 6.69,
+      "DPCC_Std_Day": 65,
       "Zone_Category": "High",
       "Yearly": [
         {
           "Year": 2020,
-          "Avg_Day": 66.47,
-          "Avg_Night": 58.21,
-          "Zone_Category": "Moderate"
-        },
-        {
-          "Year": 2021,
-          "Avg_Day": 68.25,
-          "Avg_Night": 59.71,
-          "Zone_Category": "Moderate"
-        },
-        {
-          "Year": 2022,
-          "Avg_Day": 69.84,
-          "Avg_Night": 60.83,
-          "Zone_Category": "High"
-        },
-        {
-          "Year": 2023,
-          "Avg_Day": 70.48,
-          "Avg_Night": 61.39,
-          "Zone_Category": "High"
-        },
-        {
-          "Year": 2024,
-          "Avg_Day": 71.54,
-          "Avg_Night": 62.09,
-          "Zone_Category": "High"
-        }
-      ],
-      "Avg_Excess_Day": 4.31,
-      "DPCC_Std_Day": 65
-    },
-    {
-      "Location": "Lawrence Road",
-      "City": "Delhi",
-      "Latitude": 28.692114,
-      "Longitude": 77.15727,
-      "Zone_Type": "Industrial",
-      "Avg_Day": 73.01,
-      "Avg_Night": 69.4,
-      "Zone_Category": "Low",
-      "Yearly": [
-        {
-          "Year": 2020,
-          "Avg_Day": 70.88,
-          "Avg_Night": 67.37,
-          "Zone_Category": "Low"
-        },
-        {
-          "Year": 2021,
-          "Avg_Day": 72.33,
-          "Avg_Night": 68.82,
-          "Zone_Category": "Low"
-        },
-        {
-          "Year": 2022,
-          "Avg_Day": 73.41,
-          "Avg_Night": 69.8,
-          "Zone_Category": "Low"
-        },
-        {
-          "Year": 2023,
-          "Avg_Day": 73.97,
-          "Avg_Night": 70.32,
-          "Zone_Category": "Moderate"
-        },
-        {
-          "Year": 2024,
-          "Avg_Day": 74.46,
-          "Avg_Night": 70.71,
-          "Zone_Category": "Moderate"
-        }
-      ],
-      "Avg_Excess_Day": -1.99,
-      "DPCC_Std_Day": 75
-    },
-    {
-      "Location": "Mandavali",
-      "City": "Delhi",
-      "Latitude": 28.6139,
-      "Longitude": 77.209,
-      "Zone_Type": "Residential",
-      "Avg_Day": 65.17,
-      "Avg_Night": 53.81,
-      "Zone_Category": "High",
-      "Yearly": [
-        {
-          "Year": 2020,
-          "Avg_Day": 63.23,
-          "Avg_Night": 52.22,
+          "Avg_Day": 68.7,
+          "Avg_Night": 60.03,
           "Zone_Category": "High"
         },
         {
           "Year": 2021,
-          "Avg_Day": 64.46,
-          "Avg_Night": 53.46,
+          "Avg_Day": 70.8,
+          "Avg_Night": 61.47,
           "Zone_Category": "High"
         },
         {
           "Year": 2022,
-          "Avg_Day": 65.67,
-          "Avg_Night": 54.12,
+          "Avg_Day": 72.1,
+          "Avg_Night": 62.67,
           "Zone_Category": "High"
         },
         {
           "Year": 2023,
-          "Avg_Day": 65.95,
-          "Avg_Night": 54.34,
+          "Avg_Day": 73.0,
+          "Avg_Night": 63.31,
           "Zone_Category": "High"
         },
         {
           "Year": 2024,
-          "Avg_Day": 66.52,
-          "Avg_Night": 54.92,
+          "Avg_Day": 73.85,
+          "Avg_Night": 63.89,
           "Zone_Category": "High"
         }
-      ],
-      "Avg_Excess_Day": 10.17,
-      "DPCC_Std_Day": 55
-    },
-    {
-      "Location": "Mangol Puri",
-      "City": "Delhi",
-      "Latitude": 28.697839,
-      "Longitude": 77.095586,
-      "Zone_Type": "Commercial",
-      "Avg_Day": 66.56,
-      "Avg_Night": 56.82,
-      "Zone_Category": "Moderate",
-      "Yearly": [
-        {
-          "Year": 2020,
-          "Avg_Day": 63.52,
-          "Avg_Night": 54.61,
-          "Zone_Category": "Low"
-        },
-        {
-          "Year": 2021,
-          "Avg_Day": 65.65,
-          "Avg_Night": 56.0,
-          "Zone_Category": "Moderate"
-        },
-        {
-          "Year": 2022,
-          "Avg_Day": 67.12,
-          "Avg_Night": 57.19,
-          "Zone_Category": "Moderate"
-        },
-        {
-          "Year": 2023,
-          "Avg_Day": 67.82,
-          "Avg_Night": 57.85,
-          "Zone_Category": "Moderate"
-        },
-        {
-          "Year": 2024,
-          "Avg_Day": 68.69,
-          "Avg_Night": 58.45,
-          "Zone_Category": "Moderate"
-        }
-      ],
-      "Avg_Excess_Day": 1.56,
-      "DPCC_Std_Day": 65
-    },
-    {
-      "Location": "Meera Bagh",
-      "City": "Delhi",
-      "Latitude": 28.658844,
-      "Longitude": 77.090847,
-      "Zone_Type": "Residential",
-      "Avg_Day": 65.98,
-      "Avg_Night": 54.61,
-      "Zone_Category": "High",
-      "Yearly": [
-        {
-          "Year": 2020,
-          "Avg_Day": 63.9,
-          "Avg_Night": 53.03,
-          "Zone_Category": "High"
-        },
-        {
-          "Year": 2021,
-          "Avg_Day": 65.4,
-          "Avg_Night": 54.11,
-          "Zone_Category": "High"
-        },
-        {
-          "Year": 2022,
-          "Avg_Day": 66.43,
-          "Avg_Night": 55.05,
-          "Zone_Category": "High"
-        },
-        {
-          "Year": 2023,
-          "Avg_Day": 66.92,
-          "Avg_Night": 55.21,
-          "Zone_Category": "High"
-        },
-        {
-          "Year": 2024,
-          "Avg_Day": 67.26,
-          "Avg_Night": 55.64,
-          "Zone_Category": "High"
-        }
-      ],
-      "Avg_Excess_Day": 10.98,
-      "DPCC_Std_Day": 55
-    },
-    {
-      "Location": "Mehrauli",
-      "City": "Delhi",
-      "Latitude": 28.521826,
-      "Longitude": 77.178323,
-      "Zone_Type": "Residential",
-      "Avg_Day": 64.56,
-      "Avg_Night": 53.14,
-      "Zone_Category": "High",
-      "Yearly": [
-        {
-          "Year": 2020,
-          "Avg_Day": 62.55,
-          "Avg_Night": 51.54,
-          "Zone_Category": "High"
-        },
-        {
-          "Year": 2021,
-          "Avg_Day": 63.94,
-          "Avg_Night": 52.71,
-          "Zone_Category": "High"
-        },
-        {
-          "Year": 2022,
-          "Avg_Day": 65.07,
-          "Avg_Night": 53.48,
-          "Zone_Category": "High"
-        },
-        {
-          "Year": 2023,
-          "Avg_Day": 65.48,
-          "Avg_Night": 53.76,
-          "Zone_Category": "High"
-        },
-        {
-          "Year": 2024,
-          "Avg_Day": 65.76,
-          "Avg_Night": 54.21,
-          "Zone_Category": "High"
-        }
-      ],
-      "Avg_Excess_Day": 9.56,
-      "DPCC_Std_Day": 55
-    },
-    {
-      "Location": "Moti Bagh",
-      "City": "Delhi",
-      "Latitude": 28.581921,
-      "Longitude": 77.172797,
-      "Zone_Type": "Residential",
-      "Avg_Day": 65.3,
-      "Avg_Night": 54.23,
-      "Zone_Category": "High",
-      "Yearly": [
-        {
-          "Year": 2020,
-          "Avg_Day": 63.19,
-          "Avg_Night": 52.68,
-          "Zone_Category": "High"
-        },
-        {
-          "Year": 2021,
-          "Avg_Day": 64.68,
-          "Avg_Night": 53.93,
-          "Zone_Category": "High"
-        },
-        {
-          "Year": 2022,
-          "Avg_Day": 65.83,
-          "Avg_Night": 54.46,
-          "Zone_Category": "High"
-        },
-        {
-          "Year": 2023,
-          "Avg_Day": 66.11,
-          "Avg_Night": 54.85,
-          "Zone_Category": "High"
-        },
-        {
-          "Year": 2024,
-          "Avg_Day": 66.68,
-          "Avg_Night": 55.24,
-          "Zone_Category": "High"
-        }
-      ],
-      "Avg_Excess_Day": 10.3,
-      "DPCC_Std_Day": 55
-    },
-    {
-      "Location": "Moti Nagar",
-      "City": "Delhi",
-      "Latitude": 28.657859,
-      "Longitude": 77.142429,
-      "Zone_Type": "Residential",
-      "Avg_Day": 65.68,
-      "Avg_Night": 54.61,
-      "Zone_Category": "High",
-      "Yearly": [
-        {
-          "Year": 2020,
-          "Avg_Day": 63.69,
-          "Avg_Night": 52.97,
-          "Zone_Category": "High"
-        },
-        {
-          "Year": 2021,
-          "Avg_Day": 65.08,
-          "Avg_Night": 54.16,
-          "Zone_Category": "High"
-        },
-        {
-          "Year": 2022,
-          "Avg_Day": 66.12,
-          "Avg_Night": 54.92,
-          "Zone_Category": "High"
-        },
-        {
-          "Year": 2023,
-          "Avg_Day": 66.45,
-          "Avg_Night": 55.33,
-          "Zone_Category": "High"
-        },
-        {
-          "Year": 2024,
-          "Avg_Day": 67.06,
-          "Avg_Night": 55.65,
-          "Zone_Category": "High"
-        }
-      ],
-      "Avg_Excess_Day": 10.68,
-      "DPCC_Std_Day": 55
-    },
-    {
-      "Location": "Mukherji Nagar",
-      "City": "Delhi",
-      "Latitude": 28.705728,
-      "Longitude": 77.213725,
-      "Zone_Type": "Residential",
-      "Avg_Day": 66.89,
-      "Avg_Night": 55.6,
-      "Zone_Category": "High",
-      "Yearly": [
-        {
-          "Year": 2020,
-          "Avg_Day": 64.93,
-          "Avg_Night": 53.99,
-          "Zone_Category": "High"
-        },
-        {
-          "Year": 2021,
-          "Avg_Day": 66.23,
-          "Avg_Night": 55.13,
-          "Zone_Category": "High"
-        },
-        {
-          "Year": 2022,
-          "Avg_Day": 67.24,
-          "Avg_Night": 56.0,
-          "Zone_Category": "High"
-        },
-        {
-          "Year": 2023,
-          "Avg_Day": 67.85,
-          "Avg_Night": 56.23,
-          "Zone_Category": "High"
-        },
-        {
-          "Year": 2024,
-          "Avg_Day": 68.19,
-          "Avg_Night": 56.64,
-          "Zone_Category": "High"
-        }
-      ],
-      "Avg_Excess_Day": 11.89,
-      "DPCC_Std_Day": 55
-    },
-    {
-      "Location": "Nand Nagri",
-      "City": "Delhi",
-      "Latitude": 28.697809,
-      "Longitude": 77.305701,
-      "Zone_Type": "Residential",
-      "Avg_Day": 66.15,
-      "Avg_Night": 54.83,
-      "Zone_Category": "High",
-      "Yearly": [
-        {
-          "Year": 2020,
-          "Avg_Day": 64.15,
-          "Avg_Night": 53.31,
-          "Zone_Category": "High"
-        },
-        {
-          "Year": 2021,
-          "Avg_Day": 65.48,
-          "Avg_Night": 54.52,
-          "Zone_Category": "High"
-        },
-        {
-          "Year": 2022,
-          "Avg_Day": 66.64,
-          "Avg_Night": 55.06,
-          "Zone_Category": "High"
-        },
-        {
-          "Year": 2023,
-          "Avg_Day": 67.07,
-          "Avg_Night": 55.39,
-          "Zone_Category": "High"
-        },
-        {
-          "Year": 2024,
-          "Avg_Day": 67.42,
-          "Avg_Night": 55.85,
-          "Zone_Category": "High"
-        }
-      ],
-      "Avg_Excess_Day": 11.15,
-      "DPCC_Std_Day": 55
-    },
-    {
-      "Location": "Naraouji Nagar",
-      "City": "Delhi",
-      "Latitude": 28.6139,
-      "Longitude": 77.209,
-      "Zone_Type": "Residential",
-      "Avg_Day": 64.97,
-      "Avg_Night": 53.59,
-      "Zone_Category": "High",
-      "Yearly": [
-        {
-          "Year": 2020,
-          "Avg_Day": 62.93,
-          "Avg_Night": 52.01,
-          "Zone_Category": "High"
-        },
-        {
-          "Year": 2021,
-          "Avg_Day": 64.49,
-          "Avg_Night": 53.16,
-          "Zone_Category": "High"
-        },
-        {
-          "Year": 2022,
-          "Avg_Day": 65.34,
-          "Avg_Night": 54.01,
-          "Zone_Category": "High"
-        },
-        {
-          "Year": 2023,
-          "Avg_Day": 65.74,
-          "Avg_Night": 54.2,
-          "Zone_Category": "High"
-        },
-        {
-          "Year": 2024,
-          "Avg_Day": 66.33,
-          "Avg_Night": 54.56,
-          "Zone_Category": "High"
-        }
-      ],
-      "Avg_Excess_Day": 9.97,
-      "DPCC_Std_Day": 55
-    },
-    {
-      "Location": "New Friends Colony",
-      "City": "Delhi",
-      "Latitude": 28.567101,
-      "Longitude": 77.269764,
-      "Zone_Type": "Residential",
-      "Avg_Day": 64.19,
-      "Avg_Night": 52.77,
-      "Zone_Category": "High",
-      "Yearly": [
-        {
-          "Year": 2020,
-          "Avg_Day": 62.19,
-          "Avg_Night": 51.15,
-          "Zone_Category": "High"
-        },
-        {
-          "Year": 2021,
-          "Avg_Day": 63.62,
-          "Avg_Night": 52.32,
-          "Zone_Category": "High"
-        },
-        {
-          "Year": 2022,
-          "Avg_Day": 64.64,
-          "Avg_Night": 53.13,
-          "Zone_Category": "High"
-        },
-        {
-          "Year": 2023,
-          "Avg_Day": 64.9,
-          "Avg_Night": 53.51,
-          "Zone_Category": "High"
-        },
-        {
-          "Year": 2024,
-          "Avg_Day": 65.61,
-          "Avg_Night": 53.76,
-          "Zone_Category": "High"
-        }
-      ],
-      "Avg_Excess_Day": 9.19,
-      "DPCC_Std_Day": 55
+      ]
     },
     {
       "Location": "Pahar Ganj",
       "City": "Delhi",
-      "Latitude": 28.639852,
-      "Longitude": 77.213031,
+      "Latitude": 28.6441,
+      "Longitude": 77.2132,
       "Zone_Type": "Commercial",
       "Avg_Day": 70.53,
       "Avg_Night": 61.01,
+      "Avg_Excess_Day": 5.53,
+      "DPCC_Std_Day": 65,
       "Zone_Category": "High",
       "Yearly": [
         {
@@ -1316,370 +130,194 @@
           "Avg_Night": 62.66,
           "Zone_Category": "High"
         }
-      ],
-      "Avg_Excess_Day": 5.53,
-      "DPCC_Std_Day": 65
+      ]
     },
     {
-      "Location": "Pallikaranai",
-      "City": "Chennai",
-      "Latitude": 12.930475,
-      "Longitude": 80.207769,
+      "Location": "Lajpat Nagar",
+      "City": "Delhi",
+      "Latitude": 28.57,
+      "Longitude": 77.24,
       "Zone_Type": "Commercial",
-      "Avg_Day": 73.39,
-      "Avg_Night": 62.92,
+      "Avg_Day": 69.31,
+      "Avg_Night": 60.45,
+      "Avg_Excess_Day": 4.31,
+      "DPCC_Std_Day": 65,
       "Zone_Category": "High",
       "Yearly": [
         {
           "Year": 2020,
-          "Avg_Day": 67.55,
-          "Avg_Night": 58.58,
-          "Zone_Category": "High"
-        },
-        {
-          "Year": 2021,
-          "Avg_Day": 70.9,
-          "Avg_Night": 60.98,
-          "Zone_Category": "High"
-        },
-        {
-          "Year": 2022,
-          "Avg_Day": 75.15,
-          "Avg_Night": 64.19,
-          "Zone_Category": "High"
-        },
-        {
-          "Year": 2023,
-          "Avg_Day": 76.18,
-          "Avg_Night": 65.03,
-          "Zone_Category": "High"
-        },
-        {
-          "Year": 2024,
-          "Avg_Day": 77.19,
-          "Avg_Night": 65.83,
-          "Zone_Category": "High"
-        }
-      ],
-      "Avg_Excess_Day": 0.0,
-      "DPCC_Std_Day": 0
-    },
-    {
-      "Location": "Paschim Vihar",
-      "City": "Delhi",
-      "Latitude": 28.669578,
-      "Longitude": 77.095956,
-      "Zone_Type": "Residential",
-      "Avg_Day": 65.58,
-      "Avg_Night": 54.41,
-      "Zone_Category": "High",
-      "Yearly": [
-        {
-          "Year": 2020,
-          "Avg_Day": 63.5,
-          "Avg_Night": 52.84,
-          "Zone_Category": "High"
-        },
-        {
-          "Year": 2021,
-          "Avg_Day": 64.91,
-          "Avg_Night": 54.0,
-          "Zone_Category": "High"
-        },
-        {
-          "Year": 2022,
-          "Avg_Day": 66.06,
-          "Avg_Night": 54.71,
-          "Zone_Category": "High"
-        },
-        {
-          "Year": 2023,
-          "Avg_Day": 66.48,
-          "Avg_Night": 55.05,
-          "Zone_Category": "High"
-        },
-        {
-          "Year": 2024,
-          "Avg_Day": 66.92,
-          "Avg_Night": 55.43,
-          "Zone_Category": "High"
-        }
-      ],
-      "Avg_Excess_Day": 10.58,
-      "DPCC_Std_Day": 55
-    },
-    {
-      "Location": "Patel Nagar",
-      "City": "Delhi",
-      "Latitude": 28.645013,
-      "Longitude": 77.169282,
-      "Zone_Type": "Residential",
-      "Avg_Day": 66.06,
-      "Avg_Night": 54.76,
-      "Zone_Category": "High",
-      "Yearly": [
-        {
-          "Year": 2020,
-          "Avg_Day": 64.08,
-          "Avg_Night": 53.18,
-          "Zone_Category": "High"
-        },
-        {
-          "Year": 2021,
-          "Avg_Day": 65.5,
-          "Avg_Night": 54.43,
-          "Zone_Category": "High"
-        },
-        {
-          "Year": 2022,
           "Avg_Day": 66.47,
-          "Avg_Night": 55.04,
+          "Avg_Night": 58.21,
+          "Zone_Category": "Moderate"
+        },
+        {
+          "Year": 2021,
+          "Avg_Day": 68.24,
+          "Avg_Night": 59.71,
+          "Zone_Category": "Moderate"
+        },
+        {
+          "Year": 2022,
+          "Avg_Day": 69.84,
+          "Avg_Night": 60.83,
           "Zone_Category": "High"
         },
         {
           "Year": 2023,
-          "Avg_Day": 66.82,
-          "Avg_Night": 55.34,
+          "Avg_Day": 70.48,
+          "Avg_Night": 61.39,
           "Zone_Category": "High"
         },
         {
           "Year": 2024,
-          "Avg_Day": 67.42,
-          "Avg_Night": 55.8,
+          "Avg_Day": 71.54,
+          "Avg_Night": 62.09,
           "Zone_Category": "High"
         }
-      ],
-      "Avg_Excess_Day": 11.06,
-      "DPCC_Std_Day": 55
+      ]
     },
     {
-      "Location": "Perambur",
-      "City": "Chennai",
-      "Latitude": 13.112124,
-      "Longitude": 80.245022,
+      "Location": "Daryaganj",
+      "City": "Delhi",
+      "Latitude": 28.6411,
+      "Longitude": 77.2388,
       "Zone_Type": "Commercial",
-      "Avg_Day": 77.92,
-      "Avg_Night": 67.57,
-      "Zone_Category": "Critical",
+      "Avg_Day": 68.67,
+      "Avg_Night": 59.2,
+      "Avg_Excess_Day": 3.67,
+      "DPCC_Std_Day": 65,
+      "Zone_Category": "Moderate",
       "Yearly": [
         {
           "Year": 2020,
-          "Avg_Day": 72.02,
-          "Avg_Night": 63.12,
-          "Zone_Category": "High"
+          "Avg_Day": 65.71,
+          "Avg_Night": 57.01,
+          "Zone_Category": "Moderate"
         },
         {
           "Year": 2021,
-          "Avg_Day": 75.73,
-          "Avg_Night": 65.69,
-          "Zone_Category": "High"
+          "Avg_Day": 67.64,
+          "Avg_Night": 58.36,
+          "Zone_Category": "Moderate"
         },
         {
           "Year": 2022,
-          "Avg_Day": 79.53,
-          "Avg_Night": 69.0,
-          "Zone_Category": "Critical"
+          "Avg_Day": 69.16,
+          "Avg_Night": 59.51,
+          "Zone_Category": "Moderate"
         },
         {
           "Year": 2023,
-          "Avg_Day": 80.72,
-          "Avg_Night": 69.78,
-          "Zone_Category": "Critical"
-        },
-        {
-          "Year": 2024,
-          "Avg_Day": 81.61,
-          "Avg_Night": 70.23,
-          "Zone_Category": "Critical"
-        }
-      ],
-      "Avg_Excess_Day": 0.0,
-      "DPCC_Std_Day": 0
-    },
-    {
-      "Location": "Prehladpur",
-      "City": "Delhi",
-      "Latitude": 28.6139,
-      "Longitude": 77.209,
-      "Zone_Type": "Residential",
-      "Avg_Day": 64.36,
-      "Avg_Night": 53.17,
-      "Zone_Category": "High",
-      "Yearly": [
-        {
-          "Year": 2020,
-          "Avg_Day": 62.37,
-          "Avg_Night": 51.54,
-          "Zone_Category": "High"
-        },
-        {
-          "Year": 2021,
-          "Avg_Day": 63.6,
-          "Avg_Night": 52.84,
-          "Zone_Category": "High"
-        },
-        {
-          "Year": 2022,
-          "Avg_Day": 64.86,
-          "Avg_Night": 53.49,
-          "Zone_Category": "High"
-        },
-        {
-          "Year": 2023,
-          "Avg_Day": 65.22,
-          "Avg_Night": 53.84,
+          "Avg_Day": 69.98,
+          "Avg_Night": 60.19,
           "Zone_Category": "High"
         },
         {
           "Year": 2024,
-          "Avg_Day": 65.73,
-          "Avg_Night": 54.15,
+          "Avg_Day": 70.88,
+          "Avg_Night": 60.93,
           "Zone_Category": "High"
         }
-      ],
-      "Avg_Excess_Day": 9.36,
-      "DPCC_Std_Day": 55
+      ]
     },
     {
-      "Location": "R.K. Puram",
+      "Location": "Karawal Nagar",
       "City": "Delhi",
-      "Latitude": 28.55038,
-      "Longitude": 77.185523,
-      "Zone_Type": "Residential",
-      "Avg_Day": 64.91,
-      "Avg_Night": 53.59,
-      "Zone_Category": "High",
+      "Latitude": 28.723,
+      "Longitude": 77.259,
+      "Zone_Type": "Commercial",
+      "Avg_Day": 67.46,
+      "Avg_Night": 58.07,
+      "Avg_Excess_Day": 2.46,
+      "DPCC_Std_Day": 65,
+      "Zone_Category": "Moderate",
       "Yearly": [
         {
           "Year": 2020,
-          "Avg_Day": 63.1,
-          "Avg_Night": 52.06,
-          "Zone_Category": "High"
+          "Avg_Day": 64.65,
+          "Avg_Night": 55.89,
+          "Zone_Category": "Moderate"
         },
         {
           "Year": 2021,
-          "Avg_Day": 64.18,
-          "Avg_Night": 53.17,
-          "Zone_Category": "High"
+          "Avg_Day": 66.43,
+          "Avg_Night": 57.19,
+          "Zone_Category": "Moderate"
         },
         {
           "Year": 2022,
-          "Avg_Day": 65.33,
-          "Avg_Night": 53.88,
-          "Zone_Category": "High"
+          "Avg_Day": 67.98,
+          "Avg_Night": 58.42,
+          "Zone_Category": "Moderate"
         },
         {
           "Year": 2023,
-          "Avg_Day": 65.7,
-          "Avg_Night": 54.24,
-          "Zone_Category": "High"
+          "Avg_Day": 68.69,
+          "Avg_Night": 59.07,
+          "Zone_Category": "Moderate"
         },
         {
           "Year": 2024,
-          "Avg_Day": 66.22,
-          "Avg_Night": 54.59,
-          "Zone_Category": "High"
+          "Avg_Day": 69.54,
+          "Avg_Night": 59.78,
+          "Zone_Category": "Moderate"
         }
-      ],
-      "Avg_Excess_Day": 9.91,
-      "DPCC_Std_Day": 55
+      ]
     },
     {
-      "Location": "Rajpura Road",
+      "Location": "Sarita Vihar",
       "City": "Delhi",
-      "Latitude": 28.686474,
-      "Longitude": 77.19491,
-      "Zone_Type": "Residential",
-      "Avg_Day": 66.37,
-      "Avg_Night": 55.16,
-      "Zone_Category": "High",
+      "Latitude": 28.531,
+      "Longitude": 77.288,
+      "Zone_Type": "Commercial",
+      "Avg_Day": 66.14,
+      "Avg_Night": 57.02,
+      "Avg_Excess_Day": 1.14,
+      "DPCC_Std_Day": 65,
+      "Zone_Category": "Moderate",
       "Yearly": [
         {
           "Year": 2020,
-          "Avg_Day": 64.48,
-          "Avg_Night": 53.57,
-          "Zone_Category": "High"
-        },
-        {
-          "Year": 2021,
-          "Avg_Day": 65.82,
+          "Avg_Day": 63.15,
           "Avg_Night": 54.77,
-          "Zone_Category": "High"
-        },
-        {
-          "Year": 2022,
-          "Avg_Day": 66.76,
-          "Avg_Night": 55.57,
-          "Zone_Category": "High"
-        },
-        {
-          "Year": 2023,
-          "Avg_Day": 67.13,
-          "Avg_Night": 55.76,
-          "Zone_Category": "High"
-        },
-        {
-          "Year": 2024,
-          "Avg_Day": 67.66,
-          "Avg_Night": 56.13,
-          "Zone_Category": "High"
-        }
-      ],
-      "Avg_Excess_Day": 11.37,
-      "DPCC_Std_Day": 55
-    },
-    {
-      "Location": "Rana Pratap Bagh",
-      "City": "Delhi",
-      "Latitude": 28.686706,
-      "Longitude": 77.190781,
-      "Zone_Type": "Residential",
-      "Avg_Day": 66.51,
-      "Avg_Night": 55.36,
-      "Zone_Category": "High",
-      "Yearly": [
-        {
-          "Year": 2020,
-          "Avg_Day": 64.55,
-          "Avg_Night": 53.67,
-          "Zone_Category": "High"
+          "Zone_Category": "Low"
         },
         {
           "Year": 2021,
-          "Avg_Day": 65.91,
-          "Avg_Night": 55.07,
-          "Zone_Category": "High"
+          "Avg_Day": 65.16,
+          "Avg_Night": 56.24,
+          "Zone_Category": "Moderate"
         },
         {
           "Year": 2022,
-          "Avg_Day": 67.0,
-          "Avg_Night": 55.7,
-          "Zone_Category": "High"
+          "Avg_Day": 66.62,
+          "Avg_Night": 57.42,
+          "Zone_Category": "Moderate"
         },
         {
           "Year": 2023,
-          "Avg_Day": 67.35,
-          "Avg_Night": 55.96,
-          "Zone_Category": "High"
+          "Avg_Day": 67.43,
+          "Avg_Night": 57.95,
+          "Zone_Category": "Moderate"
         },
         {
           "Year": 2024,
-          "Avg_Day": 67.72,
-          "Avg_Night": 56.38,
-          "Zone_Category": "High"
+          "Avg_Day": 68.32,
+          "Avg_Night": 58.73,
+          "Zone_Category": "Moderate"
         }
-      ],
-      "Avg_Excess_Day": 11.51,
-      "DPCC_Std_Day": 55
+      ]
     },
     {
       "Location": "Rohini",
       "City": "Delhi",
-      "Latitude": 28.716209,
-      "Longitude": 77.117074,
+      "Latitude": 28.732,
+      "Longitude": 77.11,
       "Zone_Type": "Commercial",
       "Avg_Day": 67.92,
       "Avg_Night": 58.5,
+      "Avg_Excess_Day": 2.92,
+      "DPCC_Std_Day": 65,
       "Zone_Category": "Moderate",
       "Yearly": [
         {
@@ -1712,326 +350,194 @@
           "Avg_Night": 60.17,
           "Zone_Category": "High"
         }
-      ],
-      "Avg_Excess_Day": 2.92,
-      "DPCC_Std_Day": 65
+      ]
     },
     {
-      "Location": "Sarita Vihar",
+      "Location": "Mangol Puri",
       "City": "Delhi",
-      "Latitude": 28.533479,
-      "Longitude": 77.293523,
+      "Latitude": 28.705,
+      "Longitude": 77.13,
       "Zone_Type": "Commercial",
-      "Avg_Day": 66.14,
-      "Avg_Night": 57.02,
+      "Avg_Day": 66.56,
+      "Avg_Night": 56.82,
+      "Avg_Excess_Day": 1.56,
+      "DPCC_Std_Day": 65,
       "Zone_Category": "Moderate",
       "Yearly": [
         {
           "Year": 2020,
-          "Avg_Day": 63.15,
-          "Avg_Night": 54.76,
+          "Avg_Day": 63.52,
+          "Avg_Night": 54.61,
           "Zone_Category": "Low"
         },
         {
           "Year": 2021,
-          "Avg_Day": 65.16,
-          "Avg_Night": 56.24,
+          "Avg_Day": 65.65,
+          "Avg_Night": 56.0,
           "Zone_Category": "Moderate"
         },
         {
           "Year": 2022,
-          "Avg_Day": 66.62,
-          "Avg_Night": 57.42,
+          "Avg_Day": 67.12,
+          "Avg_Night": 57.19,
           "Zone_Category": "Moderate"
         },
         {
           "Year": 2023,
-          "Avg_Day": 67.43,
-          "Avg_Night": 57.95,
+          "Avg_Day": 67.82,
+          "Avg_Night": 57.85,
           "Zone_Category": "Moderate"
         },
         {
           "Year": 2024,
-          "Avg_Day": 68.32,
-          "Avg_Night": 58.73,
+          "Avg_Day": 68.69,
+          "Avg_Night": 58.44,
           "Zone_Category": "Moderate"
         }
-      ],
-      "Avg_Excess_Day": 1.14,
-      "DPCC_Std_Day": 65
+      ]
     },
     {
-      "Location": "Shalimar Bagh",
+      "Location": "Lawrence Road",
       "City": "Delhi",
-      "Latitude": 28.701957,
-      "Longitude": 77.165432,
-      "Zone_Type": "Residential",
-      "Avg_Day": 66.91,
-      "Avg_Night": 55.57,
-      "Zone_Category": "High",
+      "Latitude": 28.68,
+      "Longitude": 77.13,
+      "Zone_Type": "Industrial",
+      "Avg_Day": 73.01,
+      "Avg_Night": 69.4,
+      "Avg_Excess_Day": -1.99,
+      "DPCC_Std_Day": 75,
+      "Zone_Category": "Low",
       "Yearly": [
         {
           "Year": 2020,
-          "Avg_Day": 65.01,
-          "Avg_Night": 54.02,
-          "Zone_Category": "High"
+          "Avg_Day": 70.88,
+          "Avg_Night": 67.37,
+          "Zone_Category": "Low"
         },
         {
           "Year": 2021,
-          "Avg_Day": 66.29,
-          "Avg_Night": 55.22,
-          "Zone_Category": "High"
+          "Avg_Day": 72.33,
+          "Avg_Night": 68.82,
+          "Zone_Category": "Low"
         },
         {
           "Year": 2022,
-          "Avg_Day": 67.24,
-          "Avg_Night": 55.94,
-          "Zone_Category": "High"
+          "Avg_Day": 73.41,
+          "Avg_Night": 69.8,
+          "Zone_Category": "Low"
         },
         {
           "Year": 2023,
-          "Avg_Day": 67.75,
-          "Avg_Night": 56.2,
-          "Zone_Category": "High"
+          "Avg_Day": 73.97,
+          "Avg_Night": 70.32,
+          "Zone_Category": "Moderate"
         },
         {
           "Year": 2024,
-          "Avg_Day": 68.27,
-          "Avg_Night": 56.47,
-          "Zone_Category": "High"
+          "Avg_Day": 74.46,
+          "Avg_Night": 70.71,
+          "Zone_Category": "Moderate"
         }
-      ],
-      "Avg_Excess_Day": 11.91,
-      "DPCC_Std_Day": 55
+      ]
     },
     {
-      "Location": "Shanti Vihar",
+      "Location": "Badli",
       "City": "Delhi",
-      "Latitude": 28.651676,
-      "Longitude": 77.300215,
-      "Zone_Type": "Residential",
-      "Avg_Day": 65.11,
-      "Avg_Night": 53.84,
-      "Zone_Category": "High",
+      "Latitude": 28.7353,
+      "Longitude": 77.1331,
+      "Zone_Type": "Industrial",
+      "Avg_Day": 72.35,
+      "Avg_Night": 69.02,
+      "Avg_Excess_Day": -2.65,
+      "DPCC_Std_Day": 75,
+      "Zone_Category": "Low",
       "Yearly": [
         {
           "Year": 2020,
-          "Avg_Day": 63.12,
-          "Avg_Night": 52.29,
-          "Zone_Category": "High"
+          "Avg_Day": 70.03,
+          "Avg_Night": 67.11,
+          "Zone_Category": "Low"
         },
         {
           "Year": 2021,
-          "Avg_Day": 64.54,
-          "Avg_Night": 53.46,
-          "Zone_Category": "High"
+          "Avg_Day": 71.56,
+          "Avg_Night": 68.46,
+          "Zone_Category": "Low"
         },
         {
           "Year": 2022,
-          "Avg_Day": 65.47,
-          "Avg_Night": 54.13,
-          "Zone_Category": "High"
+          "Avg_Day": 72.8,
+          "Avg_Night": 69.38,
+          "Zone_Category": "Low"
         },
         {
           "Year": 2023,
-          "Avg_Day": 65.97,
-          "Avg_Night": 54.44,
-          "Zone_Category": "High"
+          "Avg_Day": 73.36,
+          "Avg_Night": 69.83,
+          "Zone_Category": "Low"
         },
         {
           "Year": 2024,
-          "Avg_Day": 66.43,
-          "Avg_Night": 54.86,
-          "Zone_Category": "High"
+          "Avg_Day": 73.99,
+          "Avg_Night": 70.31,
+          "Zone_Category": "Moderate"
         }
-      ],
-      "Avg_Excess_Day": 10.11,
-      "DPCC_Std_Day": 55
+      ]
     },
     {
-      "Location": "Sowcarpet",
-      "City": "Chennai",
-      "Latitude": 13.088497,
-      "Longitude": 80.278309,
-      "Zone_Type": "Residential",
-      "Avg_Day": 70.73,
-      "Avg_Night": 60.14,
-      "Zone_Category": "High",
-      "Yearly": [
-        {
-          "Year": 2020,
-          "Avg_Day": 67.07,
-          "Avg_Night": 57.57,
-          "Zone_Category": "High"
-        },
-        {
-          "Year": 2021,
-          "Avg_Day": 69.33,
-          "Avg_Night": 59.07,
-          "Zone_Category": "High"
-        },
-        {
-          "Year": 2022,
-          "Avg_Day": 71.97,
-          "Avg_Night": 60.94,
-          "Zone_Category": "High"
-        },
-        {
-          "Year": 2023,
-          "Avg_Day": 72.27,
-          "Avg_Night": 61.46,
-          "Zone_Category": "High"
-        },
-        {
-          "Year": 2024,
-          "Avg_Day": 73.0,
-          "Avg_Night": 61.65,
-          "Zone_Category": "High"
-        }
-      ],
-      "Avg_Excess_Day": 0.0,
-      "DPCC_Std_Day": 0
-    },
-    {
-      "Location": "T Nagar",
-      "City": "Chennai",
-      "Latitude": 13.034405,
-      "Longitude": 80.23016,
-      "Zone_Type": "Commercial",
-      "Avg_Day": 79.71,
-      "Avg_Night": 69.94,
-      "Zone_Category": "Critical",
-      "Yearly": [
-        {
-          "Year": 2020,
-          "Avg_Day": 73.7,
-          "Avg_Night": 65.61,
-          "Zone_Category": "High"
-        },
-        {
-          "Year": 2021,
-          "Avg_Day": 77.61,
-          "Avg_Night": 67.88,
-          "Zone_Category": "Critical"
-        },
-        {
-          "Year": 2022,
-          "Avg_Day": 81.47,
-          "Avg_Night": 71.41,
-          "Zone_Category": "Critical"
-        },
-        {
-          "Year": 2023,
-          "Avg_Day": 82.52,
-          "Avg_Night": 72.14,
-          "Zone_Category": "Critical"
-        },
-        {
-          "Year": 2024,
-          "Avg_Day": 83.25,
-          "Avg_Night": 72.68,
-          "Zone_Category": "Critical"
-        }
-      ],
-      "Avg_Excess_Day": 0.0,
-      "DPCC_Std_Day": 0
-    },
-    {
-      "Location": "Tilak Nagar",
+      "Location": "Braham Puri",
       "City": "Delhi",
-      "Latitude": 28.636526,
-      "Longitude": 77.096482,
-      "Zone_Type": "Residential",
-      "Avg_Day": 65.94,
-      "Avg_Night": 54.59,
-      "Zone_Category": "High",
+      "Latitude": 28.675,
+      "Longitude": 77.27,
+      "Zone_Type": "Industrial",
+      "Avg_Day": 71.77,
+      "Avg_Night": 68.21,
+      "Avg_Excess_Day": -3.23,
+      "DPCC_Std_Day": 75,
+      "Zone_Category": "Low",
       "Yearly": [
         {
           "Year": 2020,
-          "Avg_Day": 63.94,
-          "Avg_Night": 53.04,
-          "Zone_Category": "High"
+          "Avg_Day": 69.54,
+          "Avg_Night": 66.26,
+          "Zone_Category": "Low"
         },
         {
           "Year": 2021,
-          "Avg_Day": 65.37,
-          "Avg_Night": 54.29,
-          "Zone_Category": "High"
-        },
-        {
-          "Year": 2022,
-          "Avg_Day": 66.39,
-          "Avg_Night": 54.85,
-          "Zone_Category": "High"
-        },
-        {
-          "Year": 2023,
-          "Avg_Day": 66.7,
-          "Avg_Night": 55.22,
-          "Zone_Category": "High"
-        },
-        {
-          "Year": 2024,
-          "Avg_Day": 67.33,
-          "Avg_Night": 55.56,
-          "Zone_Category": "High"
-        }
-      ],
-      "Avg_Excess_Day": 10.94,
-      "DPCC_Std_Day": 55
-    },
-    {
-      "Location": "Triplicane",
-      "City": "Chennai",
-      "Latitude": 13.060429,
-      "Longitude": 80.27507,
-      "Zone_Type": "Residential",
-      "Avg_Day": 74.13,
-      "Avg_Night": 62.69,
-      "Zone_Category": "High",
-      "Yearly": [
-        {
-          "Year": 2020,
           "Avg_Day": 70.86,
-          "Avg_Night": 60.08,
-          "Zone_Category": "High"
-        },
-        {
-          "Year": 2021,
-          "Avg_Day": 72.41,
-          "Avg_Night": 61.79,
-          "Zone_Category": "High"
+          "Avg_Night": 67.53,
+          "Zone_Category": "Low"
         },
         {
           "Year": 2022,
-          "Avg_Day": 75.3,
-          "Avg_Night": 63.53,
-          "Zone_Category": "High"
+          "Avg_Day": 72.23,
+          "Avg_Night": 68.64,
+          "Zone_Category": "Low"
         },
         {
           "Year": 2023,
-          "Avg_Day": 75.49,
-          "Avg_Night": 63.84,
-          "Zone_Category": "High"
+          "Avg_Day": 72.8,
+          "Avg_Night": 69.09,
+          "Zone_Category": "Low"
         },
         {
           "Year": 2024,
-          "Avg_Day": 76.61,
-          "Avg_Night": 64.23,
-          "Zone_Category": "High"
+          "Avg_Day": 73.44,
+          "Avg_Night": 69.52,
+          "Zone_Category": "Low"
         }
-      ],
-      "Avg_Excess_Day": 0.0,
-      "DPCC_Std_Day": 0
+      ]
     },
     {
       "Location": "Tughlakabad",
       "City": "Delhi",
-      "Latitude": 28.502543,
-      "Longitude": 77.299382,
+      "Latitude": 28.5147,
+      "Longitude": 77.253,
       "Zone_Type": "Industrial",
       "Avg_Day": 71.2,
       "Avg_Night": 67.62,
+      "Avg_Excess_Day": -3.8,
+      "DPCC_Std_Day": 75,
       "Zone_Category": "Low",
       "Yearly": [
         {
@@ -2064,18 +570,1162 @@
           "Avg_Night": 68.89,
           "Zone_Category": "Low"
         }
-      ],
-      "Avg_Excess_Day": -3.8,
-      "DPCC_Std_Day": 75
+      ]
+    },
+    {
+      "Location": "Adarsh Nagar",
+      "City": "Delhi",
+      "Latitude": 28.7165,
+      "Longitude": 77.1709,
+      "Zone_Type": "Residential",
+      "Avg_Day": 67.93,
+      "Avg_Night": 56.62,
+      "Avg_Excess_Day": 12.93,
+      "DPCC_Std_Day": 55,
+      "Zone_Category": "High",
+      "Yearly": [
+        {
+          "Year": 2020,
+          "Avg_Day": 65.86,
+          "Avg_Night": 55.0,
+          "Zone_Category": "High"
+        },
+        {
+          "Year": 2021,
+          "Avg_Day": 67.28,
+          "Avg_Night": 56.22,
+          "Zone_Category": "High"
+        },
+        {
+          "Year": 2022,
+          "Avg_Day": 68.43,
+          "Avg_Night": 56.95,
+          "Zone_Category": "High"
+        },
+        {
+          "Year": 2023,
+          "Avg_Day": 68.78,
+          "Avg_Night": 57.31,
+          "Zone_Category": "High"
+        },
+        {
+          "Year": 2024,
+          "Avg_Day": 69.31,
+          "Avg_Night": 57.64,
+          "Zone_Category": "High"
+        }
+      ]
+    },
+    {
+      "Location": "Ashok Vihar",
+      "City": "Delhi",
+      "Latitude": 28.6957,
+      "Longitude": 77.177,
+      "Zone_Type": "Residential",
+      "Avg_Day": 67.13,
+      "Avg_Night": 55.83,
+      "Avg_Excess_Day": 12.13,
+      "DPCC_Std_Day": 55,
+      "Zone_Category": "High",
+      "Yearly": [
+        {
+          "Year": 2020,
+          "Avg_Day": 65.16,
+          "Avg_Night": 54.26,
+          "Zone_Category": "High"
+        },
+        {
+          "Year": 2021,
+          "Avg_Day": 66.56,
+          "Avg_Night": 55.47,
+          "Zone_Category": "High"
+        },
+        {
+          "Year": 2022,
+          "Avg_Day": 67.52,
+          "Avg_Night": 56.18,
+          "Zone_Category": "High"
+        },
+        {
+          "Year": 2023,
+          "Avg_Day": 68.04,
+          "Avg_Night": 56.43,
+          "Zone_Category": "High"
+        },
+        {
+          "Year": 2024,
+          "Avg_Day": 68.36,
+          "Avg_Night": 56.79,
+          "Zone_Category": "High"
+        }
+      ]
+    },
+    {
+      "Location": "Defence Colony",
+      "City": "Delhi",
+      "Latitude": 28.5744,
+      "Longitude": 77.2337,
+      "Zone_Type": "Residential",
+      "Avg_Day": 64.52,
+      "Avg_Night": 53.4,
+      "Avg_Excess_Day": 9.52,
+      "DPCC_Std_Day": 55,
+      "Zone_Category": "High",
+      "Yearly": [
+        {
+          "Year": 2020,
+          "Avg_Day": 62.48,
+          "Avg_Night": 51.75,
+          "Zone_Category": "High"
+        },
+        {
+          "Year": 2021,
+          "Avg_Day": 63.95,
+          "Avg_Night": 53.0,
+          "Zone_Category": "High"
+        },
+        {
+          "Year": 2022,
+          "Avg_Day": 65.01,
+          "Avg_Night": 53.72,
+          "Zone_Category": "High"
+        },
+        {
+          "Year": 2023,
+          "Avg_Day": 65.3,
+          "Avg_Night": 54.06,
+          "Zone_Category": "High"
+        },
+        {
+          "Year": 2024,
+          "Avg_Day": 65.83,
+          "Avg_Night": 54.45,
+          "Zone_Category": "High"
+        }
+      ]
+    },
+    {
+      "Location": "Dwaraka",
+      "City": "Delhi",
+      "Latitude": 28.5921,
+      "Longitude": 77.046,
+      "Zone_Type": "Residential",
+      "Avg_Day": 65.14,
+      "Avg_Night": 53.8,
+      "Avg_Excess_Day": 10.14,
+      "DPCC_Std_Day": 55,
+      "Zone_Category": "High",
+      "Yearly": [
+        {
+          "Year": 2020,
+          "Avg_Day": 63.17,
+          "Avg_Night": 52.22,
+          "Zone_Category": "High"
+        },
+        {
+          "Year": 2021,
+          "Avg_Day": 64.53,
+          "Avg_Night": 53.51,
+          "Zone_Category": "High"
+        },
+        {
+          "Year": 2022,
+          "Avg_Day": 65.59,
+          "Avg_Night": 54.13,
+          "Zone_Category": "High"
+        },
+        {
+          "Year": 2023,
+          "Avg_Day": 65.9,
+          "Avg_Night": 54.39,
+          "Zone_Category": "High"
+        },
+        {
+          "Year": 2024,
+          "Avg_Day": 66.53,
+          "Avg_Night": 54.76,
+          "Zone_Category": "High"
+        }
+      ]
+    },
+    {
+      "Location": "Greater Kailash",
+      "City": "Delhi",
+      "Latitude": 28.542,
+      "Longitude": 77.24,
+      "Zone_Type": "Residential",
+      "Avg_Day": 63.9,
+      "Avg_Night": 52.61,
+      "Avg_Excess_Day": 8.9,
+      "DPCC_Std_Day": 55,
+      "Zone_Category": "High",
+      "Yearly": [
+        {
+          "Year": 2020,
+          "Avg_Day": 61.91,
+          "Avg_Night": 51.01,
+          "Zone_Category": "High"
+        },
+        {
+          "Year": 2021,
+          "Avg_Day": 63.31,
+          "Avg_Night": 52.2,
+          "Zone_Category": "High"
+        },
+        {
+          "Year": 2022,
+          "Avg_Day": 64.3,
+          "Avg_Night": 52.97,
+          "Zone_Category": "High"
+        },
+        {
+          "Year": 2023,
+          "Avg_Day": 64.77,
+          "Avg_Night": 53.22,
+          "Zone_Category": "High"
+        },
+        {
+          "Year": 2024,
+          "Avg_Day": 65.19,
+          "Avg_Night": 53.63,
+          "Zone_Category": "High"
+        }
+      ]
+    },
+    {
+      "Location": "Inder Puri",
+      "City": "Delhi",
+      "Latitude": 28.596,
+      "Longitude": 77.177,
+      "Zone_Type": "Residential",
+      "Avg_Day": 66.51,
+      "Avg_Night": 55.41,
+      "Avg_Excess_Day": 11.51,
+      "DPCC_Std_Day": 55,
+      "Zone_Category": "High",
+      "Yearly": [
+        {
+          "Year": 2020,
+          "Avg_Day": 64.55,
+          "Avg_Night": 53.87,
+          "Zone_Category": "High"
+        },
+        {
+          "Year": 2021,
+          "Avg_Day": 65.95,
+          "Avg_Night": 55.02,
+          "Zone_Category": "High"
+        },
+        {
+          "Year": 2022,
+          "Avg_Day": 66.94,
+          "Avg_Night": 55.75,
+          "Zone_Category": "High"
+        },
+        {
+          "Year": 2023,
+          "Avg_Day": 67.28,
+          "Avg_Night": 56.05,
+          "Zone_Category": "High"
+        },
+        {
+          "Year": 2024,
+          "Avg_Day": 67.82,
+          "Avg_Night": 56.39,
+          "Zone_Category": "High"
+        }
+      ]
+    },
+    {
+      "Location": "Janak Puri",
+      "City": "Delhi",
+      "Latitude": 28.6219,
+      "Longitude": 77.0815,
+      "Zone_Type": "Residential",
+      "Avg_Day": 66.13,
+      "Avg_Night": 54.81,
+      "Avg_Excess_Day": 11.13,
+      "DPCC_Std_Day": 55,
+      "Zone_Category": "High",
+      "Yearly": [
+        {
+          "Year": 2020,
+          "Avg_Day": 64.2,
+          "Avg_Night": 53.21,
+          "Zone_Category": "High"
+        },
+        {
+          "Year": 2021,
+          "Avg_Day": 65.64,
+          "Avg_Night": 54.54,
+          "Zone_Category": "High"
+        },
+        {
+          "Year": 2022,
+          "Avg_Day": 66.57,
+          "Avg_Night": 55.13,
+          "Zone_Category": "High"
+        },
+        {
+          "Year": 2023,
+          "Avg_Day": 66.88,
+          "Avg_Night": 55.44,
+          "Zone_Category": "High"
+        },
+        {
+          "Year": 2024,
+          "Avg_Day": 67.36,
+          "Avg_Night": 55.71,
+          "Zone_Category": "High"
+        }
+      ]
+    },
+    {
+      "Location": "Kondli",
+      "City": "Delhi",
+      "Latitude": 28.62,
+      "Longitude": 77.35,
+      "Zone_Type": "Residential",
+      "Avg_Day": 65.55,
+      "Avg_Night": 54.41,
+      "Avg_Excess_Day": 10.55,
+      "DPCC_Std_Day": 55,
+      "Zone_Category": "High",
+      "Yearly": [
+        {
+          "Year": 2020,
+          "Avg_Day": 63.61,
+          "Avg_Night": 52.85,
+          "Zone_Category": "High"
+        },
+        {
+          "Year": 2021,
+          "Avg_Day": 64.97,
+          "Avg_Night": 54.02,
+          "Zone_Category": "High"
+        },
+        {
+          "Year": 2022,
+          "Avg_Day": 65.98,
+          "Avg_Night": 54.76,
+          "Zone_Category": "High"
+        },
+        {
+          "Year": 2023,
+          "Avg_Day": 66.29,
+          "Avg_Night": 55.06,
+          "Zone_Category": "High"
+        },
+        {
+          "Year": 2024,
+          "Avg_Day": 66.9,
+          "Avg_Night": 55.37,
+          "Zone_Category": "High"
+        }
+      ]
+    },
+    {
+      "Location": "Mandavali",
+      "City": "Delhi",
+      "Latitude": 28.6364,
+      "Longitude": 77.2953,
+      "Zone_Type": "Residential",
+      "Avg_Day": 65.17,
+      "Avg_Night": 53.81,
+      "Avg_Excess_Day": 10.17,
+      "DPCC_Std_Day": 55,
+      "Zone_Category": "High",
+      "Yearly": [
+        {
+          "Year": 2020,
+          "Avg_Day": 63.23,
+          "Avg_Night": 52.22,
+          "Zone_Category": "High"
+        },
+        {
+          "Year": 2021,
+          "Avg_Day": 64.46,
+          "Avg_Night": 53.46,
+          "Zone_Category": "High"
+        },
+        {
+          "Year": 2022,
+          "Avg_Day": 65.67,
+          "Avg_Night": 54.12,
+          "Zone_Category": "High"
+        },
+        {
+          "Year": 2023,
+          "Avg_Day": 65.95,
+          "Avg_Night": 54.34,
+          "Zone_Category": "High"
+        },
+        {
+          "Year": 2024,
+          "Avg_Day": 66.52,
+          "Avg_Night": 54.92,
+          "Zone_Category": "High"
+        }
+      ]
+    },
+    {
+      "Location": "Meera Bagh",
+      "City": "Delhi",
+      "Latitude": 28.67,
+      "Longitude": 77.11,
+      "Zone_Type": "Residential",
+      "Avg_Day": 65.98,
+      "Avg_Night": 54.61,
+      "Avg_Excess_Day": 10.98,
+      "DPCC_Std_Day": 55,
+      "Zone_Category": "High",
+      "Yearly": [
+        {
+          "Year": 2020,
+          "Avg_Day": 63.9,
+          "Avg_Night": 53.03,
+          "Zone_Category": "High"
+        },
+        {
+          "Year": 2021,
+          "Avg_Day": 65.4,
+          "Avg_Night": 54.11,
+          "Zone_Category": "High"
+        },
+        {
+          "Year": 2022,
+          "Avg_Day": 66.43,
+          "Avg_Night": 55.05,
+          "Zone_Category": "High"
+        },
+        {
+          "Year": 2023,
+          "Avg_Day": 66.92,
+          "Avg_Night": 55.21,
+          "Zone_Category": "High"
+        },
+        {
+          "Year": 2024,
+          "Avg_Day": 67.26,
+          "Avg_Night": 55.64,
+          "Zone_Category": "High"
+        }
+      ]
+    },
+    {
+      "Location": "Mehrauli",
+      "City": "Delhi",
+      "Latitude": 28.515,
+      "Longitude": 77.18,
+      "Zone_Type": "Residential",
+      "Avg_Day": 64.56,
+      "Avg_Night": 53.14,
+      "Avg_Excess_Day": 9.56,
+      "DPCC_Std_Day": 55,
+      "Zone_Category": "High",
+      "Yearly": [
+        {
+          "Year": 2020,
+          "Avg_Day": 62.55,
+          "Avg_Night": 51.54,
+          "Zone_Category": "High"
+        },
+        {
+          "Year": 2021,
+          "Avg_Day": 63.94,
+          "Avg_Night": 52.71,
+          "Zone_Category": "High"
+        },
+        {
+          "Year": 2022,
+          "Avg_Day": 65.07,
+          "Avg_Night": 53.48,
+          "Zone_Category": "High"
+        },
+        {
+          "Year": 2023,
+          "Avg_Day": 65.48,
+          "Avg_Night": 53.76,
+          "Zone_Category": "High"
+        },
+        {
+          "Year": 2024,
+          "Avg_Day": 65.76,
+          "Avg_Night": 54.21,
+          "Zone_Category": "High"
+        }
+      ]
+    },
+    {
+      "Location": "Moti Bagh",
+      "City": "Delhi",
+      "Latitude": 28.58,
+      "Longitude": 77.17,
+      "Zone_Type": "Residential",
+      "Avg_Day": 65.3,
+      "Avg_Night": 54.23,
+      "Avg_Excess_Day": 10.3,
+      "DPCC_Std_Day": 55,
+      "Zone_Category": "High",
+      "Yearly": [
+        {
+          "Year": 2020,
+          "Avg_Day": 63.19,
+          "Avg_Night": 52.68,
+          "Zone_Category": "High"
+        },
+        {
+          "Year": 2021,
+          "Avg_Day": 64.68,
+          "Avg_Night": 53.93,
+          "Zone_Category": "High"
+        },
+        {
+          "Year": 2022,
+          "Avg_Day": 65.83,
+          "Avg_Night": 54.46,
+          "Zone_Category": "High"
+        },
+        {
+          "Year": 2023,
+          "Avg_Day": 66.11,
+          "Avg_Night": 54.85,
+          "Zone_Category": "High"
+        },
+        {
+          "Year": 2024,
+          "Avg_Day": 66.68,
+          "Avg_Night": 55.24,
+          "Zone_Category": "High"
+        }
+      ]
+    },
+    {
+      "Location": "Moti Nagar",
+      "City": "Delhi",
+      "Latitude": 28.6531,
+      "Longitude": 77.1453,
+      "Zone_Type": "Residential",
+      "Avg_Day": 65.68,
+      "Avg_Night": 54.61,
+      "Avg_Excess_Day": 10.68,
+      "DPCC_Std_Day": 55,
+      "Zone_Category": "High",
+      "Yearly": [
+        {
+          "Year": 2020,
+          "Avg_Day": 63.69,
+          "Avg_Night": 52.97,
+          "Zone_Category": "High"
+        },
+        {
+          "Year": 2021,
+          "Avg_Day": 65.08,
+          "Avg_Night": 54.16,
+          "Zone_Category": "High"
+        },
+        {
+          "Year": 2022,
+          "Avg_Day": 66.12,
+          "Avg_Night": 54.92,
+          "Zone_Category": "High"
+        },
+        {
+          "Year": 2023,
+          "Avg_Day": 66.45,
+          "Avg_Night": 55.33,
+          "Zone_Category": "High"
+        },
+        {
+          "Year": 2024,
+          "Avg_Day": 67.06,
+          "Avg_Night": 55.65,
+          "Zone_Category": "High"
+        }
+      ]
+    },
+    {
+      "Location": "Mukherji Nagar",
+      "City": "Delhi",
+      "Latitude": 28.7073,
+      "Longitude": 77.21,
+      "Zone_Type": "Residential",
+      "Avg_Day": 66.89,
+      "Avg_Night": 55.6,
+      "Avg_Excess_Day": 11.89,
+      "DPCC_Std_Day": 55,
+      "Zone_Category": "High",
+      "Yearly": [
+        {
+          "Year": 2020,
+          "Avg_Day": 64.93,
+          "Avg_Night": 53.99,
+          "Zone_Category": "High"
+        },
+        {
+          "Year": 2021,
+          "Avg_Day": 66.23,
+          "Avg_Night": 55.13,
+          "Zone_Category": "High"
+        },
+        {
+          "Year": 2022,
+          "Avg_Day": 67.24,
+          "Avg_Night": 56.0,
+          "Zone_Category": "High"
+        },
+        {
+          "Year": 2023,
+          "Avg_Day": 67.85,
+          "Avg_Night": 56.22,
+          "Zone_Category": "High"
+        },
+        {
+          "Year": 2024,
+          "Avg_Day": 68.19,
+          "Avg_Night": 56.64,
+          "Zone_Category": "High"
+        }
+      ]
+    },
+    {
+      "Location": "Nand Nagri",
+      "City": "Delhi",
+      "Latitude": 28.6944,
+      "Longitude": 77.3112,
+      "Zone_Type": "Residential",
+      "Avg_Day": 66.15,
+      "Avg_Night": 54.83,
+      "Avg_Excess_Day": 11.15,
+      "DPCC_Std_Day": 55,
+      "Zone_Category": "High",
+      "Yearly": [
+        {
+          "Year": 2020,
+          "Avg_Day": 64.15,
+          "Avg_Night": 53.31,
+          "Zone_Category": "High"
+        },
+        {
+          "Year": 2021,
+          "Avg_Day": 65.48,
+          "Avg_Night": 54.52,
+          "Zone_Category": "High"
+        },
+        {
+          "Year": 2022,
+          "Avg_Day": 66.64,
+          "Avg_Night": 55.06,
+          "Zone_Category": "High"
+        },
+        {
+          "Year": 2023,
+          "Avg_Day": 67.07,
+          "Avg_Night": 55.39,
+          "Zone_Category": "High"
+        },
+        {
+          "Year": 2024,
+          "Avg_Day": 67.42,
+          "Avg_Night": 55.85,
+          "Zone_Category": "High"
+        }
+      ]
+    },
+    {
+      "Location": "Naraouji Nagar",
+      "City": "Delhi",
+      "Latitude": 28.59,
+      "Longitude": 77.18,
+      "Zone_Type": "Residential",
+      "Avg_Day": 64.97,
+      "Avg_Night": 53.59,
+      "Avg_Excess_Day": 9.97,
+      "DPCC_Std_Day": 55,
+      "Zone_Category": "High",
+      "Yearly": [
+        {
+          "Year": 2020,
+          "Avg_Day": 62.93,
+          "Avg_Night": 52.01,
+          "Zone_Category": "High"
+        },
+        {
+          "Year": 2021,
+          "Avg_Day": 64.49,
+          "Avg_Night": 53.16,
+          "Zone_Category": "High"
+        },
+        {
+          "Year": 2022,
+          "Avg_Day": 65.34,
+          "Avg_Night": 54.01,
+          "Zone_Category": "High"
+        },
+        {
+          "Year": 2023,
+          "Avg_Day": 65.74,
+          "Avg_Night": 54.2,
+          "Zone_Category": "High"
+        },
+        {
+          "Year": 2024,
+          "Avg_Day": 66.33,
+          "Avg_Night": 54.56,
+          "Zone_Category": "High"
+        }
+      ]
+    },
+    {
+      "Location": "New Friends Colony",
+      "City": "Delhi",
+      "Latitude": 28.5636,
+      "Longitude": 77.2634,
+      "Zone_Type": "Residential",
+      "Avg_Day": 64.19,
+      "Avg_Night": 52.77,
+      "Avg_Excess_Day": 9.19,
+      "DPCC_Std_Day": 55,
+      "Zone_Category": "High",
+      "Yearly": [
+        {
+          "Year": 2020,
+          "Avg_Day": 62.19,
+          "Avg_Night": 51.15,
+          "Zone_Category": "High"
+        },
+        {
+          "Year": 2021,
+          "Avg_Day": 63.62,
+          "Avg_Night": 52.32,
+          "Zone_Category": "High"
+        },
+        {
+          "Year": 2022,
+          "Avg_Day": 64.64,
+          "Avg_Night": 53.13,
+          "Zone_Category": "High"
+        },
+        {
+          "Year": 2023,
+          "Avg_Day": 64.9,
+          "Avg_Night": 53.51,
+          "Zone_Category": "High"
+        },
+        {
+          "Year": 2024,
+          "Avg_Day": 65.6,
+          "Avg_Night": 53.76,
+          "Zone_Category": "High"
+        }
+      ]
+    },
+    {
+      "Location": "Paschim Vihar",
+      "City": "Delhi",
+      "Latitude": 28.67,
+      "Longitude": 77.1,
+      "Zone_Type": "Residential",
+      "Avg_Day": 65.58,
+      "Avg_Night": 54.41,
+      "Avg_Excess_Day": 10.58,
+      "DPCC_Std_Day": 55,
+      "Zone_Category": "High",
+      "Yearly": [
+        {
+          "Year": 2020,
+          "Avg_Day": 63.5,
+          "Avg_Night": 52.84,
+          "Zone_Category": "High"
+        },
+        {
+          "Year": 2021,
+          "Avg_Day": 64.91,
+          "Avg_Night": 54.0,
+          "Zone_Category": "High"
+        },
+        {
+          "Year": 2022,
+          "Avg_Day": 66.06,
+          "Avg_Night": 54.71,
+          "Zone_Category": "High"
+        },
+        {
+          "Year": 2023,
+          "Avg_Day": 66.48,
+          "Avg_Night": 55.06,
+          "Zone_Category": "High"
+        },
+        {
+          "Year": 2024,
+          "Avg_Day": 66.92,
+          "Avg_Night": 55.43,
+          "Zone_Category": "High"
+        }
+      ]
+    },
+    {
+      "Location": "Patel Nagar",
+      "City": "Delhi",
+      "Latitude": 28.6508,
+      "Longitude": 77.1657,
+      "Zone_Type": "Residential",
+      "Avg_Day": 66.06,
+      "Avg_Night": 54.76,
+      "Avg_Excess_Day": 11.06,
+      "DPCC_Std_Day": 55,
+      "Zone_Category": "High",
+      "Yearly": [
+        {
+          "Year": 2020,
+          "Avg_Day": 64.08,
+          "Avg_Night": 53.18,
+          "Zone_Category": "High"
+        },
+        {
+          "Year": 2021,
+          "Avg_Day": 65.51,
+          "Avg_Night": 54.43,
+          "Zone_Category": "High"
+        },
+        {
+          "Year": 2022,
+          "Avg_Day": 66.47,
+          "Avg_Night": 55.04,
+          "Zone_Category": "High"
+        },
+        {
+          "Year": 2023,
+          "Avg_Day": 66.82,
+          "Avg_Night": 55.34,
+          "Zone_Category": "High"
+        },
+        {
+          "Year": 2024,
+          "Avg_Day": 67.42,
+          "Avg_Night": 55.8,
+          "Zone_Category": "High"
+        }
+      ]
+    },
+    {
+      "Location": "Prehladpur",
+      "City": "Delhi",
+      "Latitude": 28.54,
+      "Longitude": 77.3,
+      "Zone_Type": "Residential",
+      "Avg_Day": 64.36,
+      "Avg_Night": 53.17,
+      "Avg_Excess_Day": 9.36,
+      "DPCC_Std_Day": 55,
+      "Zone_Category": "High",
+      "Yearly": [
+        {
+          "Year": 2020,
+          "Avg_Day": 62.37,
+          "Avg_Night": 51.54,
+          "Zone_Category": "High"
+        },
+        {
+          "Year": 2021,
+          "Avg_Day": 63.6,
+          "Avg_Night": 52.84,
+          "Zone_Category": "High"
+        },
+        {
+          "Year": 2022,
+          "Avg_Day": 64.86,
+          "Avg_Night": 53.49,
+          "Zone_Category": "High"
+        },
+        {
+          "Year": 2023,
+          "Avg_Day": 65.22,
+          "Avg_Night": 53.84,
+          "Zone_Category": "High"
+        },
+        {
+          "Year": 2024,
+          "Avg_Day": 65.73,
+          "Avg_Night": 54.15,
+          "Zone_Category": "High"
+        }
+      ]
+    },
+    {
+      "Location": "R.K. Puram",
+      "City": "Delhi",
+      "Latitude": 28.57,
+      "Longitude": 77.17,
+      "Zone_Type": "Residential",
+      "Avg_Day": 64.91,
+      "Avg_Night": 53.59,
+      "Avg_Excess_Day": 9.91,
+      "DPCC_Std_Day": 55,
+      "Zone_Category": "High",
+      "Yearly": [
+        {
+          "Year": 2020,
+          "Avg_Day": 63.1,
+          "Avg_Night": 52.06,
+          "Zone_Category": "High"
+        },
+        {
+          "Year": 2021,
+          "Avg_Day": 64.18,
+          "Avg_Night": 53.17,
+          "Zone_Category": "High"
+        },
+        {
+          "Year": 2022,
+          "Avg_Day": 65.33,
+          "Avg_Night": 53.88,
+          "Zone_Category": "High"
+        },
+        {
+          "Year": 2023,
+          "Avg_Day": 65.7,
+          "Avg_Night": 54.24,
+          "Zone_Category": "High"
+        },
+        {
+          "Year": 2024,
+          "Avg_Day": 66.22,
+          "Avg_Night": 54.59,
+          "Zone_Category": "High"
+        }
+      ]
+    },
+    {
+      "Location": "Rajpura Road",
+      "City": "Delhi",
+      "Latitude": 28.71,
+      "Longitude": 77.23,
+      "Zone_Type": "Residential",
+      "Avg_Day": 66.37,
+      "Avg_Night": 55.16,
+      "Avg_Excess_Day": 11.37,
+      "DPCC_Std_Day": 55,
+      "Zone_Category": "High",
+      "Yearly": [
+        {
+          "Year": 2020,
+          "Avg_Day": 64.48,
+          "Avg_Night": 53.57,
+          "Zone_Category": "High"
+        },
+        {
+          "Year": 2021,
+          "Avg_Day": 65.82,
+          "Avg_Night": 54.77,
+          "Zone_Category": "High"
+        },
+        {
+          "Year": 2022,
+          "Avg_Day": 66.76,
+          "Avg_Night": 55.57,
+          "Zone_Category": "High"
+        },
+        {
+          "Year": 2023,
+          "Avg_Day": 67.13,
+          "Avg_Night": 55.76,
+          "Zone_Category": "High"
+        },
+        {
+          "Year": 2024,
+          "Avg_Day": 67.66,
+          "Avg_Night": 56.13,
+          "Zone_Category": "High"
+        }
+      ]
+    },
+    {
+      "Location": "Rana Pratap Bagh",
+      "City": "Delhi",
+      "Latitude": 28.69,
+      "Longitude": 77.2,
+      "Zone_Type": "Residential",
+      "Avg_Day": 66.51,
+      "Avg_Night": 55.36,
+      "Avg_Excess_Day": 11.51,
+      "DPCC_Std_Day": 55,
+      "Zone_Category": "High",
+      "Yearly": [
+        {
+          "Year": 2020,
+          "Avg_Day": 64.54,
+          "Avg_Night": 53.67,
+          "Zone_Category": "High"
+        },
+        {
+          "Year": 2021,
+          "Avg_Day": 65.91,
+          "Avg_Night": 55.07,
+          "Zone_Category": "High"
+        },
+        {
+          "Year": 2022,
+          "Avg_Day": 67.0,
+          "Avg_Night": 55.7,
+          "Zone_Category": "High"
+        },
+        {
+          "Year": 2023,
+          "Avg_Day": 67.35,
+          "Avg_Night": 55.96,
+          "Zone_Category": "High"
+        },
+        {
+          "Year": 2024,
+          "Avg_Day": 67.72,
+          "Avg_Night": 56.38,
+          "Zone_Category": "High"
+        }
+      ]
+    },
+    {
+      "Location": "Shalimar Bagh",
+      "City": "Delhi",
+      "Latitude": 28.7184,
+      "Longitude": 77.16,
+      "Zone_Type": "Residential",
+      "Avg_Day": 66.91,
+      "Avg_Night": 55.57,
+      "Avg_Excess_Day": 11.91,
+      "DPCC_Std_Day": 55,
+      "Zone_Category": "High",
+      "Yearly": [
+        {
+          "Year": 2020,
+          "Avg_Day": 65.01,
+          "Avg_Night": 54.02,
+          "Zone_Category": "High"
+        },
+        {
+          "Year": 2021,
+          "Avg_Day": 66.29,
+          "Avg_Night": 55.22,
+          "Zone_Category": "High"
+        },
+        {
+          "Year": 2022,
+          "Avg_Day": 67.24,
+          "Avg_Night": 55.94,
+          "Zone_Category": "High"
+        },
+        {
+          "Year": 2023,
+          "Avg_Day": 67.75,
+          "Avg_Night": 56.2,
+          "Zone_Category": "High"
+        },
+        {
+          "Year": 2024,
+          "Avg_Day": 68.27,
+          "Avg_Night": 56.47,
+          "Zone_Category": "High"
+        }
+      ]
+    },
+    {
+      "Location": "Shanti Vihar",
+      "City": "Delhi",
+      "Latitude": 28.61,
+      "Longitude": 77.31,
+      "Zone_Type": "Residential",
+      "Avg_Day": 65.11,
+      "Avg_Night": 53.84,
+      "Avg_Excess_Day": 10.11,
+      "DPCC_Std_Day": 55,
+      "Zone_Category": "High",
+      "Yearly": [
+        {
+          "Year": 2020,
+          "Avg_Day": 63.12,
+          "Avg_Night": 52.29,
+          "Zone_Category": "High"
+        },
+        {
+          "Year": 2021,
+          "Avg_Day": 64.54,
+          "Avg_Night": 53.46,
+          "Zone_Category": "High"
+        },
+        {
+          "Year": 2022,
+          "Avg_Day": 65.47,
+          "Avg_Night": 54.13,
+          "Zone_Category": "High"
+        },
+        {
+          "Year": 2023,
+          "Avg_Day": 65.97,
+          "Avg_Night": 54.44,
+          "Zone_Category": "High"
+        },
+        {
+          "Year": 2024,
+          "Avg_Day": 66.43,
+          "Avg_Night": 54.86,
+          "Zone_Category": "High"
+        }
+      ]
+    },
+    {
+      "Location": "Tilak Nagar",
+      "City": "Delhi",
+      "Latitude": 28.64,
+      "Longitude": 77.09,
+      "Zone_Type": "Residential",
+      "Avg_Day": 65.94,
+      "Avg_Night": 54.59,
+      "Avg_Excess_Day": 10.94,
+      "DPCC_Std_Day": 55,
+      "Zone_Category": "High",
+      "Yearly": [
+        {
+          "Year": 2020,
+          "Avg_Day": 63.94,
+          "Avg_Night": 53.04,
+          "Zone_Category": "High"
+        },
+        {
+          "Year": 2021,
+          "Avg_Day": 65.37,
+          "Avg_Night": 54.29,
+          "Zone_Category": "High"
+        },
+        {
+          "Year": 2022,
+          "Avg_Day": 66.39,
+          "Avg_Night": 54.85,
+          "Zone_Category": "High"
+        },
+        {
+          "Year": 2023,
+          "Avg_Day": 66.69,
+          "Avg_Night": 55.22,
+          "Zone_Category": "High"
+        },
+        {
+          "Year": 2024,
+          "Avg_Day": 67.33,
+          "Avg_Night": 55.56,
+          "Zone_Category": "High"
+        }
+      ]
     },
     {
       "Location": "Vasant Kunj",
       "City": "Delhi",
-      "Latitude": 28.529249,
-      "Longitude": 77.154134,
+      "Latitude": 28.521,
+      "Longitude": 77.157,
       "Zone_Type": "Residential",
       "Avg_Day": 63.52,
       "Avg_Night": 52.38,
+      "Avg_Excess_Day": 8.52,
+      "DPCC_Std_Day": 55,
       "Zone_Category": "High",
       "Yearly": [
         {
@@ -2108,18 +1758,282 @@
           "Avg_Night": 53.31,
           "Zone_Category": "High"
         }
-      ],
-      "Avg_Excess_Day": 8.52,
-      "DPCC_Std_Day": 55
+      ]
+    },
+    {
+      "Location": "Yamuna Vihar",
+      "City": "Delhi",
+      "Latitude": 28.697,
+      "Longitude": 77.272,
+      "Zone_Type": "Residential",
+      "Avg_Day": 67.13,
+      "Avg_Night": 55.99,
+      "Avg_Excess_Day": 12.13,
+      "DPCC_Std_Day": 55,
+      "Zone_Category": "High",
+      "Yearly": [
+        {
+          "Year": 2020,
+          "Avg_Day": 65.21,
+          "Avg_Night": 54.31,
+          "Zone_Category": "High"
+        },
+        {
+          "Year": 2021,
+          "Avg_Day": 66.56,
+          "Avg_Night": 55.58,
+          "Zone_Category": "High"
+        },
+        {
+          "Year": 2022,
+          "Avg_Day": 67.59,
+          "Avg_Night": 56.37,
+          "Zone_Category": "High"
+        },
+        {
+          "Year": 2023,
+          "Avg_Day": 67.83,
+          "Avg_Night": 56.67,
+          "Zone_Category": "High"
+        },
+        {
+          "Year": 2024,
+          "Avg_Day": 68.45,
+          "Avg_Night": 57.01,
+          "Zone_Category": "High"
+        }
+      ]
+    },
+    {
+      "Location": "Guindy",
+      "City": "Chennai",
+      "Latitude": 13.0067,
+      "Longitude": 80.2206,
+      "Zone_Type": "Industrial",
+      "Avg_Day": 71.44,
+      "Avg_Night": 64.98,
+      "Avg_Excess_Day": 0.0,
+      "DPCC_Std_Day": 0,
+      "Zone_Category": "High",
+      "Yearly": [
+        {
+          "Year": 2020,
+          "Avg_Day": 67.13,
+          "Avg_Night": 61.48,
+          "Zone_Category": "High"
+        },
+        {
+          "Year": 2021,
+          "Avg_Day": 69.45,
+          "Avg_Night": 63.53,
+          "Zone_Category": "High"
+        },
+        {
+          "Year": 2022,
+          "Avg_Day": 72.96,
+          "Avg_Night": 66.16,
+          "Zone_Category": "High"
+        },
+        {
+          "Year": 2023,
+          "Avg_Day": 73.53,
+          "Avg_Night": 66.57,
+          "Zone_Category": "High"
+        },
+        {
+          "Year": 2024,
+          "Avg_Day": 74.12,
+          "Avg_Night": 67.15,
+          "Zone_Category": "High"
+        }
+      ]
+    },
+    {
+      "Location": "Perambur",
+      "City": "Chennai",
+      "Latitude": 13.1116,
+      "Longitude": 80.2329,
+      "Zone_Type": "Commercial",
+      "Avg_Day": 77.92,
+      "Avg_Night": 67.57,
+      "Avg_Excess_Day": 0.0,
+      "DPCC_Std_Day": 0,
+      "Zone_Category": "Critical",
+      "Yearly": [
+        {
+          "Year": 2020,
+          "Avg_Day": 72.02,
+          "Avg_Night": 63.12,
+          "Zone_Category": "High"
+        },
+        {
+          "Year": 2021,
+          "Avg_Day": 75.73,
+          "Avg_Night": 65.69,
+          "Zone_Category": "High"
+        },
+        {
+          "Year": 2022,
+          "Avg_Day": 79.53,
+          "Avg_Night": 69.0,
+          "Zone_Category": "Critical"
+        },
+        {
+          "Year": 2023,
+          "Avg_Day": 80.72,
+          "Avg_Night": 69.78,
+          "Zone_Category": "Critical"
+        },
+        {
+          "Year": 2024,
+          "Avg_Day": 81.61,
+          "Avg_Night": 70.23,
+          "Zone_Category": "Critical"
+        }
+      ]
+    },
+    {
+      "Location": "T Nagar",
+      "City": "Chennai",
+      "Latitude": 13.0358,
+      "Longitude": 80.2333,
+      "Zone_Type": "Commercial",
+      "Avg_Day": 79.71,
+      "Avg_Night": 69.94,
+      "Avg_Excess_Day": 0.0,
+      "DPCC_Std_Day": 0,
+      "Zone_Category": "Critical",
+      "Yearly": [
+        {
+          "Year": 2020,
+          "Avg_Day": 73.7,
+          "Avg_Night": 65.61,
+          "Zone_Category": "High"
+        },
+        {
+          "Year": 2021,
+          "Avg_Day": 77.61,
+          "Avg_Night": 67.88,
+          "Zone_Category": "Critical"
+        },
+        {
+          "Year": 2022,
+          "Avg_Day": 81.47,
+          "Avg_Night": 71.41,
+          "Zone_Category": "Critical"
+        },
+        {
+          "Year": 2023,
+          "Avg_Day": 82.52,
+          "Avg_Night": 72.14,
+          "Zone_Category": "Critical"
+        },
+        {
+          "Year": 2024,
+          "Avg_Day": 83.25,
+          "Avg_Night": 72.68,
+          "Zone_Category": "Critical"
+        }
+      ]
+    },
+    {
+      "Location": "Triplicane",
+      "City": "Chennai",
+      "Latitude": 13.0569,
+      "Longitude": 80.2762,
+      "Zone_Type": "Residential",
+      "Avg_Day": 74.13,
+      "Avg_Night": 62.69,
+      "Avg_Excess_Day": 0.0,
+      "DPCC_Std_Day": 0,
+      "Zone_Category": "High",
+      "Yearly": [
+        {
+          "Year": 2020,
+          "Avg_Day": 70.86,
+          "Avg_Night": 60.08,
+          "Zone_Category": "High"
+        },
+        {
+          "Year": 2021,
+          "Avg_Day": 72.41,
+          "Avg_Night": 61.79,
+          "Zone_Category": "High"
+        },
+        {
+          "Year": 2022,
+          "Avg_Day": 75.3,
+          "Avg_Night": 63.53,
+          "Zone_Category": "High"
+        },
+        {
+          "Year": 2023,
+          "Avg_Day": 75.49,
+          "Avg_Night": 63.84,
+          "Zone_Category": "High"
+        },
+        {
+          "Year": 2024,
+          "Avg_Day": 76.61,
+          "Avg_Night": 64.23,
+          "Zone_Category": "High"
+        }
+      ]
+    },
+    {
+      "Location": "Pallikaranai",
+      "City": "Chennai",
+      "Latitude": 12.937,
+      "Longitude": 80.2131,
+      "Zone_Type": "Commercial",
+      "Avg_Day": 73.39,
+      "Avg_Night": 62.92,
+      "Avg_Excess_Day": 0.0,
+      "DPCC_Std_Day": 0,
+      "Zone_Category": "High",
+      "Yearly": [
+        {
+          "Year": 2020,
+          "Avg_Day": 67.55,
+          "Avg_Night": 58.58,
+          "Zone_Category": "High"
+        },
+        {
+          "Year": 2021,
+          "Avg_Day": 70.9,
+          "Avg_Night": 60.98,
+          "Zone_Category": "High"
+        },
+        {
+          "Year": 2022,
+          "Avg_Day": 75.15,
+          "Avg_Night": 64.19,
+          "Zone_Category": "High"
+        },
+        {
+          "Year": 2023,
+          "Avg_Day": 76.18,
+          "Avg_Night": 65.03,
+          "Zone_Category": "High"
+        },
+        {
+          "Year": 2024,
+          "Avg_Day": 77.19,
+          "Avg_Night": 65.83,
+          "Zone_Category": "High"
+        }
+      ]
     },
     {
       "Location": "Velachery",
       "City": "Chennai",
-      "Latitude": 12.980166,
-      "Longitude": 80.222851,
+      "Latitude": 12.9815,
+      "Longitude": 80.218,
       "Zone_Type": "Residential",
       "Avg_Day": 75.52,
       "Avg_Night": 64.74,
+      "Avg_Excess_Day": 0.0,
+      "DPCC_Std_Day": 0,
       "Zone_Category": "High",
       "Yearly": [
         {
@@ -2152,18 +2066,18 @@
           "Avg_Night": 66.42,
           "Zone_Category": "Critical"
         }
-      ],
-      "Avg_Excess_Day": 0.0,
-      "DPCC_Std_Day": 0
+      ]
     },
     {
       "Location": "Washermanpet",
       "City": "Chennai",
-      "Latitude": 13.108965,
-      "Longitude": 80.28201,
+      "Latitude": 13.1155,
+      "Longitude": 80.2874,
       "Zone_Type": "Commercial",
       "Avg_Day": 76.52,
       "Avg_Night": 66.46,
+      "Avg_Excess_Day": 0.0,
+      "DPCC_Std_Day": 0,
       "Zone_Category": "Critical",
       "Yearly": [
         {
@@ -2196,109 +2110,931 @@
           "Avg_Night": 69.32,
           "Zone_Category": "Critical"
         }
-      ],
-      "Avg_Excess_Day": 0.0,
-      "DPCC_Std_Day": 0
+      ]
     },
     {
-      "Location": "Yamuna Vihar",
-      "City": "Delhi",
-      "Latitude": 28.700372,
-      "Longitude": 77.272773,
+      "Location": "Anna Nagar",
+      "City": "Chennai",
+      "Latitude": 13.085,
+      "Longitude": 80.2101,
+      "Zone_Type": "Silence",
+      "Avg_Day": 64.77,
+      "Avg_Night": 54.78,
+      "Avg_Excess_Day": 0.0,
+      "DPCC_Std_Day": 0,
+      "Zone_Category": "Moderate",
+      "Yearly": [
+        {
+          "Year": 2020,
+          "Avg_Day": 62.21,
+          "Avg_Night": 52.76,
+          "Zone_Category": "Moderate"
+        },
+        {
+          "Year": 2021,
+          "Avg_Day": 63.8,
+          "Avg_Night": 54.28,
+          "Zone_Category": "Moderate"
+        },
+        {
+          "Year": 2022,
+          "Avg_Day": 65.73,
+          "Avg_Night": 55.52,
+          "Zone_Category": "Moderate"
+        },
+        {
+          "Year": 2023,
+          "Avg_Day": 65.93,
+          "Avg_Night": 55.44,
+          "Zone_Category": "Moderate"
+        },
+        {
+          "Year": 2024,
+          "Avg_Day": 66.17,
+          "Avg_Night": 55.9,
+          "Zone_Category": "Moderate"
+        }
+      ]
+    },
+    {
+      "Location": "Sowcarpet",
+      "City": "Chennai",
+      "Latitude": 13.0916,
+      "Longitude": 80.2784,
       "Zone_Type": "Residential",
-      "Avg_Day": 67.13,
-      "Avg_Night": 55.99,
+      "Avg_Day": 70.73,
+      "Avg_Night": 60.14,
+      "Avg_Excess_Day": 0.0,
+      "DPCC_Std_Day": 0,
       "Zone_Category": "High",
       "Yearly": [
         {
           "Year": 2020,
-          "Avg_Day": 65.2,
-          "Avg_Night": 54.31,
+          "Avg_Day": 67.07,
+          "Avg_Night": 57.57,
           "Zone_Category": "High"
         },
         {
           "Year": 2021,
-          "Avg_Day": 66.56,
-          "Avg_Night": 55.58,
+          "Avg_Day": 69.33,
+          "Avg_Night": 59.07,
           "Zone_Category": "High"
         },
         {
           "Year": 2022,
-          "Avg_Day": 67.59,
-          "Avg_Night": 56.37,
+          "Avg_Day": 71.97,
+          "Avg_Night": 60.94,
           "Zone_Category": "High"
         },
         {
           "Year": 2023,
-          "Avg_Day": 67.83,
-          "Avg_Night": 56.67,
+          "Avg_Day": 72.26,
+          "Avg_Night": 61.46,
           "Zone_Category": "High"
         },
         {
           "Year": 2024,
-          "Avg_Day": 68.45,
-          "Avg_Night": 57.01,
+          "Avg_Day": 73.0,
+          "Avg_Night": 61.65,
           "Zone_Category": "High"
         }
-      ],
-      "Avg_Excess_Day": 12.13,
-      "DPCC_Std_Day": 55
+      ]
+    },
+    {
+      "Location": "Egmore Eye Hospital",
+      "City": "Chennai",
+      "Latitude": 13.0732,
+      "Longitude": 80.2609,
+      "Zone_Type": "Silence",
+      "Avg_Day": 72.52,
+      "Avg_Night": 61.67,
+      "Avg_Excess_Day": 0.0,
+      "DPCC_Std_Day": 0,
+      "Zone_Category": "High",
+      "Yearly": [
+        {
+          "Year": 2020,
+          "Avg_Day": 70.19,
+          "Avg_Night": 59.51,
+          "Zone_Category": "High"
+        },
+        {
+          "Year": 2021,
+          "Avg_Day": 71.78,
+          "Avg_Night": 61.09,
+          "Zone_Category": "High"
+        },
+        {
+          "Year": 2022,
+          "Avg_Day": 73.34,
+          "Avg_Night": 62.25,
+          "Zone_Category": "High"
+        },
+        {
+          "Year": 2023,
+          "Avg_Day": 73.56,
+          "Avg_Night": 62.69,
+          "Zone_Category": "High"
+        },
+        {
+          "Year": 2024,
+          "Avg_Day": 73.74,
+          "Avg_Night": 62.78,
+          "Zone_Category": "High"
+        }
+      ]
+    },
+    {
+      "Location": "Santacruz (W)",
+      "City": "Mumbai",
+      "Latitude": 19.0822,
+      "Longitude": 72.8397,
+      "Zone_Type": "Commercial",
+      "Avg_Day": 77.98,
+      "Avg_Night": 68.99,
+      "Avg_Excess_Day": 12.98,
+      "DPCC_Std_Day": 65,
+      "Zone_Category": "High",
+      "Yearly": [
+        {
+          "Year": 2020,
+          "Avg_Day": 73.67,
+          "Avg_Night": 65.45,
+          "Zone_Category": "High"
+        },
+        {
+          "Year": 2021,
+          "Avg_Day": 76.36,
+          "Avg_Night": 67.77,
+          "Zone_Category": "High"
+        },
+        {
+          "Year": 2022,
+          "Avg_Day": 78.89,
+          "Avg_Night": 69.73,
+          "Zone_Category": "High"
+        },
+        {
+          "Year": 2023,
+          "Avg_Day": 80.11,
+          "Avg_Night": 70.69,
+          "Zone_Category": "Critical"
+        },
+        {
+          "Year": 2024,
+          "Avg_Day": 80.87,
+          "Avg_Night": 71.33,
+          "Zone_Category": "Critical"
+        }
+      ]
+    },
+    {
+      "Location": "Vile Parle (W)",
+      "City": "Mumbai",
+      "Latitude": 19.1004,
+      "Longitude": 72.8497,
+      "Zone_Type": "Commercial",
+      "Avg_Day": 79.3,
+      "Avg_Night": 70.34,
+      "Avg_Excess_Day": 14.3,
+      "DPCC_Std_Day": 65,
+      "Zone_Category": "Critical",
+      "Yearly": [
+        {
+          "Year": 2020,
+          "Avg_Day": 74.9,
+          "Avg_Night": 66.81,
+          "Zone_Category": "High"
+        },
+        {
+          "Year": 2021,
+          "Avg_Day": 77.83,
+          "Avg_Night": 69.15,
+          "Zone_Category": "High"
+        },
+        {
+          "Year": 2022,
+          "Avg_Day": 80.11,
+          "Avg_Night": 71.06,
+          "Zone_Category": "Critical"
+        },
+        {
+          "Year": 2023,
+          "Avg_Day": 81.52,
+          "Avg_Night": 72.1,
+          "Zone_Category": "Critical"
+        },
+        {
+          "Year": 2024,
+          "Avg_Day": 82.16,
+          "Avg_Night": 72.57,
+          "Zone_Category": "Critical"
+        }
+      ]
+    },
+    {
+      "Location": "Andheri (W)",
+      "City": "Mumbai",
+      "Latitude": 19.1197,
+      "Longitude": 72.8464,
+      "Zone_Type": "Commercial",
+      "Avg_Day": 79.26,
+      "Avg_Night": 69.78,
+      "Avg_Excess_Day": 14.26,
+      "DPCC_Std_Day": 65,
+      "Zone_Category": "Critical",
+      "Yearly": [
+        {
+          "Year": 2020,
+          "Avg_Day": 74.79,
+          "Avg_Night": 66.31,
+          "Zone_Category": "High"
+        },
+        {
+          "Year": 2021,
+          "Avg_Day": 77.84,
+          "Avg_Night": 68.49,
+          "Zone_Category": "High"
+        },
+        {
+          "Year": 2022,
+          "Avg_Day": 80.15,
+          "Avg_Night": 70.51,
+          "Zone_Category": "Critical"
+        },
+        {
+          "Year": 2023,
+          "Avg_Day": 81.48,
+          "Avg_Night": 71.53,
+          "Zone_Category": "Critical"
+        },
+        {
+          "Year": 2024,
+          "Avg_Day": 82.02,
+          "Avg_Night": 72.05,
+          "Zone_Category": "Critical"
+        }
+      ]
+    },
+    {
+      "Location": "Bandra (W)",
+      "City": "Mumbai",
+      "Latitude": 19.0596,
+      "Longitude": 72.8295,
+      "Zone_Type": "Commercial",
+      "Avg_Day": 77.54,
+      "Avg_Night": 68.61,
+      "Avg_Excess_Day": 12.54,
+      "DPCC_Std_Day": 65,
+      "Zone_Category": "High",
+      "Yearly": [
+        {
+          "Year": 2020,
+          "Avg_Day": 73.31,
+          "Avg_Night": 65.1,
+          "Zone_Category": "High"
+        },
+        {
+          "Year": 2021,
+          "Avg_Day": 75.84,
+          "Avg_Night": 67.5,
+          "Zone_Category": "High"
+        },
+        {
+          "Year": 2022,
+          "Avg_Day": 78.47,
+          "Avg_Night": 69.32,
+          "Zone_Category": "High"
+        },
+        {
+          "Year": 2023,
+          "Avg_Day": 79.59,
+          "Avg_Night": 70.27,
+          "Zone_Category": "Critical"
+        },
+        {
+          "Year": 2024,
+          "Avg_Day": 80.48,
+          "Avg_Night": 70.87,
+          "Zone_Category": "Critical"
+        }
+      ]
+    },
+    {
+      "Location": "Lower Parel",
+      "City": "Mumbai",
+      "Latitude": 18.9982,
+      "Longitude": 72.8326,
+      "Zone_Type": "Industrial",
+      "Avg_Day": 76.71,
+      "Avg_Night": 71.41,
+      "Avg_Excess_Day": 1.71,
+      "DPCC_Std_Day": 75,
+      "Zone_Category": "Moderate",
+      "Yearly": [
+        {
+          "Year": 2020,
+          "Avg_Day": 73.12,
+          "Avg_Night": 68.6,
+          "Zone_Category": "Low"
+        },
+        {
+          "Year": 2021,
+          "Avg_Day": 75.23,
+          "Avg_Night": 70.35,
+          "Zone_Category": "Moderate"
+        },
+        {
+          "Year": 2022,
+          "Avg_Day": 77.58,
+          "Avg_Night": 72.0,
+          "Zone_Category": "Moderate"
+        },
+        {
+          "Year": 2023,
+          "Avg_Day": 78.6,
+          "Avg_Night": 72.87,
+          "Zone_Category": "Moderate"
+        },
+        {
+          "Year": 2024,
+          "Avg_Day": 79.0,
+          "Avg_Night": 73.22,
+          "Zone_Category": "Moderate"
+        }
+      ]
+    },
+    {
+      "Location": "Khar (W)",
+      "City": "Mumbai",
+      "Latitude": 19.0726,
+      "Longitude": 72.8373,
+      "Zone_Type": "Commercial",
+      "Avg_Day": 74.37,
+      "Avg_Night": 65.33,
+      "Avg_Excess_Day": 9.37,
+      "DPCC_Std_Day": 65,
+      "Zone_Category": "High",
+      "Yearly": [
+        {
+          "Year": 2020,
+          "Avg_Day": 70.19,
+          "Avg_Night": 61.87,
+          "Zone_Category": "High"
+        },
+        {
+          "Year": 2021,
+          "Avg_Day": 72.72,
+          "Avg_Night": 64.07,
+          "Zone_Category": "High"
+        },
+        {
+          "Year": 2022,
+          "Avg_Day": 75.3,
+          "Avg_Night": 66.0,
+          "Zone_Category": "High"
+        },
+        {
+          "Year": 2023,
+          "Avg_Day": 76.49,
+          "Avg_Night": 67.06,
+          "Zone_Category": "High"
+        },
+        {
+          "Year": 2024,
+          "Avg_Day": 77.14,
+          "Avg_Night": 67.66,
+          "Zone_Category": "High"
+        }
+      ]
+    },
+    {
+      "Location": "Dr. E. Moses Road",
+      "City": "Mumbai",
+      "Latitude": 19.0048,
+      "Longitude": 72.8178,
+      "Zone_Type": "Commercial",
+      "Avg_Day": 73.86,
+      "Avg_Night": 64.59,
+      "Avg_Excess_Day": 8.86,
+      "DPCC_Std_Day": 65,
+      "Zone_Category": "High",
+      "Yearly": [
+        {
+          "Year": 2020,
+          "Avg_Day": 69.47,
+          "Avg_Night": 61.05,
+          "Zone_Category": "High"
+        },
+        {
+          "Year": 2021,
+          "Avg_Day": 72.28,
+          "Avg_Night": 63.42,
+          "Zone_Category": "High"
+        },
+        {
+          "Year": 2022,
+          "Avg_Day": 74.75,
+          "Avg_Night": 65.31,
+          "Zone_Category": "High"
+        },
+        {
+          "Year": 2023,
+          "Avg_Day": 76.06,
+          "Avg_Night": 66.24,
+          "Zone_Category": "High"
+        },
+        {
+          "Year": 2024,
+          "Avg_Day": 76.75,
+          "Avg_Night": 66.92,
+          "Zone_Category": "High"
+        }
+      ]
+    },
+    {
+      "Location": "Marine Lines",
+      "City": "Mumbai",
+      "Latitude": 18.9432,
+      "Longitude": 72.8236,
+      "Zone_Type": "Commercial",
+      "Avg_Day": 74.24,
+      "Avg_Night": 65.06,
+      "Avg_Excess_Day": 9.24,
+      "DPCC_Std_Day": 65,
+      "Zone_Category": "High",
+      "Yearly": [
+        {
+          "Year": 2020,
+          "Avg_Day": 69.85,
+          "Avg_Night": 61.58,
+          "Zone_Category": "High"
+        },
+        {
+          "Year": 2021,
+          "Avg_Day": 72.71,
+          "Avg_Night": 63.89,
+          "Zone_Category": "High"
+        },
+        {
+          "Year": 2022,
+          "Avg_Day": 75.19,
+          "Avg_Night": 65.81,
+          "Zone_Category": "High"
+        },
+        {
+          "Year": 2023,
+          "Avg_Day": 76.43,
+          "Avg_Night": 66.68,
+          "Zone_Category": "High"
+        },
+        {
+          "Year": 2024,
+          "Avg_Day": 77.03,
+          "Avg_Night": 67.35,
+          "Zone_Category": "High"
+        }
+      ]
+    },
+    {
+      "Location": "Charni Road",
+      "City": "Mumbai",
+      "Latitude": 18.9549,
+      "Longitude": 72.8186,
+      "Zone_Type": "Residential",
+      "Avg_Day": 74.51,
+      "Avg_Night": 63.64,
+      "Avg_Excess_Day": 19.51,
+      "DPCC_Std_Day": 55,
+      "Zone_Category": "Critical",
+      "Yearly": [
+        {
+          "Year": 2020,
+          "Avg_Day": 71.33,
+          "Avg_Night": 61.09,
+          "Zone_Category": "Critical"
+        },
+        {
+          "Year": 2021,
+          "Avg_Day": 73.69,
+          "Avg_Night": 62.99,
+          "Zone_Category": "Critical"
+        },
+        {
+          "Year": 2022,
+          "Avg_Day": 75.37,
+          "Avg_Night": 64.28,
+          "Zone_Category": "Critical"
+        },
+        {
+          "Year": 2023,
+          "Avg_Day": 75.95,
+          "Avg_Night": 64.83,
+          "Zone_Category": "Critical"
+        },
+        {
+          "Year": 2024,
+          "Avg_Day": 76.21,
+          "Avg_Night": 65.03,
+          "Zone_Category": "Critical"
+        }
+      ]
+    },
+    {
+      "Location": "Turner Road (Bandra)",
+      "City": "Mumbai",
+      "Latitude": 19.0543,
+      "Longitude": 72.8366,
+      "Zone_Type": "Residential",
+      "Avg_Day": 74.1,
+      "Avg_Night": 63.17,
+      "Avg_Excess_Day": 19.09,
+      "DPCC_Std_Day": 55,
+      "Zone_Category": "Critical",
+      "Yearly": [
+        {
+          "Year": 2020,
+          "Avg_Day": 71.12,
+          "Avg_Night": 60.56,
+          "Zone_Category": "Critical"
+        },
+        {
+          "Year": 2021,
+          "Avg_Day": 73.38,
+          "Avg_Night": 62.5,
+          "Zone_Category": "Critical"
+        },
+        {
+          "Year": 2022,
+          "Avg_Day": 74.83,
+          "Avg_Night": 63.78,
+          "Zone_Category": "Critical"
+        },
+        {
+          "Year": 2023,
+          "Avg_Day": 75.49,
+          "Avg_Night": 64.4,
+          "Zone_Category": "Critical"
+        },
+        {
+          "Year": 2024,
+          "Avg_Day": 75.65,
+          "Avg_Night": 64.6,
+          "Zone_Category": "Critical"
+        }
+      ]
+    },
+    {
+      "Location": "Mahalakshmi",
+      "City": "Mumbai",
+      "Latitude": 18.9845,
+      "Longitude": 72.8191,
+      "Zone_Type": "Residential",
+      "Avg_Day": 74.03,
+      "Avg_Night": 62.68,
+      "Avg_Excess_Day": 19.03,
+      "DPCC_Std_Day": 55,
+      "Zone_Category": "Critical",
+      "Yearly": [
+        {
+          "Year": 2020,
+          "Avg_Day": 70.82,
+          "Avg_Night": 60.2,
+          "Zone_Category": "Critical"
+        },
+        {
+          "Year": 2021,
+          "Avg_Day": 73.18,
+          "Avg_Night": 62.05,
+          "Zone_Category": "Critical"
+        },
+        {
+          "Year": 2022,
+          "Avg_Day": 74.83,
+          "Avg_Night": 63.26,
+          "Zone_Category": "Critical"
+        },
+        {
+          "Year": 2023,
+          "Avg_Day": 75.48,
+          "Avg_Night": 63.82,
+          "Zone_Category": "Critical"
+        },
+        {
+          "Year": 2024,
+          "Avg_Day": 75.82,
+          "Avg_Night": 64.09,
+          "Zone_Category": "Critical"
+        }
+      ]
+    },
+    {
+      "Location": "Matunga",
+      "City": "Mumbai",
+      "Latitude": 19.0225,
+      "Longitude": 72.8587,
+      "Zone_Type": "Residential",
+      "Avg_Day": 73.85,
+      "Avg_Night": 62.37,
+      "Avg_Excess_Day": 18.85,
+      "DPCC_Std_Day": 55,
+      "Zone_Category": "Critical",
+      "Yearly": [
+        {
+          "Year": 2020,
+          "Avg_Day": 70.75,
+          "Avg_Night": 59.85,
+          "Zone_Category": "Critical"
+        },
+        {
+          "Year": 2021,
+          "Avg_Day": 72.85,
+          "Avg_Night": 61.61,
+          "Zone_Category": "Critical"
+        },
+        {
+          "Year": 2022,
+          "Avg_Day": 74.66,
+          "Avg_Night": 63.02,
+          "Zone_Category": "Critical"
+        },
+        {
+          "Year": 2023,
+          "Avg_Day": 75.33,
+          "Avg_Night": 63.57,
+          "Zone_Category": "Critical"
+        },
+        {
+          "Year": 2024,
+          "Avg_Day": 75.67,
+          "Avg_Night": 63.81,
+          "Zone_Category": "Critical"
+        }
+      ]
+    },
+    {
+      "Location": "Haji Ali",
+      "City": "Mumbai",
+      "Latitude": 18.9826,
+      "Longitude": 72.8089,
+      "Zone_Type": "Commercial",
+      "Avg_Day": 72.76,
+      "Avg_Night": 62.82,
+      "Avg_Excess_Day": 7.76,
+      "DPCC_Std_Day": 65,
+      "Zone_Category": "High",
+      "Yearly": [
+        {
+          "Year": 2020,
+          "Avg_Day": 68.49,
+          "Avg_Night": 59.32,
+          "Zone_Category": "Moderate"
+        },
+        {
+          "Year": 2021,
+          "Avg_Day": 71.18,
+          "Avg_Night": 61.6,
+          "Zone_Category": "High"
+        },
+        {
+          "Year": 2022,
+          "Avg_Day": 73.61,
+          "Avg_Night": 63.65,
+          "Zone_Category": "High"
+        },
+        {
+          "Year": 2023,
+          "Avg_Day": 74.92,
+          "Avg_Night": 64.47,
+          "Zone_Category": "High"
+        },
+        {
+          "Year": 2024,
+          "Avg_Day": 75.61,
+          "Avg_Night": 65.07,
+          "Zone_Category": "High"
+        }
+      ]
+    },
+    {
+      "Location": "Mahim",
+      "City": "Mumbai",
+      "Latitude": 19.0385,
+      "Longitude": 72.8438,
+      "Zone_Type": "Residential",
+      "Avg_Day": 72.63,
+      "Avg_Night": 61.69,
+      "Avg_Excess_Day": 17.63,
+      "DPCC_Std_Day": 55,
+      "Zone_Category": "Critical",
+      "Yearly": [
+        {
+          "Year": 2020,
+          "Avg_Day": 69.46,
+          "Avg_Night": 59.08,
+          "Zone_Category": "High"
+        },
+        {
+          "Year": 2021,
+          "Avg_Day": 71.68,
+          "Avg_Night": 61.0,
+          "Zone_Category": "Critical"
+        },
+        {
+          "Year": 2022,
+          "Avg_Day": 73.47,
+          "Avg_Night": 62.33,
+          "Zone_Category": "Critical"
+        },
+        {
+          "Year": 2023,
+          "Avg_Day": 74.1,
+          "Avg_Night": 62.89,
+          "Zone_Category": "Critical"
+        },
+        {
+          "Year": 2024,
+          "Avg_Day": 74.44,
+          "Avg_Night": 63.12,
+          "Zone_Category": "Critical"
+        }
+      ]
+    },
+    {
+      "Location": "Churchgate",
+      "City": "Mumbai",
+      "Latitude": 18.9322,
+      "Longitude": 72.8264,
+      "Zone_Type": "Commercial",
+      "Avg_Day": 70.5,
+      "Avg_Night": 61.33,
+      "Avg_Excess_Day": 5.5,
+      "DPCC_Std_Day": 65,
+      "Zone_Category": "High",
+      "Yearly": [
+        {
+          "Year": 2020,
+          "Avg_Day": 66.18,
+          "Avg_Night": 57.85,
+          "Zone_Category": "Moderate"
+        },
+        {
+          "Year": 2021,
+          "Avg_Day": 68.98,
+          "Avg_Night": 60.16,
+          "Zone_Category": "High"
+        },
+        {
+          "Year": 2022,
+          "Avg_Day": 71.33,
+          "Avg_Night": 62.06,
+          "Zone_Category": "High"
+        },
+        {
+          "Year": 2023,
+          "Avg_Day": 72.77,
+          "Avg_Night": 63.02,
+          "Zone_Category": "High"
+        },
+        {
+          "Year": 2024,
+          "Avg_Day": 73.25,
+          "Avg_Night": 63.57,
+          "Zone_Category": "High"
+        }
+      ]
+    },
+    {
+      "Location": "Mumbai Central",
+      "City": "Mumbai",
+      "Latitude": 18.9696,
+      "Longitude": 72.8194,
+      "Zone_Type": "Commercial",
+      "Avg_Day": 69.69,
+      "Avg_Night": 60.6,
+      "Avg_Excess_Day": 4.69,
+      "DPCC_Std_Day": 65,
+      "Zone_Category": "High",
+      "Yearly": [
+        {
+          "Year": 2020,
+          "Avg_Day": 65.28,
+          "Avg_Night": 57.04,
+          "Zone_Category": "Moderate"
+        },
+        {
+          "Year": 2021,
+          "Avg_Day": 68.17,
+          "Avg_Night": 59.38,
+          "Zone_Category": "Moderate"
+        },
+        {
+          "Year": 2022,
+          "Avg_Day": 70.64,
+          "Avg_Night": 61.31,
+          "Zone_Category": "High"
+        },
+        {
+          "Year": 2023,
+          "Avg_Day": 71.8,
+          "Avg_Night": 62.34,
+          "Zone_Category": "High"
+        },
+        {
+          "Year": 2024,
+          "Avg_Day": 72.55,
+          "Avg_Night": 62.93,
+          "Zone_Category": "High"
+        }
+      ]
+    },
+    {
+      "Location": "Grant Road",
+      "City": "Mumbai",
+      "Latitude": 18.9642,
+      "Longitude": 72.8183,
+      "Zone_Type": "Commercial",
+      "Avg_Day": 69.52,
+      "Avg_Night": 60.01,
+      "Avg_Excess_Day": 4.52,
+      "DPCC_Std_Day": 65,
+      "Zone_Category": "High",
+      "Yearly": [
+        {
+          "Year": 2020,
+          "Avg_Day": 65.19,
+          "Avg_Night": 56.51,
+          "Zone_Category": "Moderate"
+        },
+        {
+          "Year": 2021,
+          "Avg_Day": 67.94,
+          "Avg_Night": 58.9,
+          "Zone_Category": "Moderate"
+        },
+        {
+          "Year": 2022,
+          "Avg_Day": 70.42,
+          "Avg_Night": 60.72,
+          "Zone_Category": "High"
+        },
+        {
+          "Year": 2023,
+          "Avg_Day": 71.6,
+          "Avg_Night": 61.67,
+          "Zone_Category": "High"
+        },
+        {
+          "Year": 2024,
+          "Avg_Day": 72.46,
+          "Avg_Night": 62.25,
+          "Zone_Category": "High"
+        }
+      ]
+    },
+    {
+      "Location": "Mulund (W)",
+      "City": "Mumbai",
+      "Latitude": 19.1728,
+      "Longitude": 72.9569,
+      "Zone_Type": "Residential",
+      "Avg_Day": 66.38,
+      "Avg_Night": 56.67,
+      "Avg_Excess_Day": 11.38,
+      "DPCC_Std_Day": 55,
+      "Zone_Category": "High",
+      "Yearly": [
+        {
+          "Year": 2020,
+          "Avg_Day": 63.31,
+          "Avg_Night": 54.1,
+          "Zone_Category": "High"
+        },
+        {
+          "Year": 2021,
+          "Avg_Day": 65.52,
+          "Avg_Night": 55.98,
+          "Zone_Category": "High"
+        },
+        {
+          "Year": 2022,
+          "Avg_Day": 67.1,
+          "Avg_Night": 57.35,
+          "Zone_Category": "High"
+        },
+        {
+          "Year": 2023,
+          "Avg_Day": 67.89,
+          "Avg_Night": 57.8,
+          "Zone_Category": "High"
+        },
+        {
+          "Year": 2024,
+          "Avg_Day": 68.09,
+          "Avg_Night": 58.12,
+          "Zone_Category": "High"
+        }
+      ]
     }
-  ],
-  "trends": {
-    "Chennai": [
-      {
-        "Year": 2020,
-        "Avg_Day": 69.37,
-        "Avg_Night": 60.29
-      },
-      {
-        "Year": 2021,
-        "Avg_Day": 71.9,
-        "Avg_Night": 62.25
-      },
-      {
-        "Year": 2022,
-        "Avg_Day": 75.04,
-        "Avg_Night": 64.64
-      },
-      {
-        "Year": 2023,
-        "Avg_Day": 75.65,
-        "Avg_Night": 65.14
-      },
-      {
-        "Year": 2024,
-        "Avg_Day": 76.37,
-        "Avg_Night": 65.62
-      }
-    ],
-    "Delhi": [
-      {
-        "Year": 2020,
-        "Avg_Day": 64.81,
-        "Avg_Night": 55.17
-      },
-      {
-        "Year": 2021,
-        "Avg_Day": 66.33,
-        "Avg_Night": 56.43
-      },
-      {
-        "Year": 2022,
-        "Avg_Day": 67.48,
-        "Avg_Night": 57.29
-      },
-      {
-        "Year": 2023,
-        "Avg_Day": 67.96,
-        "Avg_Night": 57.66
-      },
-      {
-        "Year": 2024,
-        "Avg_Day": 68.55,
-        "Avg_Night": 58.11
-      }
-    ]
-  }
+  ]
 }

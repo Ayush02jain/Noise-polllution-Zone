@@ -42,6 +42,7 @@ body {
 }
 .tb-badge.delhi { background: #2a5a90; }
 .tb-badge.chennai { background: #c06020; border-color: #a05010; }
+.tb-badge.mumbai { background: #1a7a4a; border-color: #155f3a; }
 
 /* Menu Bar */
 .menubar {
@@ -115,6 +116,7 @@ body {
 .city-btn:hover { background: #ddeaf8; }
 .city-btn.active { background: #4a7db5; color: #fff; border-color: #3a6da5; }
 .city-btn.active.chennai-active { background: #c06020; border-color: #a05010; }
+.city-btn.active.mumbai-active  { background: #1a7a4a; border-color: #155f3a; }
 .year-select {
   width: 100%;
   padding: 3px 5px;
@@ -239,7 +241,7 @@ body {
 
 /* Bottom Panel */
 .bottom-panel {
-  height: 160px;
+  height: 180px;
   background: #e8f0f8;
   border-top: 1px solid #b0c8e0;
   display: flex;
@@ -263,6 +265,7 @@ body {
 }
 .delhi-title { color: #1a4a8a; }
 .chennai-title { color: #b05010; }
+.mumbai-title { color: #1a7a4a; }
 .chart-box canvas { flex: 1; min-height: 0; }
 
 /* Status Bar */
