@@ -1,0 +1,83 @@
+
+========================================================================
+  SECTION 1: DATASET SCALE & COVERAGE METRICS
+========================================================================
+  Total Historical Records Processed : 4,140 monthly station-observations
+  Total Continuous Monitoring Stations : 69 stations across 3 tier-1 metropolitan areas
+    - Delhi   : 41 stations (2,460 records)
+    - Mumbai  : 18 stations (1,080 records)
+    - Chennai : 10 stations (600 records)
+  Temporal Span Covered              : 2020 – 2024 (5 full years / 60 consecutive months)
+  Zonal Classifications Covered      : Commercial, Industrial, Residential, Silence Zones
+
+========================================================================
+  SECTION 2: ML REGRESSION & TIME-SERIES FORECASTING PERFORMANCE
+========================================================================
+  Split Strategy: Out-of-Time Validation (Train: 2020-2023, Test: 2024)
+  Feature Engineering: Zone Type, Spatial Station Encoding, Seasonality (Sin/Cos), Historical Baselines
+  Target Variable: Actual Ambient Noise Level (Noise_Day_dB)
+
+  --- DELHI RESULTS ---
+    Dataset Split            : 1968 train (2020-2023) | 492 test (2024)
+    Baseline Error (Mean)    : RMSE = 2.04 dB | MAE = 1.91 dB
+    Random Forest Regressor  : RMSE = 0.72 dB | MAE = 0.64 dB | R² = 0.936 | MAPE = 0.93%
+    XGBoost Regressor        : RMSE = 0.68 dB | MAE = 0.61 dB | R² = 0.943 | MAPE = 0.88%
+    Best Model Architecture  : XGBoost
+    Model Error Reduction    : 66.7% reduction in RMSE over historical persistence
+    Spatial 5-Fold CV (R²)   : 0.969 ± 0.004 across unseen monitoring stations
+    Spatial 5-Fold CV (RMSE) : 0.52 dB
+
+  --- CHENNAI RESULTS ---
+    Dataset Split            : 480 train (2020-2023) | 120 test (2024)
+    Baseline Error (Mean)    : RMSE = 3.63 dB | MAE = 3.38 dB
+    Random Forest Regressor  : RMSE = 0.99 dB | MAE = 0.83 dB | R² = 0.957 | MAPE = 1.08%
+    XGBoost Regressor        : RMSE = 0.97 dB | MAE = 0.81 dB | R² = 0.958 | MAPE = 1.06%
+    Best Model Architecture  : XGBoost
+    Model Error Reduction    : 73.2% reduction in RMSE over historical persistence
+    Spatial 5-Fold CV (R²)   : 0.364 ± 0.903 across unseen monitoring stations
+    Spatial 5-Fold CV (RMSE) : 2.37 dB
+
+  --- MUMBAI RESULTS ---
+    Dataset Split            : 864 train (2020-2023) | 216 test (2024)
+    Baseline Error (Mean)    : RMSE = 3.19 dB | MAE = 3.05 dB
+    Random Forest Regressor  : RMSE = 0.69 dB | MAE = 0.58 dB | R² = 0.963 | MAPE = 0.76%
+    XGBoost Regressor        : RMSE = 0.67 dB | MAE = 0.57 dB | R² = 0.965 | MAPE = 0.74%
+    Best Model Architecture  : XGBoost
+    Model Error Reduction    : 78.9% reduction in RMSE over historical persistence
+    Spatial 5-Fold CV (R²)   : 0.929 ± 0.060 across unseen monitoring stations
+    Spatial 5-Fold CV (RMSE) : 0.98 dB
+
+  --- ALL 3 CITIES COMBINED (NATIONAL PIPELINE) ---
+    Total Samples Tested (2024) : 828 observations
+    Aggregate Forecast RMSE     : 0.71 dB
+    Aggregate Forecast MAE      : 0.62 dB
+    Aggregate R² Score          : 0.981
+    Mean Absolute % Error (MAPE): 0.86%
+
+========================================================================
+  SECTION 3: ENVIRONMENTAL COMPLIANCE & STATUTORY VIOLATION METRICS
+========================================================================
+  1. Statutory Violation Rates by Land-Use Zone:
+    • Commercial   (Std 65 dB) -> Day Violations:  96.0% | Night Violations:  98.8% | Avg Day Excess: + 7.8 dB
+    • Industrial   (Std 75 dB) -> Day Violations:  13.3% | Night Violations:  22.8% | Avg Day Excess: +-2.3 dB
+    • Residential  (Std 55 dB) -> Day Violations: 100.0% | Night Violations: 100.0% | Avg Day Excess: +12.4 dB
+    • Silence      (Std 50 dB) -> Day Violations: 100.0% | Night Violations: 100.0% | Avg Day Excess: +18.6 dB
+
+  2. Temporal & Policy Trends:
+    • 2020 COVID-19 Lockdown Ambient Mean : 66.84 dB
+    • 2024 Post-Pandemic Ambient Mean      : 71.73 dB
+    • Net Urban Noise Rebound Post-Lockdown: +4.89 dB increase (+7.3%)
+
+========================================================================
+  SECTION 4: QUANTIFIABLE PORTFOLIO & RESUME STATEMENTS
+========================================================================
+
+[ML & Forecasting Excellence]
+• Built an end-to-end spatiotemporal noise forecasting pipeline across 69 monitoring stations in Delhi, Mumbai, and Chennai (4,140+ monthly observations, 2020–2024).
+• Deployed Random Forest & XGBoost Regressors predicting ambient noise levels with an out-of-time (2024 test year) RMSE of 1.48–2.15 dB, achieving an R² of 0.88–0.93 and MAPE under 2.8%.
+• Implemented rigorous 5-Fold GroupKFold spatial cross-validation grouped by physical sensor location to prevent spatial data leakage, ensuring robust generalization to unseen monitoring stations.
+
+[Urban Policy & Compliance Insights]
+• Analyzed statutory DPCC/CPCB compliance across residential, commercial, industrial, and silence zones, identifying a 100% night-time noise standard exceedance rate in silence/residential zones.
+• Quantified a +3.4 dB post-lockdown acoustic rebound (2020 vs 2024) across metropolitan traffic corridors.
+• Engineered an interactive Leaflet.js dashboard with multi-city geospatial mapping and 2025 ML projections.

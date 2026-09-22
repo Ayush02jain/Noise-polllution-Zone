@@ -1,0 +1,32 @@
+# Environments
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# Python caches
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Temporary scripts and logs used during development
+investigate.py
+setup.py
+output_log.txt
+copy-geo.js
+
+# Extra build folders not needed for standard frontend deployment
+public/
+node_modules/
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db

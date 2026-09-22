@@ -1,0 +1,936 @@
+{
+  "locations": [
+    {
+      "Location": "Andheri (W)",
+      "City": "Mumbai",
+      "Latitude": 19.1197,
+      "Longitude": 72.8464,
+      "Avg_Day": 79.62,
+      "Avg_Night": 70.07,
+      "Avg_Excess_Day": 14.62,
+      "DPCC_Std_Day": 65,
+      "Zone_Category": "Critical",
+      "Zone_Type": "Commercial",
+      "Yearly": [
+        {
+          "Year": 2020,
+          "Avg_Day": 74.79,
+          "Avg_Night": 66.31,
+          "Zone_Category": "High"
+        },
+        {
+          "Year": 2021,
+          "Avg_Day": 77.84,
+          "Avg_Night": 68.49,
+          "Zone_Category": "High"
+        },
+        {
+          "Year": 2022,
+          "Avg_Day": 80.15,
+          "Avg_Night": 70.51,
+          "Zone_Category": "Critical"
+        },
+        {
+          "Year": 2023,
+          "Avg_Day": 81.48,
+          "Avg_Night": 71.53,
+          "Zone_Category": "Critical"
+        },
+        {
+          "Year": 2024,
+          "Avg_Day": 82.02,
+          "Avg_Night": 72.05,
+          "Zone_Category": "Critical"
+        },
+        {
+          "Year": 2025,
+          "Avg_Day": 81.47,
+          "Avg_Night": 71.52,
+          "Zone_Category": "Critical"
+        }
+      ]
+    },
+    {
+      "Location": "Bandra (W)",
+      "City": "Mumbai",
+      "Latitude": 19.0596,
+      "Longitude": 72.8295,
+      "Avg_Day": 77.88,
+      "Avg_Night": 68.89,
+      "Avg_Excess_Day": 12.88,
+      "DPCC_Std_Day": 65,
+      "Zone_Category": "High",
+      "Zone_Type": "Commercial",
+      "Yearly": [
+        {
+          "Year": 2020,
+          "Avg_Day": 73.31,
+          "Avg_Night": 65.1,
+          "Zone_Category": "High"
+        },
+        {
+          "Year": 2021,
+          "Avg_Day": 75.84,
+          "Avg_Night": 67.5,
+          "Zone_Category": "High"
+        },
+        {
+          "Year": 2022,
+          "Avg_Day": 78.47,
+          "Avg_Night": 69.32,
+          "Zone_Category": "High"
+        },
+        {
+          "Year": 2023,
+          "Avg_Day": 79.59,
+          "Avg_Night": 70.27,
+          "Zone_Category": "Critical"
+        },
+        {
+          "Year": 2024,
+          "Avg_Day": 80.48,
+          "Avg_Night": 70.87,
+          "Zone_Category": "Critical"
+        },
+        {
+          "Year": 2025,
+          "Avg_Day": 79.58,
+          "Avg_Night": 70.29,
+          "Zone_Category": "High"
+        }
+      ]
+    },
+    {
+      "Location": "Charni Road",
+      "City": "Mumbai",
+      "Latitude": 18.9549,
+      "Longitude": 72.8186,
+      "Avg_Day": 74.75,
+      "Avg_Night": 63.83,
+      "Avg_Excess_Day": 19.75,
+      "DPCC_Std_Day": 55,
+      "Zone_Category": "Critical",
+      "Zone_Type": "Residential",
+      "Yearly": [
+        {
+          "Year": 2020,
+          "Avg_Day": 71.33,
+          "Avg_Night": 61.09,
+          "Zone_Category": "Critical"
+        },
+        {
+          "Year": 2021,
+          "Avg_Day": 73.69,
+          "Avg_Night": 62.99,
+          "Zone_Category": "Critical"
+        },
+        {
+          "Year": 2022,
+          "Avg_Day": 75.37,
+          "Avg_Night": 64.28,
+          "Zone_Category": "Critical"
+        },
+        {
+          "Year": 2023,
+          "Avg_Day": 75.95,
+          "Avg_Night": 64.83,
+          "Zone_Category": "Critical"
+        },
+        {
+          "Year": 2024,
+          "Avg_Day": 76.21,
+          "Avg_Night": 65.03,
+          "Zone_Category": "Critical"
+        },
+        {
+          "Year": 2025,
+          "Avg_Day": 75.96,
+          "Avg_Night": 64.78,
+          "Zone_Category": "Critical"
+        }
+      ]
+    },
+    {
+      "Location": "Churchgate",
+      "City": "Mumbai",
+      "Latitude": 18.9322,
+      "Longitude": 72.8264,
+      "Avg_Day": 70.88,
+      "Avg_Night": 61.61,
+      "Avg_Excess_Day": 5.88,
+      "DPCC_Std_Day": 65,
+      "Zone_Category": "High",
+      "Zone_Type": "Commercial",
+      "Yearly": [
+        {
+          "Year": 2020,
+          "Avg_Day": 66.18,
+          "Avg_Night": 57.84,
+          "Zone_Category": "Moderate"
+        },
+        {
+          "Year": 2021,
+          "Avg_Day": 68.98,
+          "Avg_Night": 60.16,
+          "Zone_Category": "High"
+        },
+        {
+          "Year": 2022,
+          "Avg_Day": 71.33,
+          "Avg_Night": 62.06,
+          "Zone_Category": "High"
+        },
+        {
+          "Year": 2023,
+          "Avg_Day": 72.77,
+          "Avg_Night": 63.02,
+          "Zone_Category": "High"
+        },
+        {
+          "Year": 2024,
+          "Avg_Day": 73.25,
+          "Avg_Night": 63.57,
+          "Zone_Category": "High"
+        },
+        {
+          "Year": 2025,
+          "Avg_Day": 72.77,
+          "Avg_Night": 63.0,
+          "Zone_Category": "High"
+        }
+      ]
+    },
+    {
+      "Location": "Dr. E. Moses Road",
+      "City": "Mumbai",
+      "Latitude": 19.0048,
+      "Longitude": 72.8178,
+      "Avg_Day": 74.23,
+      "Avg_Night": 64.86,
+      "Avg_Excess_Day": 9.23,
+      "DPCC_Std_Day": 65,
+      "Zone_Category": "High",
+      "Zone_Type": "Commercial",
+      "Yearly": [
+        {
+          "Year": 2020,
+          "Avg_Day": 69.47,
+          "Avg_Night": 61.05,
+          "Zone_Category": "High"
+        },
+        {
+          "Year": 2021,
+          "Avg_Day": 72.28,
+          "Avg_Night": 63.42,
+          "Zone_Category": "High"
+        },
+        {
+          "Year": 2022,
+          "Avg_Day": 74.75,
+          "Avg_Night": 65.31,
+          "Zone_Category": "High"
+        },
+        {
+          "Year": 2023,
+          "Avg_Day": 76.06,
+          "Avg_Night": 66.23,
+          "Zone_Category": "High"
+        },
+        {
+          "Year": 2024,
+          "Avg_Day": 76.75,
+          "Avg_Night": 66.92,
+          "Zone_Category": "High"
+        },
+        {
+          "Year": 2025,
+          "Avg_Day": 76.06,
+          "Avg_Night": 66.26,
+          "Zone_Category": "High"
+        }
+      ]
+    },
+    {
+      "Location": "Grant Road",
+      "City": "Mumbai",
+      "Latitude": 18.9642,
+      "Longitude": 72.8183,
+      "Avg_Day": 69.87,
+      "Avg_Night": 60.29,
+      "Avg_Excess_Day": 4.87,
+      "DPCC_Std_Day": 65,
+      "Zone_Category": "High",
+      "Zone_Type": "Commercial",
+      "Yearly": [
+        {
+          "Year": 2020,
+          "Avg_Day": 65.19,
+          "Avg_Night": 56.51,
+          "Zone_Category": "Moderate"
+        },
+        {
+          "Year": 2021,
+          "Avg_Day": 67.94,
+          "Avg_Night": 58.9,
+          "Zone_Category": "Moderate"
+        },
+        {
+          "Year": 2022,
+          "Avg_Day": 70.42,
+          "Avg_Night": 60.72,
+          "Zone_Category": "High"
+        },
+        {
+          "Year": 2023,
+          "Avg_Day": 71.6,
+          "Avg_Night": 61.67,
+          "Zone_Category": "High"
+        },
+        {
+          "Year": 2024,
+          "Avg_Day": 72.46,
+          "Avg_Night": 62.25,
+          "Zone_Category": "High"
+        },
+        {
+          "Year": 2025,
+          "Avg_Day": 71.63,
+          "Avg_Night": 61.68,
+          "Zone_Category": "High"
+        }
+      ]
+    },
+    {
+      "Location": "Haji Ali",
+      "City": "Mumbai",
+      "Latitude": 18.9826,
+      "Longitude": 72.8089,
+      "Avg_Day": 73.12,
+      "Avg_Night": 63.09,
+      "Avg_Excess_Day": 8.12,
+      "DPCC_Std_Day": 65,
+      "Zone_Category": "High",
+      "Zone_Type": "Commercial",
+      "Yearly": [
+        {
+          "Year": 2020,
+          "Avg_Day": 68.49,
+          "Avg_Night": 59.32,
+          "Zone_Category": "Moderate"
+        },
+        {
+          "Year": 2021,
+          "Avg_Day": 71.19,
+          "Avg_Night": 61.6,
+          "Zone_Category": "High"
+        },
+        {
+          "Year": 2022,
+          "Avg_Day": 73.61,
+          "Avg_Night": 63.65,
+          "Zone_Category": "High"
+        },
+        {
+          "Year": 2023,
+          "Avg_Day": 74.92,
+          "Avg_Night": 64.47,
+          "Zone_Category": "High"
+        },
+        {
+          "Year": 2024,
+          "Avg_Day": 75.61,
+          "Avg_Night": 65.07,
+          "Zone_Category": "High"
+        },
+        {
+          "Year": 2025,
+          "Avg_Day": 74.89,
+          "Avg_Night": 64.42,
+          "Zone_Category": "High"
+        }
+      ]
+    },
+    {
+      "Location": "Khar (W)",
+      "City": "Mumbai",
+      "Latitude": 19.0726,
+      "Longitude": 72.8373,
+      "Avg_Day": 74.72,
+      "Avg_Night": 65.61,
+      "Avg_Excess_Day": 9.72,
+      "DPCC_Std_Day": 65,
+      "Zone_Category": "High",
+      "Zone_Type": "Commercial",
+      "Yearly": [
+        {
+          "Year": 2020,
+          "Avg_Day": 70.19,
+          "Avg_Night": 61.87,
+          "Zone_Category": "High"
+        },
+        {
+          "Year": 2021,
+          "Avg_Day": 72.72,
+          "Avg_Night": 64.08,
+          "Zone_Category": "High"
+        },
+        {
+          "Year": 2022,
+          "Avg_Day": 75.3,
+          "Avg_Night": 66.0,
+          "Zone_Category": "High"
+        },
+        {
+          "Year": 2023,
+          "Avg_Day": 76.49,
+          "Avg_Night": 67.06,
+          "Zone_Category": "High"
+        },
+        {
+          "Year": 2024,
+          "Avg_Day": 77.14,
+          "Avg_Night": 67.66,
+          "Zone_Category": "High"
+        },
+        {
+          "Year": 2025,
+          "Avg_Day": 76.51,
+          "Avg_Night": 67.02,
+          "Zone_Category": "High"
+        }
+      ]
+    },
+    {
+      "Location": "Lower Parel",
+      "City": "Mumbai",
+      "Latitude": 18.9982,
+      "Longitude": 72.8326,
+      "Avg_Day": 77.02,
+      "Avg_Night": 71.65,
+      "Avg_Excess_Day": 2.02,
+      "DPCC_Std_Day": 75,
+      "Zone_Category": "Moderate",
+      "Zone_Type": "Industrial",
+      "Yearly": [
+        {
+          "Year": 2020,
+          "Avg_Day": 73.12,
+          "Avg_Night": 68.59,
+          "Zone_Category": "Low"
+        },
+        {
+          "Year": 2021,
+          "Avg_Day": 75.23,
+          "Avg_Night": 70.34,
+          "Zone_Category": "Moderate"
+        },
+        {
+          "Year": 2022,
+          "Avg_Day": 77.58,
+          "Avg_Night": 72.0,
+          "Zone_Category": "Moderate"
+        },
+        {
+          "Year": 2023,
+          "Avg_Day": 78.6,
+          "Avg_Night": 72.87,
+          "Zone_Category": "Moderate"
+        },
+        {
+          "Year": 2024,
+          "Avg_Day": 79.0,
+          "Avg_Night": 73.22,
+          "Zone_Category": "Moderate"
+        },
+        {
+          "Year": 2025,
+          "Avg_Day": 78.61,
+          "Avg_Night": 72.89,
+          "Zone_Category": "Moderate"
+        }
+      ]
+    },
+    {
+      "Location": "Mahalakshmi",
+      "City": "Mumbai",
+      "Latitude": 18.9845,
+      "Longitude": 72.8191,
+      "Avg_Day": 74.27,
+      "Avg_Night": 62.88,
+      "Avg_Excess_Day": 19.27,
+      "DPCC_Std_Day": 55,
+      "Zone_Category": "Critical",
+      "Zone_Type": "Residential",
+      "Yearly": [
+        {
+          "Year": 2020,
+          "Avg_Day": 70.82,
+          "Avg_Night": 60.2,
+          "Zone_Category": "Critical"
+        },
+        {
+          "Year": 2021,
+          "Avg_Day": 73.18,
+          "Avg_Night": 62.05,
+          "Zone_Category": "Critical"
+        },
+        {
+          "Year": 2022,
+          "Avg_Day": 74.83,
+          "Avg_Night": 63.26,
+          "Zone_Category": "Critical"
+        },
+        {
+          "Year": 2023,
+          "Avg_Day": 75.48,
+          "Avg_Night": 63.82,
+          "Zone_Category": "Critical"
+        },
+        {
+          "Year": 2024,
+          "Avg_Day": 75.82,
+          "Avg_Night": 64.09,
+          "Zone_Category": "Critical"
+        },
+        {
+          "Year": 2025,
+          "Avg_Day": 75.5,
+          "Avg_Night": 63.89,
+          "Zone_Category": "Critical"
+        }
+      ]
+    },
+    {
+      "Location": "Mahim",
+      "City": "Mumbai",
+      "Latitude": 19.0385,
+      "Longitude": 72.8438,
+      "Avg_Day": 72.88,
+      "Avg_Night": 61.89,
+      "Avg_Excess_Day": 17.88,
+      "DPCC_Std_Day": 55,
+      "Zone_Category": "Critical",
+      "Zone_Type": "Residential",
+      "Yearly": [
+        {
+          "Year": 2020,
+          "Avg_Day": 69.45,
+          "Avg_Night": 59.08,
+          "Zone_Category": "High"
+        },
+        {
+          "Year": 2021,
+          "Avg_Day": 71.68,
+          "Avg_Night": 61.0,
+          "Zone_Category": "Critical"
+        },
+        {
+          "Year": 2022,
+          "Avg_Day": 73.47,
+          "Avg_Night": 62.33,
+          "Zone_Category": "Critical"
+        },
+        {
+          "Year": 2023,
+          "Avg_Day": 74.1,
+          "Avg_Night": 62.89,
+          "Zone_Category": "Critical"
+        },
+        {
+          "Year": 2024,
+          "Avg_Day": 74.44,
+          "Avg_Night": 63.12,
+          "Zone_Category": "Critical"
+        },
+        {
+          "Year": 2025,
+          "Avg_Day": 74.12,
+          "Avg_Night": 62.91,
+          "Zone_Category": "Critical"
+        }
+      ]
+    },
+    {
+      "Location": "Marine Lines",
+      "City": "Mumbai",
+      "Latitude": 18.9432,
+      "Longitude": 72.8236,
+      "Avg_Day": 74.6,
+      "Avg_Night": 65.33,
+      "Avg_Excess_Day": 9.6,
+      "DPCC_Std_Day": 65,
+      "Zone_Category": "High",
+      "Zone_Type": "Commercial",
+      "Yearly": [
+        {
+          "Year": 2020,
+          "Avg_Day": 69.85,
+          "Avg_Night": 61.58,
+          "Zone_Category": "High"
+        },
+        {
+          "Year": 2021,
+          "Avg_Day": 72.71,
+          "Avg_Night": 63.89,
+          "Zone_Category": "High"
+        },
+        {
+          "Year": 2022,
+          "Avg_Day": 75.19,
+          "Avg_Night": 65.81,
+          "Zone_Category": "High"
+        },
+        {
+          "Year": 2023,
+          "Avg_Day": 76.43,
+          "Avg_Night": 66.68,
+          "Zone_Category": "High"
+        },
+        {
+          "Year": 2024,
+          "Avg_Day": 77.03,
+          "Avg_Night": 67.35,
+          "Zone_Category": "High"
+        },
+        {
+          "Year": 2025,
+          "Avg_Day": 76.39,
+          "Avg_Night": 66.69,
+          "Zone_Category": "High"
+        }
+      ]
+    },
+    {
+      "Location": "Matunga",
+      "City": "Mumbai",
+      "Latitude": 19.0225,
+      "Longitude": 72.8587,
+      "Avg_Day": 74.1,
+      "Avg_Night": 62.57,
+      "Avg_Excess_Day": 19.1,
+      "DPCC_Std_Day": 55,
+      "Zone_Category": "Critical",
+      "Zone_Type": "Residential",
+      "Yearly": [
+        {
+          "Year": 2020,
+          "Avg_Day": 70.75,
+          "Avg_Night": 59.85,
+          "Zone_Category": "Critical"
+        },
+        {
+          "Year": 2021,
+          "Avg_Day": 72.85,
+          "Avg_Night": 61.61,
+          "Zone_Category": "Critical"
+        },
+        {
+          "Year": 2022,
+          "Avg_Day": 74.67,
+          "Avg_Night": 63.02,
+          "Zone_Category": "Critical"
+        },
+        {
+          "Year": 2023,
+          "Avg_Day": 75.33,
+          "Avg_Night": 63.57,
+          "Zone_Category": "Critical"
+        },
+        {
+          "Year": 2024,
+          "Avg_Day": 75.67,
+          "Avg_Night": 63.81,
+          "Zone_Category": "Critical"
+        },
+        {
+          "Year": 2025,
+          "Avg_Day": 75.33,
+          "Avg_Night": 63.58,
+          "Zone_Category": "Critical"
+        }
+      ]
+    },
+    {
+      "Location": "Mulund (W)",
+      "City": "Mumbai",
+      "Latitude": 19.1728,
+      "Longitude": 72.9569,
+      "Avg_Day": 66.63,
+      "Avg_Night": 56.86,
+      "Avg_Excess_Day": 11.63,
+      "DPCC_Std_Day": 55,
+      "Zone_Category": "High",
+      "Zone_Type": "Residential",
+      "Yearly": [
+        {
+          "Year": 2020,
+          "Avg_Day": 63.31,
+          "Avg_Night": 54.1,
+          "Zone_Category": "High"
+        },
+        {
+          "Year": 2021,
+          "Avg_Day": 65.52,
+          "Avg_Night": 55.98,
+          "Zone_Category": "High"
+        },
+        {
+          "Year": 2022,
+          "Avg_Day": 67.1,
+          "Avg_Night": 57.35,
+          "Zone_Category": "High"
+        },
+        {
+          "Year": 2023,
+          "Avg_Day": 67.89,
+          "Avg_Night": 57.8,
+          "Zone_Category": "High"
+        },
+        {
+          "Year": 2024,
+          "Avg_Day": 68.09,
+          "Avg_Night": 58.12,
+          "Zone_Category": "High"
+        },
+        {
+          "Year": 2025,
+          "Avg_Day": 67.87,
+          "Avg_Night": 57.8,
+          "Zone_Category": "High"
+        }
+      ]
+    },
+    {
+      "Location": "Mumbai Central",
+      "City": "Mumbai",
+      "Latitude": 18.9696,
+      "Longitude": 72.8194,
+      "Avg_Day": 70.05,
+      "Avg_Night": 60.89,
+      "Avg_Excess_Day": 5.05,
+      "DPCC_Std_Day": 65,
+      "Zone_Category": "High",
+      "Zone_Type": "Commercial",
+      "Yearly": [
+        {
+          "Year": 2020,
+          "Avg_Day": 65.28,
+          "Avg_Night": 57.04,
+          "Zone_Category": "Moderate"
+        },
+        {
+          "Year": 2021,
+          "Avg_Day": 68.17,
+          "Avg_Night": 59.38,
+          "Zone_Category": "Moderate"
+        },
+        {
+          "Year": 2022,
+          "Avg_Day": 70.64,
+          "Avg_Night": 61.31,
+          "Zone_Category": "High"
+        },
+        {
+          "Year": 2023,
+          "Avg_Day": 71.8,
+          "Avg_Night": 62.34,
+          "Zone_Category": "High"
+        },
+        {
+          "Year": 2024,
+          "Avg_Day": 72.55,
+          "Avg_Night": 62.93,
+          "Zone_Category": "High"
+        },
+        {
+          "Year": 2025,
+          "Avg_Day": 71.84,
+          "Avg_Night": 62.35,
+          "Zone_Category": "High"
+        }
+      ]
+    },
+    {
+      "Location": "Santacruz (W)",
+      "City": "Mumbai",
+      "Latitude": 19.0822,
+      "Longitude": 72.8397,
+      "Avg_Day": 78.33,
+      "Avg_Night": 69.27,
+      "Avg_Excess_Day": 13.33,
+      "DPCC_Std_Day": 65,
+      "Zone_Category": "High",
+      "Zone_Type": "Commercial",
+      "Yearly": [
+        {
+          "Year": 2020,
+          "Avg_Day": 73.67,
+          "Avg_Night": 65.45,
+          "Zone_Category": "High"
+        },
+        {
+          "Year": 2021,
+          "Avg_Day": 76.36,
+          "Avg_Night": 67.77,
+          "Zone_Category": "High"
+        },
+        {
+          "Year": 2022,
+          "Avg_Day": 78.89,
+          "Avg_Night": 69.73,
+          "Zone_Category": "High"
+        },
+        {
+          "Year": 2023,
+          "Avg_Day": 80.11,
+          "Avg_Night": 70.69,
+          "Zone_Category": "Critical"
+        },
+        {
+          "Year": 2024,
+          "Avg_Day": 80.86,
+          "Avg_Night": 71.33,
+          "Zone_Category": "Critical"
+        },
+        {
+          "Year": 2025,
+          "Avg_Day": 80.11,
+          "Avg_Night": 70.66,
+          "Zone_Category": "Critical"
+        }
+      ]
+    },
+    {
+      "Location": "Turner Road (Bandra)",
+      "City": "Mumbai",
+      "Latitude": 19.0543,
+      "Longitude": 72.8366,
+      "Avg_Day": 74.33,
+      "Avg_Night": 63.36,
+      "Avg_Excess_Day": 19.33,
+      "DPCC_Std_Day": 55,
+      "Zone_Category": "Critical",
+      "Zone_Type": "Residential",
+      "Yearly": [
+        {
+          "Year": 2020,
+          "Avg_Day": 71.12,
+          "Avg_Night": 60.56,
+          "Zone_Category": "Critical"
+        },
+        {
+          "Year": 2021,
+          "Avg_Day": 73.38,
+          "Avg_Night": 62.5,
+          "Zone_Category": "Critical"
+        },
+        {
+          "Year": 2022,
+          "Avg_Day": 74.83,
+          "Avg_Night": 63.78,
+          "Zone_Category": "Critical"
+        },
+        {
+          "Year": 2023,
+          "Avg_Day": 75.49,
+          "Avg_Night": 64.4,
+          "Zone_Category": "Critical"
+        },
+        {
+          "Year": 2024,
+          "Avg_Day": 75.65,
+          "Avg_Night": 64.6,
+          "Zone_Category": "Critical"
+        },
+        {
+          "Year": 2025,
+          "Avg_Day": 75.48,
+          "Avg_Night": 64.35,
+          "Zone_Category": "Critical"
+        }
+      ]
+    },
+    {
+      "Location": "Vile Parle (W)",
+      "City": "Mumbai",
+      "Latitude": 19.1004,
+      "Longitude": 72.8497,
+      "Avg_Day": 79.67,
+      "Avg_Night": 70.63,
+      "Avg_Excess_Day": 14.67,
+      "DPCC_Std_Day": 65,
+      "Zone_Category": "Critical",
+      "Zone_Type": "Commercial",
+      "Yearly": [
+        {
+          "Year": 2020,
+          "Avg_Day": 74.9,
+          "Avg_Night": 66.81,
+          "Zone_Category": "High"
+        },
+        {
+          "Year": 2021,
+          "Avg_Day": 77.83,
+          "Avg_Night": 69.15,
+          "Zone_Category": "High"
+        },
+        {
+          "Year": 2022,
+          "Avg_Day": 80.11,
+          "Avg_Night": 71.06,
+          "Zone_Category": "Critical"
+        },
+        {
+          "Year": 2023,
+          "Avg_Day": 81.52,
+          "Avg_Night": 72.09,
+          "Zone_Category": "Critical"
+        },
+        {
+          "Year": 2024,
+          "Avg_Day": 82.16,
+          "Avg_Night": 72.57,
+          "Zone_Category": "Critical"
+        },
+        {
+          "Year": 2025,
+          "Avg_Day": 81.52,
+          "Avg_Night": 72.1,
+          "Zone_Category": "Critical"
+        }
+      ]
+    }
+  ],
+  "yearly_trend": [
+    {
+      "Year": 2020,
+      "Avg_Day": 70.07,
+      "Avg_Night": 61.24
+    },
+    {
+      "Year": 2021,
+      "Avg_Day": 72.63,
+      "Avg_Night": 63.38
+    },
+    {
+      "Year": 2022,
+      "Avg_Day": 74.82,
+      "Avg_Night": 65.08
+    },
+    {
+      "Year": 2023,
+      "Avg_Day": 75.87,
+      "Avg_Night": 65.9
+    },
+    {
+      "Year": 2024,
+      "Avg_Day": 76.4,
+      "Avg_Night": 66.36
+    },
+    {
+      "Year": 2025,
+      "Avg_Day": 75.87,
+      "Avg_Night": 65.9
+    }
+  ]
+}

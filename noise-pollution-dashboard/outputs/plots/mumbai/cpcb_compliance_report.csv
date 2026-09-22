@@ -1,0 +1,4 @@
+Zone_Type,CPCB_Day_Standard,Avg_Recorded_Day_dB,Avg_Excess_Day_dB,Violation_Pct
+Commercial,65,74.46,9.46,98.6
+Industrial,75,76.71,1.71,73.3
+Residential,55,72.58,17.58,100.0

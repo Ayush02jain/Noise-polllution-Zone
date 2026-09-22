@@ -2,11 +2,12 @@
   "locations": [
     {
       "Location": "Adarsh Nagar",
+      "City": "Delhi",
       "Latitude": 28.7165,
       "Longitude": 77.1709,
-      "Avg_Day": 67.93,
-      "Avg_Night": 56.62,
-      "Avg_Excess_Day": 12.93,
+      "Avg_Day": 68.08,
+      "Avg_Night": 56.74,
+      "Avg_Excess_Day": 13.08,
       "DPCC_Std_Day": 55,
       "Zone_Category": "High",
       "Zone_Type": "Residential",
@@ -40,16 +41,23 @@
           "Avg_Day": 69.31,
           "Avg_Night": 57.64,
           "Zone_Category": "High"
+        },
+        {
+          "Year": 2025,
+          "Avg_Day": 68.79,
+          "Avg_Night": 57.34,
+          "Zone_Category": "High"
         }
       ]
     },
     {
       "Location": "Anand Vihar",
+      "City": "Delhi",
       "Latitude": 28.6469,
       "Longitude": 77.3156,
-      "Avg_Day": 71.69,
-      "Avg_Night": 62.27,
-      "Avg_Excess_Day": 6.69,
+      "Avg_Day": 71.9,
+      "Avg_Night": 62.44,
+      "Avg_Excess_Day": 6.9,
       "DPCC_Std_Day": 65,
       "Zone_Category": "High",
       "Zone_Type": "Commercial",
@@ -83,16 +91,23 @@
           "Avg_Day": 73.85,
           "Avg_Night": 63.89,
           "Zone_Category": "High"
+        },
+        {
+          "Year": 2025,
+          "Avg_Day": 72.99,
+          "Avg_Night": 63.26,
+          "Zone_Category": "High"
         }
       ]
     },
     {
       "Location": "Ashok Vihar",
+      "City": "Delhi",
       "Latitude": 28.6957,
       "Longitude": 77.177,
-      "Avg_Day": 67.13,
-      "Avg_Night": 55.83,
-      "Avg_Excess_Day": 12.13,
+      "Avg_Day": 67.28,
+      "Avg_Night": 55.92,
+      "Avg_Excess_Day": 12.28,
       "DPCC_Std_Day": 55,
       "Zone_Category": "High",
       "Zone_Type": "Residential",
@@ -126,16 +141,23 @@
           "Avg_Day": 68.36,
           "Avg_Night": 56.79,
           "Zone_Category": "High"
+        },
+        {
+          "Year": 2025,
+          "Avg_Day": 68.03,
+          "Avg_Night": 56.38,
+          "Zone_Category": "High"
         }
       ]
     },
     {
       "Location": "Badli",
+      "City": "Delhi",
       "Latitude": 28.7353,
       "Longitude": 77.1331,
-      "Avg_Day": 72.35,
-      "Avg_Night": 69.02,
-      "Avg_Excess_Day": -2.65,
+      "Avg_Day": 72.52,
+      "Avg_Night": 69.16,
+      "Avg_Excess_Day": -2.48,
       "DPCC_Std_Day": 75,
       "Zone_Category": "Low",
       "Zone_Type": "Industrial",
@@ -169,16 +191,23 @@
           "Avg_Day": 73.99,
           "Avg_Night": 70.31,
           "Zone_Category": "Moderate"
+        },
+        {
+          "Year": 2025,
+          "Avg_Day": 73.36,
+          "Avg_Night": 69.84,
+          "Zone_Category": "Low"
         }
       ]
     },
     {
       "Location": "Braham Puri",
+      "City": "Delhi",
       "Latitude": 28.675,
       "Longitude": 77.27,
-      "Avg_Day": 71.77,
-      "Avg_Night": 68.21,
-      "Avg_Excess_Day": -3.23,
+      "Avg_Day": 71.95,
+      "Avg_Night": 68.34,
+      "Avg_Excess_Day": -3.05,
       "DPCC_Std_Day": 75,
       "Zone_Category": "Low",
       "Zone_Type": "Industrial",
@@ -212,16 +241,23 @@
           "Avg_Day": 73.44,
           "Avg_Night": 69.52,
           "Zone_Category": "Low"
+        },
+        {
+          "Year": 2025,
+          "Avg_Day": 72.83,
+          "Avg_Night": 69.03,
+          "Zone_Category": "Low"
         }
       ]
     },
     {
       "Location": "Daryaganj",
+      "City": "Delhi",
       "Latitude": 28.6411,
       "Longitude": 77.2388,
-      "Avg_Day": 68.67,
-      "Avg_Night": 59.2,
-      "Avg_Excess_Day": 3.67,
+      "Avg_Day": 68.89,
+      "Avg_Night": 59.36,
+      "Avg_Excess_Day": 3.89,
       "DPCC_Std_Day": 65,
       "Zone_Category": "Moderate",
       "Zone_Type": "Commercial",
@@ -255,16 +291,23 @@
           "Avg_Day": 70.88,
           "Avg_Night": 60.93,
           "Zone_Category": "High"
+        },
+        {
+          "Year": 2025,
+          "Avg_Day": 69.96,
+          "Avg_Night": 60.16,
+          "Zone_Category": "Moderate"
         }
       ]
     },
     {
       "Location": "Defence Colony",
+      "City": "Delhi",
       "Latitude": 28.5744,
       "Longitude": 77.2337,
-      "Avg_Day": 64.52,
-      "Avg_Night": 53.4,
-      "Avg_Excess_Day": 9.52,
+      "Avg_Day": 64.65,
+      "Avg_Night": 53.5,
+      "Avg_Excess_Day": 9.65,
       "DPCC_Std_Day": 55,
       "Zone_Category": "High",
       "Zone_Type": "Residential",
@@ -298,16 +341,23 @@
           "Avg_Day": 65.83,
           "Avg_Night": 54.45,
           "Zone_Category": "High"
+        },
+        {
+          "Year": 2025,
+          "Avg_Day": 65.32,
+          "Avg_Night": 54.01,
+          "Zone_Category": "High"
         }
       ]
     },
     {
       "Location": "Dwaraka",
+      "City": "Delhi",
       "Latitude": 28.5921,
       "Longitude": 77.046,
-      "Avg_Day": 65.14,
-      "Avg_Night": 53.8,
-      "Avg_Excess_Day": 10.14,
+      "Avg_Day": 65.27,
+      "Avg_Night": 53.89,
+      "Avg_Excess_Day": 10.27,
       "DPCC_Std_Day": 55,
       "Zone_Category": "High",
       "Zone_Type": "Residential",
@@ -341,16 +391,23 @@
           "Avg_Day": 66.53,
           "Avg_Night": 54.76,
           "Zone_Category": "High"
+        },
+        {
+          "Year": 2025,
+          "Avg_Day": 65.9,
+          "Avg_Night": 54.29,
+          "Zone_Category": "High"
         }
       ]
     },
     {
       "Location": "Greater Kailash",
+      "City": "Delhi",
       "Latitude": 28.542,
       "Longitude": 77.24,
-      "Avg_Day": 63.9,
-      "Avg_Night": 52.61,
-      "Avg_Excess_Day": 8.9,
+      "Avg_Day": 64.04,
+      "Avg_Night": 52.7,
+      "Avg_Excess_Day": 9.04,
       "DPCC_Std_Day": 55,
       "Zone_Category": "High",
       "Zone_Type": "Residential",
@@ -384,16 +441,23 @@
           "Avg_Day": 65.19,
           "Avg_Night": 53.63,
           "Zone_Category": "High"
+        },
+        {
+          "Year": 2025,
+          "Avg_Day": 64.74,
+          "Avg_Night": 53.18,
+          "Zone_Category": "High"
         }
       ]
     },
     {
       "Location": "Inder Puri",
+      "City": "Delhi",
       "Latitude": 28.596,
       "Longitude": 77.177,
-      "Avg_Day": 66.51,
-      "Avg_Night": 55.41,
-      "Avg_Excess_Day": 11.51,
+      "Avg_Day": 66.64,
+      "Avg_Night": 55.51,
+      "Avg_Excess_Day": 11.64,
       "DPCC_Std_Day": 55,
       "Zone_Category": "High",
       "Zone_Type": "Residential",
@@ -427,16 +491,23 @@
           "Avg_Day": 67.82,
           "Avg_Night": 56.39,
           "Zone_Category": "High"
+        },
+        {
+          "Year": 2025,
+          "Avg_Day": 67.29,
+          "Avg_Night": 55.99,
+          "Zone_Category": "High"
         }
       ]
     },
     {
       "Location": "Janak Puri",
+      "City": "Delhi",
       "Latitude": 28.6219,
       "Longitude": 77.0815,
-      "Avg_Day": 66.13,
-      "Avg_Night": 54.81,
-      "Avg_Excess_Day": 11.13,
+      "Avg_Day": 66.26,
+      "Avg_Night": 54.89,
+      "Avg_Excess_Day": 11.26,
       "DPCC_Std_Day": 55,
       "Zone_Category": "High",
       "Zone_Type": "Residential",
@@ -470,16 +541,23 @@
           "Avg_Day": 67.36,
           "Avg_Night": 55.71,
           "Zone_Category": "High"
+        },
+        {
+          "Year": 2025,
+          "Avg_Day": 66.9,
+          "Avg_Night": 55.3,
+          "Zone_Category": "High"
         }
       ]
     },
     {
       "Location": "Karawal Nagar",
+      "City": "Delhi",
       "Latitude": 28.723,
       "Longitude": 77.259,
-      "Avg_Day": 67.46,
-      "Avg_Night": 58.07,
-      "Avg_Excess_Day": 2.46,
+      "Avg_Day": 67.66,
+      "Avg_Night": 58.24,
+      "Avg_Excess_Day": 2.66,
       "DPCC_Std_Day": 65,
       "Zone_Category": "Moderate",
       "Zone_Type": "Commercial",
@@ -513,16 +591,23 @@
           "Avg_Day": 69.54,
           "Avg_Night": 59.78,
           "Zone_Category": "Moderate"
+        },
+        {
+          "Year": 2025,
+          "Avg_Day": 68.69,
+          "Avg_Night": 59.09,
+          "Zone_Category": "Moderate"
         }
       ]
     },
     {
       "Location": "Karol Bagh",
+      "City": "Delhi",
       "Latitude": 28.6514,
       "Longitude": 77.1907,
-      "Avg_Day": 73.27,
-      "Avg_Night": 63.73,
-      "Avg_Excess_Day": 8.27,
+      "Avg_Day": 73.47,
+      "Avg_Night": 63.89,
+      "Avg_Excess_Day": 8.47,
       "DPCC_Std_Day": 65,
       "Zone_Category": "High",
       "Zone_Type": "Commercial",
@@ -556,16 +641,23 @@
           "Avg_Day": 75.45,
           "Avg_Night": 65.44,
           "Zone_Category": "High"
+        },
+        {
+          "Year": 2025,
+          "Avg_Day": 74.5,
+          "Avg_Night": 64.68,
+          "Zone_Category": "High"
         }
       ]
     },
     {
       "Location": "Kondli",
+      "City": "Delhi",
       "Latitude": 28.62,
       "Longitude": 77.35,
-      "Avg_Day": 65.55,
-      "Avg_Night": 54.41,
-      "Avg_Excess_Day": 10.55,
+      "Avg_Day": 65.67,
+      "Avg_Night": 54.52,
+      "Avg_Excess_Day": 10.67,
       "DPCC_Std_Day": 55,
       "Zone_Category": "High",
       "Zone_Type": "Residential",
@@ -599,16 +691,23 @@
           "Avg_Day": 66.9,
           "Avg_Night": 55.37,
           "Zone_Category": "High"
+        },
+        {
+          "Year": 2025,
+          "Avg_Day": 66.29,
+          "Avg_Night": 55.08,
+          "Zone_Category": "High"
         }
       ]
     },
     {
       "Location": "Lajpat Nagar",
+      "City": "Delhi",
       "Latitude": 28.57,
       "Longitude": 77.24,
-      "Avg_Day": 69.31,
-      "Avg_Night": 60.45,
-      "Avg_Excess_Day": 4.31,
+      "Avg_Day": 69.51,
+      "Avg_Night": 60.6,
+      "Avg_Excess_Day": 4.51,
       "DPCC_Std_Day": 65,
       "Zone_Category": "High",
       "Zone_Type": "Commercial",
@@ -642,16 +741,23 @@
           "Avg_Day": 71.54,
           "Avg_Night": 62.09,
           "Zone_Category": "High"
+        },
+        {
+          "Year": 2025,
+          "Avg_Day": 70.5,
+          "Avg_Night": 61.35,
+          "Zone_Category": "High"
         }
       ]
     },
     {
       "Location": "Lawrence Road",
+      "City": "Delhi",
       "Latitude": 28.68,
       "Longitude": 77.13,
-      "Avg_Day": 73.01,
-      "Avg_Night": 69.4,
-      "Avg_Excess_Day": -1.99,
+      "Avg_Day": 73.17,
+      "Avg_Night": 69.55,
+      "Avg_Excess_Day": -1.83,
       "DPCC_Std_Day": 75,
       "Zone_Category": "Low",
       "Zone_Type": "Industrial",
@@ -685,16 +791,23 @@
           "Avg_Day": 74.46,
           "Avg_Night": 70.71,
           "Zone_Category": "Moderate"
+        },
+        {
+          "Year": 2025,
+          "Avg_Day": 73.97,
+          "Avg_Night": 70.26,
+          "Zone_Category": "Low"
         }
       ]
     },
     {
       "Location": "Mandavali",
+      "City": "Delhi",
       "Latitude": 28.6364,
       "Longitude": 77.2953,
-      "Avg_Day": 65.17,
-      "Avg_Night": 53.81,
-      "Avg_Excess_Day": 10.17,
+      "Avg_Day": 65.3,
+      "Avg_Night": 53.89,
+      "Avg_Excess_Day": 10.3,
       "DPCC_Std_Day": 55,
       "Zone_Category": "High",
       "Zone_Type": "Residential",
@@ -728,16 +841,23 @@
           "Avg_Day": 66.52,
           "Avg_Night": 54.92,
           "Zone_Category": "High"
+        },
+        {
+          "Year": 2025,
+          "Avg_Day": 65.96,
+          "Avg_Night": 54.27,
+          "Zone_Category": "High"
         }
       ]
     },
     {
       "Location": "Mangol Puri",
+      "City": "Delhi",
       "Latitude": 28.705,
       "Longitude": 77.13,
-      "Avg_Day": 66.56,
-      "Avg_Night": 56.82,
-      "Avg_Excess_Day": 1.56,
+      "Avg_Day": 66.77,
+      "Avg_Night": 56.98,
+      "Avg_Excess_Day": 1.77,
       "DPCC_Std_Day": 65,
       "Zone_Category": "Moderate",
       "Zone_Type": "Commercial",
@@ -771,16 +891,23 @@
           "Avg_Day": 68.69,
           "Avg_Night": 58.45,
           "Zone_Category": "Moderate"
+        },
+        {
+          "Year": 2025,
+          "Avg_Day": 67.79,
+          "Avg_Night": 57.8,
+          "Zone_Category": "Moderate"
         }
       ]
     },
     {
       "Location": "Meera Bagh",
+      "City": "Delhi",
       "Latitude": 28.67,
       "Longitude": 77.11,
-      "Avg_Day": 65.98,
-      "Avg_Night": 54.61,
-      "Avg_Excess_Day": 10.98,
+      "Avg_Day": 66.13,
+      "Avg_Night": 54.71,
+      "Avg_Excess_Day": 11.13,
       "DPCC_Std_Day": 55,
       "Zone_Category": "High",
       "Zone_Type": "Residential",
@@ -814,16 +941,23 @@
           "Avg_Day": 67.26,
           "Avg_Night": 55.64,
           "Zone_Category": "High"
+        },
+        {
+          "Year": 2025,
+          "Avg_Day": 66.89,
+          "Avg_Night": 55.22,
+          "Zone_Category": "High"
         }
       ]
     },
     {
       "Location": "Mehrauli",
+      "City": "Delhi",
       "Latitude": 28.515,
       "Longitude": 77.18,
-      "Avg_Day": 64.56,
-      "Avg_Night": 53.14,
-      "Avg_Excess_Day": 9.56,
+      "Avg_Day": 64.71,
+      "Avg_Night": 53.23,
+      "Avg_Excess_Day": 9.71,
       "DPCC_Std_Day": 55,
       "Zone_Category": "High",
       "Zone_Type": "Residential",
@@ -857,16 +991,23 @@
           "Avg_Day": 65.76,
           "Avg_Night": 54.21,
           "Zone_Category": "High"
+        },
+        {
+          "Year": 2025,
+          "Avg_Day": 65.47,
+          "Avg_Night": 53.71,
+          "Zone_Category": "High"
         }
       ]
     },
     {
       "Location": "Moti Bagh",
+      "City": "Delhi",
       "Latitude": 28.58,
       "Longitude": 77.17,
-      "Avg_Day": 65.3,
-      "Avg_Night": 54.23,
-      "Avg_Excess_Day": 10.3,
+      "Avg_Day": 65.43,
+      "Avg_Night": 54.34,
+      "Avg_Excess_Day": 10.43,
       "DPCC_Std_Day": 55,
       "Zone_Category": "High",
       "Zone_Type": "Residential",
@@ -900,16 +1041,23 @@
           "Avg_Day": 66.68,
           "Avg_Night": 55.24,
           "Zone_Category": "High"
+        },
+        {
+          "Year": 2025,
+          "Avg_Day": 66.11,
+          "Avg_Night": 54.87,
+          "Zone_Category": "High"
         }
       ]
     },
     {
       "Location": "Moti Nagar",
+      "City": "Delhi",
       "Latitude": 28.6531,
       "Longitude": 77.1453,
-      "Avg_Day": 65.68,
-      "Avg_Night": 54.61,
-      "Avg_Excess_Day": 10.68,
+      "Avg_Day": 65.81,
+      "Avg_Night": 54.71,
+      "Avg_Excess_Day": 10.81,
       "DPCC_Std_Day": 55,
       "Zone_Category": "High",
       "Zone_Type": "Residential",
@@ -943,16 +1091,23 @@
           "Avg_Day": 67.06,
           "Avg_Night": 55.65,
           "Zone_Category": "High"
+        },
+        {
+          "Year": 2025,
+          "Avg_Day": 66.47,
+          "Avg_Night": 55.22,
+          "Zone_Category": "High"
         }
       ]
     },
     {
       "Location": "Mukherji Nagar",
+      "City": "Delhi",
       "Latitude": 28.7073,
       "Longitude": 77.21,
-      "Avg_Day": 66.89,
-      "Avg_Night": 55.6,
-      "Avg_Excess_Day": 11.89,
+      "Avg_Day": 67.04,
+      "Avg_Night": 55.69,
+      "Avg_Excess_Day": 12.04,
       "DPCC_Std_Day": 55,
       "Zone_Category": "High",
       "Zone_Type": "Residential",
@@ -986,16 +1141,23 @@
           "Avg_Day": 68.19,
           "Avg_Night": 56.64,
           "Zone_Category": "High"
+        },
+        {
+          "Year": 2025,
+          "Avg_Day": 67.81,
+          "Avg_Night": 56.13,
+          "Zone_Category": "High"
         }
       ]
     },
     {
       "Location": "Nand Nagri",
+      "City": "Delhi",
       "Latitude": 28.6944,
       "Longitude": 77.3112,
-      "Avg_Day": 66.15,
-      "Avg_Night": 54.83,
-      "Avg_Excess_Day": 11.15,
+      "Avg_Day": 66.3,
+      "Avg_Night": 54.9,
+      "Avg_Excess_Day": 11.3,
       "DPCC_Std_Day": 55,
       "Zone_Category": "High",
       "Zone_Type": "Residential",
@@ -1029,16 +1191,23 @@
           "Avg_Day": 67.42,
           "Avg_Night": 55.85,
           "Zone_Category": "High"
+        },
+        {
+          "Year": 2025,
+          "Avg_Day": 67.06,
+          "Avg_Night": 55.29,
+          "Zone_Category": "High"
         }
       ]
     },
     {
       "Location": "Naraouji Nagar",
+      "City": "Delhi",
       "Latitude": 28.59,
       "Longitude": 77.18,
-      "Avg_Day": 64.97,
-      "Avg_Night": 53.59,
-      "Avg_Excess_Day": 9.97,
+      "Avg_Day": 65.1,
+      "Avg_Night": 53.69,
+      "Avg_Excess_Day": 10.1,
       "DPCC_Std_Day": 55,
       "Zone_Category": "High",
       "Zone_Type": "Residential",
@@ -1072,16 +1241,23 @@
           "Avg_Day": 66.33,
           "Avg_Night": 54.56,
           "Zone_Category": "High"
+        },
+        {
+          "Year": 2025,
+          "Avg_Day": 65.74,
+          "Avg_Night": 54.21,
+          "Zone_Category": "High"
         }
       ]
     },
     {
       "Location": "New Friends Colony",
+      "City": "Delhi",
       "Latitude": 28.5636,
       "Longitude": 77.2634,
-      "Avg_Day": 64.19,
-      "Avg_Night": 52.77,
-      "Avg_Excess_Day": 9.19,
+      "Avg_Day": 64.31,
+      "Avg_Night": 52.88,
+      "Avg_Excess_Day": 9.31,
       "DPCC_Std_Day": 55,
       "Zone_Category": "High",
       "Zone_Type": "Residential",
@@ -1115,16 +1291,23 @@
           "Avg_Day": 65.61,
           "Avg_Night": 53.76,
           "Zone_Category": "High"
+        },
+        {
+          "Year": 2025,
+          "Avg_Day": 64.93,
+          "Avg_Night": 53.41,
+          "Zone_Category": "High"
         }
       ]
     },
     {
       "Location": "Pahar Ganj",
+      "City": "Delhi",
       "Latitude": 28.6441,
       "Longitude": 77.2132,
-      "Avg_Day": 70.53,
-      "Avg_Night": 61.01,
-      "Avg_Excess_Day": 5.53,
+      "Avg_Day": 70.75,
+      "Avg_Night": 61.18,
+      "Avg_Excess_Day": 5.75,
       "DPCC_Std_Day": 65,
       "Zone_Category": "High",
       "Zone_Type": "Commercial",
@@ -1158,16 +1341,23 @@
           "Avg_Day": 72.61,
           "Avg_Night": 62.66,
           "Zone_Category": "High"
+        },
+        {
+          "Year": 2025,
+          "Avg_Day": 71.86,
+          "Avg_Night": 62.0,
+          "Zone_Category": "High"
         }
       ]
     },
     {
       "Location": "Paschim Vihar",
+      "City": "Delhi",
       "Latitude": 28.67,
       "Longitude": 77.1,
-      "Avg_Day": 65.58,
-      "Avg_Night": 54.41,
-      "Avg_Excess_Day": 10.58,
+      "Avg_Day": 65.72,
+      "Avg_Night": 54.51,
+      "Avg_Excess_Day": 10.72,
       "DPCC_Std_Day": 55,
       "Zone_Category": "High",
       "Zone_Type": "Residential",
@@ -1201,16 +1391,23 @@
           "Avg_Day": 66.92,
           "Avg_Night": 55.43,
           "Zone_Category": "High"
+        },
+        {
+          "Year": 2025,
+          "Avg_Day": 66.46,
+          "Avg_Night": 55.02,
+          "Zone_Category": "High"
         }
       ]
     },
     {
       "Location": "Patel Nagar",
+      "City": "Delhi",
       "Latitude": 28.6508,
       "Longitude": 77.1657,
-      "Avg_Day": 66.06,
-      "Avg_Night": 54.76,
-      "Avg_Excess_Day": 11.06,
+      "Avg_Day": 66.19,
+      "Avg_Night": 54.84,
+      "Avg_Excess_Day": 11.19,
       "DPCC_Std_Day": 55,
       "Zone_Category": "High",
       "Zone_Type": "Residential",
@@ -1244,16 +1441,23 @@
           "Avg_Day": 67.42,
           "Avg_Night": 55.8,
           "Zone_Category": "High"
+        },
+        {
+          "Year": 2025,
+          "Avg_Day": 66.83,
+          "Avg_Night": 55.27,
+          "Zone_Category": "High"
         }
       ]
     },
     {
       "Location": "Prehladpur",
+      "City": "Delhi",
       "Latitude": 28.54,
       "Longitude": 77.3,
-      "Avg_Day": 64.36,
-      "Avg_Night": 53.17,
-      "Avg_Excess_Day": 9.36,
+      "Avg_Day": 64.5,
+      "Avg_Night": 53.27,
+      "Avg_Excess_Day": 9.5,
       "DPCC_Std_Day": 55,
       "Zone_Category": "High",
       "Zone_Type": "Residential",
@@ -1287,16 +1491,23 @@
           "Avg_Day": 65.73,
           "Avg_Night": 54.15,
           "Zone_Category": "High"
+        },
+        {
+          "Year": 2025,
+          "Avg_Day": 65.21,
+          "Avg_Night": 53.76,
+          "Zone_Category": "High"
         }
       ]
     },
     {
       "Location": "R.K. Puram",
+      "City": "Delhi",
       "Latitude": 28.57,
       "Longitude": 77.17,
-      "Avg_Day": 64.91,
-      "Avg_Night": 53.59,
-      "Avg_Excess_Day": 9.91,
+      "Avg_Day": 65.04,
+      "Avg_Night": 53.68,
+      "Avg_Excess_Day": 10.04,
       "DPCC_Std_Day": 55,
       "Zone_Category": "High",
       "Zone_Type": "Residential",
@@ -1330,16 +1541,23 @@
           "Avg_Day": 66.22,
           "Avg_Night": 54.59,
           "Zone_Category": "High"
+        },
+        {
+          "Year": 2025,
+          "Avg_Day": 65.7,
+          "Avg_Night": 54.15,
+          "Zone_Category": "High"
         }
       ]
     },
     {
       "Location": "Rajpura Road",
+      "City": "Delhi",
       "Latitude": 28.71,
       "Longitude": 77.23,
-      "Avg_Day": 66.37,
-      "Avg_Night": 55.16,
-      "Avg_Excess_Day": 11.37,
+      "Avg_Day": 66.5,
+      "Avg_Night": 55.26,
+      "Avg_Excess_Day": 11.5,
       "DPCC_Std_Day": 55,
       "Zone_Category": "High",
       "Zone_Type": "Residential",
@@ -1373,16 +1591,23 @@
           "Avg_Day": 67.66,
           "Avg_Night": 56.13,
           "Zone_Category": "High"
+        },
+        {
+          "Year": 2025,
+          "Avg_Day": 67.15,
+          "Avg_Night": 55.75,
+          "Zone_Category": "High"
         }
       ]
     },
     {
       "Location": "Rana Pratap Bagh",
+      "City": "Delhi",
       "Latitude": 28.69,
       "Longitude": 77.2,
-      "Avg_Day": 66.51,
-      "Avg_Night": 55.36,
-      "Avg_Excess_Day": 11.51,
+      "Avg_Day": 66.65,
+      "Avg_Night": 55.45,
+      "Avg_Excess_Day": 11.65,
       "DPCC_Std_Day": 55,
       "Zone_Category": "High",
       "Zone_Type": "Residential",
@@ -1416,16 +1641,23 @@
           "Avg_Day": 67.72,
           "Avg_Night": 56.38,
           "Zone_Category": "High"
+        },
+        {
+          "Year": 2025,
+          "Avg_Day": 67.37,
+          "Avg_Night": 55.92,
+          "Zone_Category": "High"
         }
       ]
     },
     {
       "Location": "Rohini",
+      "City": "Delhi",
       "Latitude": 28.732,
       "Longitude": 77.11,
-      "Avg_Day": 67.92,
-      "Avg_Night": 58.5,
-      "Avg_Excess_Day": 2.92,
+      "Avg_Day": 68.13,
+      "Avg_Night": 58.64,
+      "Avg_Excess_Day": 3.13,
       "DPCC_Std_Day": 65,
       "Zone_Category": "Moderate",
       "Zone_Type": "Commercial",
@@ -1459,16 +1691,23 @@
           "Avg_Day": 70.02,
           "Avg_Night": 60.17,
           "Zone_Category": "High"
+        },
+        {
+          "Year": 2025,
+          "Avg_Day": 69.19,
+          "Avg_Night": 59.35,
+          "Zone_Category": "Moderate"
         }
       ]
     },
     {
       "Location": "Sarita Vihar",
+      "City": "Delhi",
       "Latitude": 28.531,
       "Longitude": 77.288,
-      "Avg_Day": 66.14,
-      "Avg_Night": 57.02,
-      "Avg_Excess_Day": 1.14,
+      "Avg_Day": 66.35,
+      "Avg_Night": 57.17,
+      "Avg_Excess_Day": 1.35,
       "DPCC_Std_Day": 65,
       "Zone_Category": "Moderate",
       "Zone_Type": "Commercial",
@@ -1502,16 +1741,23 @@
           "Avg_Day": 68.32,
           "Avg_Night": 58.73,
           "Zone_Category": "Moderate"
+        },
+        {
+          "Year": 2025,
+          "Avg_Day": 67.41,
+          "Avg_Night": 57.88,
+          "Zone_Category": "Moderate"
         }
       ]
     },
     {
       "Location": "Shalimar Bagh",
+      "City": "Delhi",
       "Latitude": 28.7184,
       "Longitude": 77.16,
-      "Avg_Day": 66.91,
-      "Avg_Night": 55.57,
-      "Avg_Excess_Day": 11.91,
+      "Avg_Day": 67.05,
+      "Avg_Night": 55.67,
+      "Avg_Excess_Day": 12.05,
       "DPCC_Std_Day": 55,
       "Zone_Category": "High",
       "Zone_Type": "Residential",
@@ -1545,16 +1791,23 @@
           "Avg_Day": 68.27,
           "Avg_Night": 56.47,
           "Zone_Category": "High"
+        },
+        {
+          "Year": 2025,
+          "Avg_Day": 67.74,
+          "Avg_Night": 56.16,
+          "Zone_Category": "High"
         }
       ]
     },
     {
       "Location": "Shanti Vihar",
+      "City": "Delhi",
       "Latitude": 28.61,
       "Longitude": 77.31,
-      "Avg_Day": 65.11,
-      "Avg_Night": 53.84,
-      "Avg_Excess_Day": 10.11,
+      "Avg_Day": 65.25,
+      "Avg_Night": 53.92,
+      "Avg_Excess_Day": 10.25,
       "DPCC_Std_Day": 55,
       "Zone_Category": "High",
       "Zone_Type": "Residential",
@@ -1588,16 +1841,23 @@
           "Avg_Day": 66.43,
           "Avg_Night": 54.86,
           "Zone_Category": "High"
+        },
+        {
+          "Year": 2025,
+          "Avg_Day": 65.94,
+          "Avg_Night": 54.33,
+          "Zone_Category": "High"
         }
       ]
     },
     {
       "Location": "Tilak Nagar",
+      "City": "Delhi",
       "Latitude": 28.64,
       "Longitude": 77.09,
-      "Avg_Day": 65.94,
-      "Avg_Night": 54.59,
-      "Avg_Excess_Day": 10.94,
+      "Avg_Day": 66.07,
+      "Avg_Night": 54.7,
+      "Avg_Excess_Day": 11.07,
       "DPCC_Std_Day": 55,
       "Zone_Category": "High",
       "Zone_Type": "Residential",
@@ -1631,16 +1891,23 @@
           "Avg_Day": 67.33,
           "Avg_Night": 55.56,
           "Zone_Category": "High"
+        },
+        {
+          "Year": 2025,
+          "Avg_Day": 66.73,
+          "Avg_Night": 55.23,
+          "Zone_Category": "High"
         }
       ]
     },
     {
       "Location": "Tughlakabad",
+      "City": "Delhi",
       "Latitude": 28.5147,
       "Longitude": 77.253,
-      "Avg_Day": 71.2,
-      "Avg_Night": 67.62,
-      "Avg_Excess_Day": -3.8,
+      "Avg_Day": 71.36,
+      "Avg_Night": 67.75,
+      "Avg_Excess_Day": -3.64,
       "DPCC_Std_Day": 75,
       "Zone_Category": "Low",
       "Zone_Type": "Industrial",
@@ -1674,16 +1941,23 @@
           "Avg_Day": 72.79,
           "Avg_Night": 68.89,
           "Zone_Category": "Low"
+        },
+        {
+          "Year": 2025,
+          "Avg_Day": 72.19,
+          "Avg_Night": 68.39,
+          "Zone_Category": "Low"
         }
       ]
     },
     {
       "Location": "Vasant Kunj",
+      "City": "Delhi",
       "Latitude": 28.521,
       "Longitude": 77.157,
-      "Avg_Day": 63.52,
-      "Avg_Night": 52.38,
-      "Avg_Excess_Day": 8.52,
+      "Avg_Day": 63.64,
+      "Avg_Night": 52.5,
+      "Avg_Excess_Day": 8.64,
       "DPCC_Std_Day": 55,
       "Zone_Category": "High",
       "Zone_Type": "Residential",
@@ -1717,16 +1991,23 @@
           "Avg_Day": 64.79,
           "Avg_Night": 53.31,
           "Zone_Category": "High"
+        },
+        {
+          "Year": 2025,
+          "Avg_Day": 64.23,
+          "Avg_Night": 53.08,
+          "Zone_Category": "High"
         }
       ]
     },
     {
       "Location": "Yamuna Vihar",
+      "City": "Delhi",
       "Latitude": 28.697,
       "Longitude": 77.272,
-      "Avg_Day": 67.13,
-      "Avg_Night": 55.99,
-      "Avg_Excess_Day": 12.13,
+      "Avg_Day": 67.25,
+      "Avg_Night": 56.09,
+      "Avg_Excess_Day": 12.25,
       "DPCC_Std_Day": 55,
       "Zone_Category": "High",
       "Zone_Type": "Residential",
@@ -1760,6 +2041,12 @@
           "Avg_Day": 68.45,
           "Avg_Night": 57.01,
           "Zone_Category": "High"
+        },
+        {
+          "Year": 2025,
+          "Avg_Day": 67.85,
+          "Avg_Night": 56.57,
+          "Zone_Category": "High"
         }
       ]
     }
@@ -1789,6 +2076,11 @@
       "Year": 2024,
       "Avg_Day": 68.55,
       "Avg_Night": 58.11
+    },
+    {
+      "Year": 2025,
+      "Avg_Day": 67.96,
+      "Avg_Night": 57.62
     }
   ]
 }

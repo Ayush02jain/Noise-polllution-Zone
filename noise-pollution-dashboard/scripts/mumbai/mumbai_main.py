@@ -1,10 +1,10 @@
 """
-Noise Pollution Zone Forecasting for Chennai (2020-2025)
-========================================================
-Steps 1-4: Preprocessing, ML Regression Forecasting (RF & XGBoost),
-           Trend Analysis + 2025 Forecast, JSON Export
-Uses: data/processed/chennai_noise_2020_2024.csv
-Outputs: models/chennai/chennai_noise_model.pkl, plots, chennai_locations_geo.json
+Noise Pollution Zone Forecasting for Mumbai (2020-2025)
+=======================================================
+Steps 1-5: Preprocessing, ML Regression Forecasting (RF & XGBoost),
+           Trend Analysis + 2025 Forecast, CPCB Compliance Report, JSON Export
+Uses: data/processed/mumbai_noise_2020_2024.csv
+Outputs: models/mumbai/mumbai_noise_model.pkl, plots, cpcb_compliance_report.csv, mumbai_locations_geo.json
 """
 
 import pandas as pd
@@ -27,8 +27,8 @@ warnings.filterwarnings('ignore')
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 PROJECT_ROOT = os.path.abspath(os.path.join(SCRIPT_DIR, '..', '..'))
 
-PLOTS_DIR = os.path.join(PROJECT_ROOT, 'outputs', 'plots', 'chennai')
-MODELS_DIR = os.path.join(PROJECT_ROOT, 'models', 'chennai')
+PLOTS_DIR = os.path.join(PROJECT_ROOT, 'outputs', 'plots', 'mumbai')
+MODELS_DIR = os.path.join(PROJECT_ROOT, 'models', 'mumbai')
 DATA_GEO_DIR = os.path.join(PROJECT_ROOT, 'data', 'geo')
 
 os.makedirs(PLOTS_DIR, exist_ok=True)
@@ -36,7 +36,7 @@ os.makedirs(MODELS_DIR, exist_ok=True)
 os.makedirs(DATA_GEO_DIR, exist_ok=True)
 
 print("=" * 70)
-print("  NOISE POLLUTION FORECASTING & REGRESSION - CHENNAI")
+print("  NOISE POLLUTION FORECASTING & REGRESSION - MUMBAI")
 print("=" * 70)
 
 # ============================================================================
@@ -46,11 +46,12 @@ print("\n" + "=" * 70)
 print("  STEP 1: DATA PREPROCESSING & FEATURE ENGINEERING")
 print("=" * 70)
 
-csv_path = os.path.join(PROJECT_ROOT, 'data', 'processed', 'chennai_noise_2020_2024.csv')
+csv_path = os.path.join(PROJECT_ROOT, 'data', 'processed', 'mumbai_noise_2020_2024.csv')
 df = pd.read_csv(csv_path)
 print(f"  Loaded: {df.shape[0]} rows x {df.shape[1]} columns")
 
-numeric_cols = ['Noise_Day_dB', 'Noise_Night_dB', 'Base_2019_Day_dB', 'Base_2019_Night_dB']
+numeric_cols = ['Noise_Day_dB', 'Noise_Night_dB', 'CPCB_Day_Std_dB',
+                'CPCB_Night_Std_dB', 'Excess_Day_dB', 'Excess_Night_dB']
 for col in numeric_cols:
     if col in df.columns:
         df[col] = pd.to_numeric(df[col], errors='coerce')
@@ -157,7 +158,7 @@ y_train_night = train_df['Noise_Night_dB'].values
 rf_night.fit(X_train_night, y_train_night)
 
 # Save
-model_save_path = os.path.join(MODELS_DIR, 'chennai_noise_model.pkl')
+model_save_path = os.path.join(MODELS_DIR, 'mumbai_noise_model.pkl')
 joblib.dump({
     'model_day': best_model,
     'model_night': rf_night,
@@ -181,10 +182,10 @@ feat_imp = pd.DataFrame({'Feature': feature_names, 'Importance': best_model.feat
 feat_imp = feat_imp.sort_values('Importance', ascending=True)
 
 fig, ax = plt.subplots(figsize=(10, 6))
-colors = plt.cm.plasma(np.linspace(0.3, 0.9, len(feat_imp)))
+colors = plt.cm.summer(np.linspace(0.3, 0.9, len(feat_imp)))
 bars = ax.barh(feat_imp['Feature'], feat_imp['Importance'], color=colors, edgecolor='white', height=0.6)
 ax.set_xlabel('Importance', fontsize=12, fontweight='bold')
-ax.set_title(f'Chennai Noise Forecasting - {best_name} Feature Importance', fontsize=14, fontweight='bold', pad=15)
+ax.set_title(f'Mumbai Noise Forecasting - {best_name} Feature Importance', fontsize=14, fontweight='bold', pad=15)
 for bar, val in zip(bars, feat_imp['Importance']):
     ax.text(val + 0.005, bar.get_y() + bar.get_height()/2, f'{val:.4f}', va='center', fontsize=9)
 ax.spines['top'].set_visible(False)
@@ -196,13 +197,13 @@ print("  Saved: feature_importance.png")
 
 # Actual vs Predicted plot
 fig, ax = plt.subplots(figsize=(8, 8))
-ax.scatter(y_test, best_pred, alpha=0.6, color='#d35400', edgecolors='white', s=60, label='2024 Test Points')
+ax.scatter(y_test, best_pred, alpha=0.6, color='#16a085', edgecolors='white', s=60, label='2024 Test Points')
 min_val = min(y_test.min(), best_pred.min()) - 2
 max_val = max(y_test.max(), best_pred.max()) + 2
-ax.plot([min_val, max_val], [min_val, max_val], 'k--', lw=2, label='Ideal Perfect Fit (y=x)')
+ax.plot([min_val, max_val], [min_val, max_val], 'r--', lw=2, label='Ideal Perfect Fit (y=x)')
 ax.set_xlabel('Actual Noise Day (dB) - 2024', fontsize=12, fontweight='bold')
 ax.set_ylabel('Predicted Noise Day (dB) - 2024', fontsize=12, fontweight='bold')
-ax.set_title(f'Chennai 2024 Out-of-Time Test Set\nRMSE: {best_rmse:.2f} dB | MAE: {best_mae:.2f} dB | R²: {best_r2:.2f}', fontsize=14, fontweight='bold')
+ax.set_title(f'Mumbai 2024 Out-of-Time Test Set\nRMSE: {best_rmse:.2f} dB | MAE: {best_mae:.2f} dB | R²: {best_r2:.2f}', fontsize=14, fontweight='bold')
 ax.legend(fontsize=11)
 ax.grid(True, alpha=0.3, linestyle='--')
 plt.tight_layout()
@@ -217,22 +218,14 @@ print("\n" + "=" * 70)
 print("  STEP 3: 2025 FORECAST GENERATION & TREND ANALYSIS")
 print("=" * 70)
 
-unique_locs = df[['Location', 'Zone_Type']].drop_duplicates()
-
-# CPCB standard reference for classification
-CPCB_DAY_LIMITS = {
-    'Industrial': 75,
-    'Commercial': 65,
-    'Residential': 55,
-    'Silence': 50
-}
+unique_locs = df[['Location', 'Zone_Type', 'CPCB_Day_Std_dB', 'CPCB_Night_Std_dB']].drop_duplicates()
 
 forecast_rows = []
 for _, row in unique_locs.iterrows():
     loc = row['Location']
     zt = row['Zone_Type']
-    std_day = CPCB_DAY_LIMITS.get(zt, 55)
-    std_night = std_day - 10
+    std_day = row['CPCB_Day_Std_dB']
+    std_night = row['CPCB_Night_Std_dB']
     
     zt_enc = le_zone_type.transform([zt])[0]
     loc_enc = le_loc.transform([loc])[0]
@@ -266,8 +259,10 @@ for _, row in unique_locs.iterrows():
         
         forecast_rows.append({
             'Location': loc,
-            'City': 'Chennai',
+            'City': 'Mumbai',
             'Zone_Type': zt,
+            'CPCB_Day_Std_dB': std_day,
+            'CPCB_Night_Std_dB': std_night,
             'Year': 2025,
             'Month': m,
             'Month_Name': month_names[m-1],
@@ -287,25 +282,25 @@ yearly = df_combined.groupby('Year')[['Noise_Day_dB', 'Noise_Night_dB']].mean().
 fig, ax = plt.subplots(figsize=(12, 6))
 hist_yearly = yearly[yearly['Year'] <= 2024]
 ax.plot(hist_yearly['Year'], hist_yearly['Noise_Day_dB'], marker='o', ms=9, lw=2.5,
-        color='#e67e22', label='Historical Day Noise (dB)', zorder=5)
+        color='#16a085', label='Historical Day Noise (dB)', zorder=5)
 ax.plot(hist_yearly['Year'], hist_yearly['Noise_Night_dB'], marker='s', ms=9, lw=2.5,
-        color='#3498db', label='Historical Night Noise (dB)', zorder=5)
+        color='#2980b9', label='Historical Night Noise (dB)', zorder=5)
 
 fc_yearly = yearly[yearly['Year'] >= 2024]
 ax.plot(fc_yearly['Year'], fc_yearly['Noise_Day_dB'], marker='o', ms=9, lw=2.5, ls='--',
-        color='#d35400', label='ML Forecasted Day (2025)', zorder=5)
+        color='#27ae60', label='ML Forecasted Day (2025)', zorder=5)
 ax.plot(fc_yearly['Year'], fc_yearly['Noise_Night_dB'], marker='s', ms=9, lw=2.5, ls='--',
-        color='#2980b9', label='ML Forecasted Night (2025)', zorder=5)
+        color='#1abc9c', label='ML Forecasted Night (2025)', zorder=5)
 
 for _, r in yearly.iterrows():
     ax.text(r['Year'], r['Noise_Day_dB'] + 0.35, f"{r['Noise_Day_dB']:.1f}",
-            ha='center', fontsize=9, color='#d35400', fontweight='bold')
+            ha='center', fontsize=9, color='#16a085', fontweight='bold')
     ax.text(r['Year'], r['Noise_Night_dB'] - 0.55, f"{r['Noise_Night_dB']:.1f}",
             ha='center', fontsize=9, color='#2980b9', fontweight='bold')
 
 ax.set_xlabel('Year', fontsize=13, fontweight='bold')
 ax.set_ylabel('Avg Noise (dB)', fontsize=13, fontweight='bold')
-ax.set_title('Chennai Noise Pollution Trend & 2025 ML Forecast', fontsize=15, fontweight='bold')
+ax.set_title('Mumbai Noise Pollution Trend & 2025 ML Forecast', fontsize=15, fontweight='bold')
 ax.set_xticks(yearly['Year'])
 ax.legend(fontsize=10, loc='lower right')
 ax.grid(True, alpha=0.3, linestyle='--')
@@ -315,28 +310,63 @@ plt.close()
 print("  Saved: noise_trend_2020_2025.png")
 
 # ============================================================================
-# STEP 4: GEOCODING & JSON EXPORT
+# STEP 4: CPCB COMPLIANCE REPORT
 # ============================================================================
 print("\n" + "=" * 70)
-print("  STEP 4: GEOCODING & JSON EXPORT")
+print("  STEP 4: CPCB COMPLIANCE REPORT")
 print("=" * 70)
 
-CHENNAI_COORDS = {
-    'Guindy':               (13.0067, 80.2206),
-    'Perambur':             (13.1116, 80.2329),
-    'T Nagar':              (13.0358, 80.2333),
-    'Triplicane':           (13.0569, 80.2762),
-    'Pallikaranai':         (12.9370, 80.2131),
-    'Velachery':            (12.9815, 80.2180),
-    'Washermanpet':         (13.1155, 80.2874),
-    'Anna Nagar':           (13.0850, 80.2101),
-    'Sowcarpet':            (13.0916, 80.2784),
-    'Egmore Eye Hospital':  (13.0732, 80.2609),
+compliance = df.groupby('Zone_Type').agg(
+    CPCB_Day_Standard=('CPCB_Day_Std_dB', 'first'),
+    Avg_Recorded_Day_dB=('Noise_Day_dB', 'mean'),
+    Avg_Excess_Day_dB=('Excess_Day_dB', 'mean'),
+).reset_index()
+
+violation_pct = df.groupby('Zone_Type').apply(
+    lambda g: round((g['Excess_Day_dB'] > 0).sum() / len(g) * 100, 1)
+).reset_index(name='Violation_Pct')
+
+compliance = compliance.merge(violation_pct, on='Zone_Type')
+compliance['Avg_Recorded_Day_dB'] = compliance['Avg_Recorded_Day_dB'].round(2)
+compliance['Avg_Excess_Day_dB'] = compliance['Avg_Excess_Day_dB'].round(2)
+
+print(compliance.to_string(index=False))
+compliance.to_csv(os.path.join(PLOTS_DIR, 'cpcb_compliance_report.csv'), index=False)
+print("  Saved: cpcb_compliance_report.csv")
+
+# ============================================================================
+# STEP 5: GEOCODING & JSON EXPORT
+# ============================================================================
+print("\n" + "=" * 70)
+print("  STEP 5: GEOCODING & JSON EXPORT")
+print("=" * 70)
+
+MUMBAI_COORDS = {
+    'Santacruz (W)':        (19.0822, 72.8397),
+    'Vile Parle (W)':       (19.1004, 72.8497),
+    'Andheri (W)':          (19.1197, 72.8464),
+    'Bandra (W)':           (19.0596, 72.8295),
+    'Lower Parel':          (18.9982, 72.8326),
+    'Khar (W)':             (19.0726, 72.8373),
+    'Dr. E. Moses Road':    (19.0048, 72.8178),
+    'Marine Lines':         (18.9432, 72.8236),
+    'Charni Road':          (18.9549, 72.8186),
+    'Turner Road (Bandra)': (19.0543, 72.8366),
+    'Mahalakshmi':          (18.9845, 72.8191),
+    'Matunga':              (19.0225, 72.8587),
+    'Haji Ali':             (18.9826, 72.8089),
+    'Mahim':                (19.0385, 72.8438),
+    'Churchgate':           (18.9322, 72.8264),
+    'Mumbai Central':       (18.9696, 72.8194),
+    'Grant Road':           (18.9642, 72.8183),
+    'Mulund (W)':           (19.1728, 72.9569),
 }
 
 loc_overall = df_combined.groupby('Location').agg(
     Avg_Day=('Noise_Day_dB', 'mean'),
     Avg_Night=('Noise_Night_dB', 'mean'),
+    Avg_Excess_Day=('Excess_Day_dB', 'mean'),
+    CPCB_Std_Day=('CPCB_Day_Std_dB', 'first'),
     Zone_Category=('Zone_Category', lambda x: x.mode()[0]),
     Zone_Type=('Zone_Type', 'first')
 ).reset_index()
@@ -351,7 +381,7 @@ loc_yearly = df_combined.groupby(['Location', 'Year']).agg(
 latitudes, longitudes = [], []
 for _, row in loc_overall.iterrows():
     loc = row['Location'].strip()
-    lat, lon = CHENNAI_COORDS.get(loc, (13.0827, 80.2707))
+    lat, lon = MUMBAI_COORDS.get(loc, (19.0760, 72.8777))
     latitudes.append(lat)
     longitudes.append(lon)
 
@@ -371,13 +401,13 @@ for _, ov in loc_overall.iterrows():
     
     geo_records.append({
         'Location': loc,
-        'City': 'Chennai',
+        'City': 'Mumbai',
         'Latitude': ov['Latitude'],
         'Longitude': ov['Longitude'],
         'Avg_Day': round(ov['Avg_Day'], 2),
         'Avg_Night': round(ov['Avg_Night'], 2),
-        'Avg_Excess_Day': 0.0,
-        'DPCC_Std_Day': CPCB_DAY_LIMITS.get(ov['Zone_Type'], 55),
+        'Avg_Excess_Day': round(ov['Avg_Excess_Day'], 2),
+        'DPCC_Std_Day': int(ov['CPCB_Std_Day']),
         'Zone_Category': ov['Zone_Category'],
         'Zone_Type': ov['Zone_Type'],
         'Yearly': yearly_clean
@@ -394,11 +424,11 @@ output_json = {
     'yearly_trend': yearly_trend_clean
 }
 
-json_path = os.path.join(DATA_GEO_DIR, 'chennai_locations_geo.json')
+json_path = os.path.join(DATA_GEO_DIR, 'mumbai_locations_geo.json')
 with open(json_path, 'w') as f:
     json.dump(output_json, f, indent=2)
 
 print(f"  Saved: {json_path} ({len(geo_records)} locations)")
 print("=" * 70)
-print("  CHENNAI PIPELINE COMPLETED SUCCESSFULLY!")
+print("  MUMBAI PIPELINE COMPLETED SUCCESSFULLY!")
 print("=" * 70)

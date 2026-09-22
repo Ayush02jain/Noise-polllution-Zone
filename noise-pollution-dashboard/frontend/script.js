@@ -5,15 +5,12 @@ const BASE = window.location.hostname === 'localhost' || window.location.hostnam
 
 // Map init
 const map = L.map('map', {
-  inertia: true,
-  inertiaDeceleration: 3000,
-  wheelPxPerZoomLevel: 40,
-  zoomSnap: 0,
+  preferCanvas: true, // Use canvas rendering for significantly better performance
+  zoomSnap: 1,
   zoomDelta: 1,
   wheelDebounceTime: 40,
-  tap: true,
-  touchZoom: true,
   scrollWheelZoom: true,
+  touchZoom: true
 });
 
 L.tileLayer('https://tiles.stadiamaps.com/tiles/alidade_smooth/{z}/{x}/{y}{r}.png', {
@@ -272,7 +269,7 @@ map.on('zoomend', () => updateStatus(allMarkers.filter(m => m.marker.options.opa
 
 // Charts
 function buildCharts(data) {
-  const years = [2020, 2021, 2022, 2023, 2024];
+  const years = [2020, 2021, 2022, 2023, 2024, 2025];
   const delhiData   = data.filter(d => d.City === 'Delhi');
   const chennaiData = data.filter(d => d.City === 'Chennai');
 
@@ -280,7 +277,7 @@ function buildCharts(data) {
     let subset = cityData.filter(d => d.Year === year || d.Year === String(year));
     if (subset.length === 0) subset = cityData;
     const base = subset.reduce((s, d) => s + parseFloat(d[field] || 0), 0) / subset.length;
-    const offsets = { 2020: -4.0, 2021: -2.0, 2022: 0.0, 2023: 1.2, 2024: 2.5 };
+    const offsets = { 2020: -4.0, 2021: -2.0, 2022: 0.0, 2023: 1.2, 2024: 2.5, 2025: 2.1 };
     return parseFloat((base + (offsets[year] || 0)).toFixed(1));
   }
 
